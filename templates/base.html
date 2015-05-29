@@ -5,6 +5,7 @@
     <title>Landing page</title>
     <script src="{{ STATIC_URL }}js/jquery-1.11.2.min.js"></script>
     <script src="{{ STATIC_URL }}js/jquery.validate.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.flexslider-min.js"></script>
     <script src="{{ STATIC_URL }}js/common.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/reset.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
@@ -55,7 +56,7 @@
 
         <form class="ticket" action="">
             <input type="text" name="name" placeholder="Ваше имя"/>
-            <input type="text" name="email" placeholder="Ваше E-mail"/>
+            <input type="email" name="email" placeholder="Ваше E-mail"/>
             <input type="submit" value="Оставить заявку"/>
         </form>
     </div>
@@ -109,7 +110,7 @@
     <div class="container">
         <form class="ticket" action="">
             <input type="text" name="name" placeholder="Ваше имя"/>
-            <input type="text" name="email" placeholder="Ваше E-mail"/>
+            <input type="email" name="email" placeholder="Ваше E-mail"/>
             <input type="submit" value="Оставить заявку"/>
         </form>
     </div>
@@ -180,19 +181,77 @@
 <div id="block_12">
     <div class="container">
         <h3>Вот, что говорят о нас клиенты:</h3>
+
+        <div class="slider_1">
+            <ul class="slides_1">
+                <li>
+                    <div class="photo">
+                        <img src="{{ STATIC_URL }}slider1/photo_1.png" alt=""/>
+                    </div>
+                    <div class="content">
+                        <span class="name">Михаил</span>
+                        <span class="datetime">21 апреля 2013</span>
+
+                        <p>Все прошло просто супер! Впервые ехали в Египет с женой и не разочаровались: очень интересные
+                            экскурсии. Нам понравилось, спасибо!</p>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="photo">
+                        <img src="{{ STATIC_URL }}slider1/photo_1.png" alt=""/>
+                    </div>
+                    <div class="content">
+                        <span class="name">Михаил</span>
+                        <span class="datetime">21 апреля 2013</span>
+
+                        <p>Все прошло просто супер! Впервые ехали в Египет с женой и не разочаровались: очень интересные
+                            экскурсии. Нам понравилось, спасибо!</p>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 <div id="block_13">
-    <div class="container"></div>
+    <div class="container">
+        <div class="slider_2">
+            <ul class="slides">
+                <li>
+                    <img src="{{ STATIC_URL }}slider2/slide1.jpg" alt=""/>
+                </li>
+                <li>
+                    <img src="{{ STATIC_URL }}slider2/slide2.jpg" alt=""/>
+                </li>
+                <li>
+                    <img src="{{ STATIC_URL }}slider2/slide3.jpg" alt=""/>
+                </li>
+                <li>
+                    <img src="{{ STATIC_URL }}slider2/slide4.jpg" alt=""/>
+                </li>
+                 <li>
+                    <img src="{{ STATIC_URL }}slider2/slide2.jpg" alt=""/>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 <footer>
     <div class="container">
         <form class="ticket" action="">
             <input type="text" name="name" placeholder="Ваше имя"/>
-            <input type="text" name="email" placeholder="Ваше E-mail"/>
+            <input type="email" name="email" placeholder="Ваше E-mail"/>
             <input type="submit" value="Да! Я хочу на САФАРИ!"/>
         </form>
     </div>
 </footer>
+<div class="modal">
+    <form class="ticket" action="">
+        <input type="text" name="name" placeholder="Ваше имя"/>
+        <input type="email" name="email" placeholder="Ваше E-mail"/>
+        <input type="submit" value="Оставить заявку"/>
+    </form>
+</div>
 </body>
 </html>

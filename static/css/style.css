@@ -69,7 +69,7 @@ header button {
   margin-top: 12px;
 }
 #block_1 {
-  background: url("../img/kilimanjaro.jpg") no-repeat;
+  background: url("../img/kilimanjaro.jpg");
   background-size: 100%;
   height: 530px;
 }
@@ -93,7 +93,7 @@ header button {
   color: #101b3f;
 }
 #block_3 {
-  background: url("../img/block_3_bg.jpg") no-repeat;
+  background: url("../img/block_3_bg.jpg");
   background-size: 100%;
   padding: 10px 0;
 }
@@ -171,7 +171,7 @@ header button {
   margin-bottom: 0;
 }
 #block_6 {
-  background: url("../img/block_6_bg.jpg") no-repeat;
+  background: url("../img/block_6_bg.jpg");
   background-size: 100%;
   text-align: center;
   padding-bottom: 45px;
@@ -254,7 +254,7 @@ header button {
   margin-top: -25px;
 }
 #block_10 {
-  background: url("../img/block_10_bg.jpg") no-repeat;
+  background: url("../img/block_10_bg.jpg");
   background-size: 100%;
 }
 #block_10 h2 {
@@ -265,22 +265,51 @@ header button {
 }
 #block_10 ul {
   list-style: none;
+  width: 670px;
+  margin: 0 auto;
 }
 #block_10 ul li {
   color: #fff;
   font-size: 24px;
-  margin-bottom: 50px;
 }
 #block_10 ul li:last-child {
   margin-bottom: 0;
 }
+#block_10 ul li .icon {
+  width: 150px;
+  height: 150px;
+  float: left;
+  text-align: center;
+  line-height: 150px;
+}
+#block_10 ul li .content {
+  height: 150px;
+  width: 510px;
+  display: table;
+}
+#block_10 ul li .content p {
+  line-height: 1.5em;
+  vertical-align: middle;
+  display: table-cell;
+}
+#block_10 ul li img {
+  vertical-align: middle;
+}
 #block_11 {
   background: #21a8ff;
+  padding: 10px 0;
 }
 #block_11 p {
   text-align: center;
   color: #fff;
   font-size: 24px;
+}
+#block_12 h3 {
+  text-align: center;
+  color: #101b3f;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 65px;
 }
 footer {
   background: #21a8ff;

@@ -1,0 +1,5 @@
+<form class="ticket" action="{% url 'form' %}" method="post">{% csrf_token %}
+    <input type="text" name="name" placeholder="Ваше имя"/>
+    <input type="email" name="email" placeholder="Ваше E-mail"/>
+    <input type="submit" value="Оставить заявку"/>
+</form>

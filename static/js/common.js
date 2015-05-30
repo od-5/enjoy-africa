@@ -25,6 +25,13 @@ $(window).load(function() {
     $("footer form").validate();
     $(".modal form").validate();
 
+    $('form.ticket').ajaxForm({
+        success: function(data){
+            alert(data)
+            $('form.ticket').resetForm();
+        }
+    });
+
     // Затемнение фона
     $('header button').click(function(){
         $('.modal').fadeIn();

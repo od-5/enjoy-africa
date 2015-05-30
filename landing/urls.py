@@ -8,8 +8,9 @@ from django.views.generic import TemplateView
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'landing.views.home', name='home'),
-    url(r'^$', TemplateView.as_view(template_name='base.html'), name='home'),
-    # url(r'^blog/', include('blog.urls')),
+    url(r'^$', 'core.views.home', name='home'),
+    # url(r'^$', TemplateView.as_view(template_name='base.html'), name='home'),
+    url(r'', include('core.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
 )

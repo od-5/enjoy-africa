@@ -2,9 +2,13 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Landing page</title>
+    <title>{{ setup.title|striptags|default:'Safari Travel' }}</title>
+    <meta name="description" content="{{ setup.meta_desc|striptags|default:'' }}"/>
+    <meta name="keywords" content="{{ setup.meta_key|striptags|default:'' }}"/>
+    {{ setup.top_js|safe|default:'' }}
     <script src="{{ STATIC_URL }}js/jquery-1.11.2.min.js"></script>
     <script src="{{ STATIC_URL }}js/jquery.validate.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.form.js"></script>
     <script src="{{ STATIC_URL }}js/jquery.flexslider-min.js"></script>
     <script src="{{ STATIC_URL }}js/common.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/reset.css">
@@ -54,11 +58,7 @@
     <div class="container">
         <h2>Совершите самое необычное путешествия в Вашей жизни!</h2>
 
-        <form class="ticket" action="">
-            <input type="text" name="name" placeholder="Ваше имя"/>
-            <input type="email" name="email" placeholder="Ваше E-mail"/>
-            <input type="submit" value="Оставить заявку"/>
-        </form>
+        {% include 'form.html' %}
     </div>
 </div>
 <div id="block_5">
@@ -108,11 +108,7 @@
 </div>
 <div id="block_8">
     <div class="container">
-        <form class="ticket" action="">
-            <input type="text" name="name" placeholder="Ваше имя"/>
-            <input type="email" name="email" placeholder="Ваше E-mail"/>
-            <input type="submit" value="Оставить заявку"/>
-        </form>
+        {% include 'form.html' %}
     </div>
 </div>
 <div id="block_9">
@@ -239,7 +235,7 @@
 </div>
 <footer>
     <div class="container">
-        <form class="ticket" action="">
+        <form class="ticket" action="" method="post">{% csrf_token %}
             <input type="text" name="name" placeholder="Ваше имя"/>
             <input type="email" name="email" placeholder="Ваше E-mail"/>
             <input type="submit" value="Да! Я хочу на САФАРИ!"/>
@@ -247,11 +243,8 @@
     </div>
 </footer>
 <div class="modal">
-    <form class="ticket" action="">
-        <input type="text" name="name" placeholder="Ваше имя"/>
-        <input type="email" name="email" placeholder="Ваше E-mail"/>
-        <input type="submit" value="Оставить заявку"/>
-    </form>
+    {% include 'form.html' %}
 </div>
+{{ setup.bottom_js|safe|default:'' }}
 </body>
 </html>

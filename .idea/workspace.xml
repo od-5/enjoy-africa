@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b5690ff-3341-4cfe-b4d2-1a4c9e19a3c0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/requirements.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/landing/settings.py" afterPath="$PROJECT_DIR$/landing/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="src.iws" />
@@ -37,11 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/landing/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2330" max-vertical-offset="2826">
-              <caret line="141" column="35" selection-start-line="141" selection-start-column="35" selection-end-line="141" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.17297298" vertical-offset="1970" max-vertical-offset="2826">
+              <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -123,16 +124,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.097297296" vertical-offset="0" max-vertical-offset="370">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -150,11 +141,11 @@
         <option value="$PROJECT_DIR$/core/urls.py" />
         <option value="$PROJECT_DIR$/landing/urls.py" />
         <option value="$PROJECT_DIR$/templates/form.html" />
-        <option value="$PROJECT_DIR$/landing/settings.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/core/views.py" />
         <option value="$PROJECT_DIR$/static/js/common.js" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/landing/settings.py" />
       </list>
     </option>
   </component>
@@ -548,7 +539,19 @@
       <option name="project" value="LOCAL" />
       <updated>1432975170861</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add requirements.txt">
+      <created>1432976141884</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1432976141884</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix STATIC_ROOT">
+      <created>1432976379005</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1432976379005</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -621,7 +624,9 @@
     <MESSAGE value="less fix" />
     <MESSAGE value="add  form validate" />
     <MESSAGE value="ajax form" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajax form" />
+    <MESSAGE value="add requirements.txt" />
+    <MESSAGE value="fix STATIC_ROOT" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix STATIC_ROOT" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -649,7 +654,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="270">
           <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding>
-            <element signature="e#15#49#0" expanded="true" />
+            <element signature="e#15#49#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -669,7 +674,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="360">
           <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
-            <element signature="e#15#47#0" expanded="true" />
+            <element signature="e#15#47#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -869,7 +874,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
           <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
-            <element signature="e#15#47#0" expanded="true" />
+            <element signature="e#15#47#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -878,14 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
           <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/landing/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2330" max-vertical-offset="2826">
-          <caret line="141" column="35" selection-start-line="141" selection-start-column="35" selection-end-line="141" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -903,7 +900,7 @@
         <state vertical-scroll-proportion="0.43783784" vertical-offset="0" max-vertical-offset="370">
           <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding>
-            <element signature="e#15#49#0" expanded="true" />
+            <element signature="e#15#49#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -934,6 +931,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.097297296" vertical-offset="0" max-vertical-offset="370">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1170">
@@ -944,10 +949,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
+    <entry file="file://$PROJECT_DIR$/landing/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.097297296" vertical-offset="0" max-vertical-offset="370">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.17297298" vertical-offset="1970" max-vertical-offset="2826">
+          <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
           <folding />
         </state>
       </provider>

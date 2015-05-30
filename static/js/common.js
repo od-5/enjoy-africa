@@ -27,8 +27,13 @@ $(window).load(function() {
 
     $('form.ticket').ajaxForm({
         success: function(data){
-            alert(data)
+            $('.modal').fadeOut();
+            if ($('#overlay')) {
+                console.log(data);
+                $('#overlay').remove();
+            }
             $('form.ticket').resetForm();
+
         }
     });
 

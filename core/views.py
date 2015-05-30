@@ -1,6 +1,8 @@
 # coding=utf-8
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.conf import settings
+from django.core.mail import send_mail
 from .models import Setup
 from .forms import TicketForm
 
@@ -14,10 +16,21 @@ def home(request):
     return render(request, 'base.html', {'setup': setup, 'form': form})
 
 def ticket(request):
+    try:
+        email = Setup.objects.all()[0].email
+    except:
+        email = 'od-5@yandex.ru'
     if request.method == "POST":
         form = TicketForm(data=request.POST)
         if form.is_valid():
-            form.save()
-        return HttpResponse('ok')
+            ticket = form.save(commit=False)
+            ticket.save()
+            send_mail(
+                u'enjoy-africa.ru - Заявка с сайта',
+                u'Имя: %s\nE-mail: %s\n' % (ticket.name, ticket.email),
+                settings.DEFAULT_FROM_EMAIL,
+                [email, ]
+            )
+        return HttpResponse(ticket.email)
 
     return HttpResponse('fail')

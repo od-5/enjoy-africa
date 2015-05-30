@@ -27,6 +27,11 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'admin@enjoy-africa.ru'
+EMAIL_HOST = 'smtp.fullspace.ru'
+EMAIL_HOST_USER = 'admin@enjoy-africa.ru'
+EMAIL_HOST_PASSWORD = 'alena2010'
 
 # Application definition
 

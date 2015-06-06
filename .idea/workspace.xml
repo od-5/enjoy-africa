@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b5690ff-3341-4cfe-b4d2-1a4c9e19a3c0" name="Default" comment="fix block_&amp; width">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+    <list default="true" id="4b5690ff-3341-4cfe-b4d2-1a4c9e19a3c0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.less" afterPath="$PROJECT_DIR$/static/css/style.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -117,8 +116,8 @@
       <file leaf-file-name="style.less" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/style.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.89504373" vertical-offset="8513" max-vertical-offset="8964">
-              <caret line="490" column="17" selection-start-line="490" selection-start-column="17" selection-end-line="490" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.5276968" vertical-offset="8621" max-vertical-offset="8982">
+              <caret line="489" column="11" selection-start-line="489" selection-start-column="11" selection-end-line="489" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -652,7 +651,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433621571981</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fix creator">
+      <created>1433622795937</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1433622795937</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -730,7 +735,8 @@
     <MESSAGE value="fix mail" />
     <MESSAGE value="add lider and reviews models" />
     <MESSAGE value="fix block_&amp; width" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix block_&amp; width" />
+    <MESSAGE value="fix creator" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix creator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1121,8 +1127,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/style.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.89504373" vertical-offset="8513" max-vertical-offset="8964">
-          <caret line="490" column="17" selection-start-line="490" selection-start-column="17" selection-end-line="490" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.5276968" vertical-offset="8621" max-vertical-offset="8982">
+          <caret line="489" column="11" selection-start-line="489" selection-start-column="11" selection-end-line="489" selection-end-column="11" />
           <folding />
         </state>
       </provider>

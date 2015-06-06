@@ -15,221 +15,223 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
 </head>
 <body>
-<header>
-    <div class="container">
-        <img src="{{ STATIC_URL }}img/logotype.png" alt="Enjoy Africa Travel companies"/>
-        <button>Узнать подробнее</button>
-        <div class="clear"></div>
-    </div>
-</header>
-<div id="block_1">
-    <div class="container">
-        <p>Хотите совершить сафари-путешествие по <br/> Африке и сэкономить до 30% <br/> от стоимости тура?</p>
-    </div>
-</div>
-<div id="block_2">
-    <div class="container">
-        <h1>Почему именно мы? 4 железных аргумента:</h1>
-    </div>
-</div>
-<div id="block_3">
-    <div class="container">
-        <ul>
-            <li>
-                <p class="title one">Мы не посредники</p>
-                <p class="content">Вы приобретаете сафари напрямую у местного туроператора, минуя всех посредников, оставляющих себе до 30% от стоимости тура.</p>
-            </li>
-            <li>
-                <p class="title two">Мы говорим по-русски</p>
-                <p class="content">Мы единственный полностью "русский туроператор" в Восточной Африке</p>
-            </li>
-            <li>
-                <p class="title three">Мы гарантируем</p>
-                <p class="content">Заключение договора гарантирует строгое выполнение условий тура.</p>
-            </li>
-            <li>
-                <p class="title four">Мы делаем Ваш отдых удобнее</p>
-                <p class="content">Вы можете оплатить полную стоимость тура на месте при встрече с нашим гидом. Заранее взымается лишь организационная часть сборов в размере 100 USD с человека.</p>
-            </li>
-        </ul>
-    </div>
-</div>
-<div id="block_4">
-    <div class="container">
-        <h2>Совершите самое необычное путешествие в Вашей жизни!</h2>
-
-        {% include 'form.html' %}
-    </div>
-</div>
-<div id="block_5">
-    <div class="container">
-        <h2>Почему выбирают именно нас?</h2>
-
-        <p>Мы единственный полностью "русский туроператор" в Восточной Африке. Все наши сотрудники свободно общаются на
-            русском языке. Мы единственный туроператор в Восточной Африке, работающий исключительно с русскоговорящими
-            туристами.</p>
-
-        <p>Мы работает на рынке сафари-путешествий для русскоязычных туристов с 2009 года. Мы знаем, как сделать сафари
-            незабываемым.</p>
-
-        <p>Наша компания «Enjoy Africa Group of Companies» - это зарегистрированный в Кении и Танзании туроператор по
-            странам Восточной Африки. Мы имеем все необходимые лицензии для данной деятельности.</p>
-
-        <p>Наш гид имеет высшее образование по направлению "Специалист по языкам и культуре Восточной Африки"</p>
-    </div>
-</div>
-<div id="block_6">
-    <div class="container">
-        <h2>Сафари - это просто!</h2>
-        <div class="step">
-            <img src="{{ STATIC_URL }}img/block_6_1.png" alt=""/>
-            <p>Заполните <br/>форму</p>
+<div id="wrapper">
+    <header>
+        <div class="container">
+            <img src="{{ STATIC_URL }}img/logotype.png" alt="Enjoy Africa Travel companies"/>
+            <button>Узнать подробнее</button>
+            <div class="clear"></div>
         </div>
-        <div class="step">
-            <img src="{{ STATIC_URL }}img/block_6_2.png" alt=""/>
-            <p>Получите наше предложение</p>
+    </header>
+    <div id="block_1">
+        <div class="container">
+            <p>Хотите совершить сафари-путешествие по <br/> Африке и сэкономить до 30% <br/> от стоимости тура?</p>
         </div>
-        <div class="step">
-            <img src="{{ STATIC_URL }}img/block_6_3.png" alt=""/>
-            <p>Забронируйте тур</p>
+    </div>
+    <div id="block_2">
+        <div class="container">
+            <h1>Почему именно мы? 4 железных аргумента:</h1>
         </div>
-        <div class="step last">
-            <img src="{{ STATIC_URL }}img/block_6_4.png" alt=""/>
-            <p>Приготовьтесь к сафари</p>
-        </div>
-        <div class="clear"></div>
     </div>
-</div>
-<div id="block_7">
-    <div class="container">
-        <p>
-            Оставьте заявку <strong>прямо сейчас</strong><br/>
-            и получите одну экскурсию бесплатно на выбор:<br/>
-            <strong>"Посещение масайской деревни"</strong><br/>
-            или <br/>
-            <strong>"Прогулка на лодке по Озеру Найваша"</strong><br/>
-            <strong>Предложение ограниченно!</strong>
-        </p>
-    </div>
-</div>
-<div id="block_8">
-    <div class="container">
-        {% include 'form.html' %}
-    </div>
-</div>
-<div id="block_9">
-    <div class="container">
-        <p>93% наших клиентов советуют нас друзьям и обращаются к нам повторно!</p>
-    </div>
-</div>
-<div id="block_10">
-    <div class="container">
-        <h2>Что включено в стоимость?</h2>
-        <ul>
-            <li>
-                <div class="icon">
-                    <img src="{{ STATIC_URL }}img/block_10_1.png" alt=""/>
-                </div>
-                <div class="content">
-                    <p>Трансферы из аэропорта и назад</p>
-                </div>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <div class="icon">
-                    <img src="{{ STATIC_URL }}img/block_10_2.png" alt=""/>
-                </div>
-                <div class="content">
-                    <p>Трансферы и сафари по утвержденному <br/>маршруту на протяжении всего тура на <br/>комфортабельных минивенах и джипах.</p>
-                </div>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <div class="icon">
-                    <img src="{{ STATIC_URL }}img/block_10_3.png" alt=""/>
-                </div>
-                <div class="content">
-                    <p>Проживание в гостиницах (3-4*) в <br/>национальных парках с полным пансионом <br/>(трех разовое питание).</p>
-                </div>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <div class="icon">
-                    <img src="{{ STATIC_URL }}img/block_10_4.png" alt=""/>
-                </div>
-                <div class="content">
-                    <p>Сопровождение опытного русскоязычного гида.</p>
-                </div>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <div class="icon">
-                    <img src="{{ STATIC_URL }}img/block_10_5.png" alt=""/>
-                </div>
-                <div class="content">
-                    <p>Фотосессия из Африки.</p>
-                </div>
-                <div class="clear"></div>
-            </li>
-        </ul>
-    </div>
-</div>
-<div id="block_11">
-    <div class="container">
-        <p>Мы организовали 476 сафари - туров по Восточной Африке, 1488 туристов из <br/> России, Украины и Белоруссии
-            остались довольны и получили массу <br/>незабываемых впечатлений.</p>
-    </div>
-</div>
-{% if review %}
-<div id="block_12">
-    <div class="container">
-        <h3>Вот, что говорят о нас клиенты:</h3>
-
-        <div class="slider_1">
-            <ul class="slides_1">
-            {% for item in review %}
+    <div id="block_3">
+        <div class="container">
+            <ul>
                 <li>
-                    <div class="photo">
-                        <img src="{{ item.photo.url }}" alt="{{ item.name }}"/>
+                    <p class="title one">Мы не посредники</p>
+                    <p class="content">Вы приобретаете сафари напрямую у местного туроператора, минуя всех посредников, оставляющих себе до 30% от стоимости тура.</p>
+                </li>
+                <li>
+                    <p class="title two">Мы говорим по-русски</p>
+                    <p class="content">Мы единственный полностью "русский туроператор" в Восточной Африке</p>
+                </li>
+                <li>
+                    <p class="title three">Мы гарантируем</p>
+                    <p class="content">Заключение договора гарантирует строгое выполнение условий тура.</p>
+                </li>
+                <li>
+                    <p class="title four">Мы делаем Ваш отдых удобнее</p>
+                    <p class="content">Вы можете оплатить полную стоимость тура на месте при встрече с нашим гидом. Заранее взымается лишь организационная часть сборов в размере 100 USD с человека.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="block_4">
+        <div class="container">
+            <h2>Совершите самое необычное путешествие в Вашей жизни!</h2>
+
+            {% include 'form.html' %}
+        </div>
+    </div>
+    <div id="block_5">
+        <div class="container">
+            <h2>Почему выбирают именно нас?</h2>
+
+            <p>Мы единственный полностью "русский туроператор" в Восточной Африке. Все наши сотрудники свободно общаются на
+                русском языке. Мы единственный туроператор в Восточной Африке, работающий исключительно с русскоговорящими
+                туристами.</p>
+
+            <p>Мы работает на рынке сафари-путешествий для русскоязычных туристов с 2009 года. Мы знаем, как сделать сафари
+                незабываемым.</p>
+
+            <p>Наша компания «Enjoy Africa Group of Companies» - это зарегистрированный в Кении и Танзании туроператор по
+                странам Восточной Африки. Мы имеем все необходимые лицензии для данной деятельности.</p>
+
+            <p>Наш гид имеет высшее образование по направлению "Специалист по языкам и культуре Восточной Африки"</p>
+        </div>
+    </div>
+    <div id="block_6">
+        <div class="container">
+            <h2>Сафари - это просто!</h2>
+            <div class="step">
+                <img src="{{ STATIC_URL }}img/block_6_1.png" alt=""/>
+                <p>Заполните <br/>форму</p>
+            </div>
+            <div class="step">
+                <img src="{{ STATIC_URL }}img/block_6_2.png" alt=""/>
+                <p>Получите наше предложение</p>
+            </div>
+            <div class="step">
+                <img src="{{ STATIC_URL }}img/block_6_3.png" alt=""/>
+                <p>Забронируйте тур</p>
+            </div>
+            <div class="step last">
+                <img src="{{ STATIC_URL }}img/block_6_4.png" alt=""/>
+                <p>Приготовьтесь к сафари</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div id="block_7">
+        <div class="container">
+            <p>
+                Оставьте заявку <strong>прямо сейчас</strong><br/>
+                и получите одну экскурсию бесплатно на выбор:<br/>
+                <strong>"Посещение масайской деревни"</strong><br/>
+                или <br/>
+                <strong>"Прогулка на лодке по Озеру Найваша"</strong><br/>
+                <strong>Предложение ограниченно!</strong>
+            </p>
+        </div>
+    </div>
+    <div id="block_8">
+        <div class="container">
+            {% include 'form.html' %}
+        </div>
+    </div>
+    <div id="block_9">
+        <div class="container">
+            <p>93% наших клиентов советуют нас друзьям и обращаются к нам повторно!</p>
+        </div>
+    </div>
+    <div id="block_10">
+        <div class="container">
+            <h2>Что включено в стоимость?</h2>
+            <ul>
+                <li>
+                    <div class="icon">
+                        <img src="{{ STATIC_URL }}img/block_10_1.png" alt=""/>
                     </div>
                     <div class="content">
-                        <span class="name">{{ item.name }}</span>
-                        <span class="datetime">{{ item.created }}</span>
-
-                        <p>{{ item.content|striptags }}</p>
+                        <p>Трансферы из аэропорта и назад</p>
                     </div>
                     <div class="clear"></div>
                 </li>
-            {% endfor %}
-            </ul>
-        </div>
-    </div>
-</div>
-{% endif %}
-{% if slider %}
-<div id="block_13">
-    <div class="container">
-        <div class="slider_2">
-            <ul class="slides">
-            {% for item in slider %}
                 <li>
-                    <img src="{{ item.image.url }}" alt="{{ item.name|default:'' }}"/>
+                    <div class="icon">
+                        <img src="{{ STATIC_URL }}img/block_10_2.png" alt=""/>
+                    </div>
+                    <div class="content">
+                        <p>Трансферы и сафари по утвержденному <br/>маршруту на протяжении всего тура на <br/>комфортабельных минивенах и джипах.</p>
+                    </div>
+                    <div class="clear"></div>
                 </li>
-            {% endfor %}
+                <li>
+                    <div class="icon">
+                        <img src="{{ STATIC_URL }}img/block_10_3.png" alt=""/>
+                    </div>
+                    <div class="content">
+                        <p>Проживание в гостиницах (3-4*) в <br/>национальных парках с полным пансионом <br/>(трех разовое питание).</p>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="icon">
+                        <img src="{{ STATIC_URL }}img/block_10_4.png" alt=""/>
+                    </div>
+                    <div class="content">
+                        <p>Сопровождение опытного русскоязычного гида.</p>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="icon">
+                        <img src="{{ STATIC_URL }}img/block_10_5.png" alt=""/>
+                    </div>
+                    <div class="content">
+                        <p>Фотосессия из Африки.</p>
+                    </div>
+                    <div class="clear"></div>
+                </li>
             </ul>
         </div>
     </div>
-</div>
-{% endif %}
-<footer>
-    <div class="container">
-        <form class="ticket" action="" method="post">{% csrf_token %}
-            <input type="text" name="name" placeholder="Ваше имя"/>
-            <input type="email" name="email" placeholder="Ваше E-mail"/>
-            <input type="submit" value="Да! Я хочу на САФАРИ!"/>
-        </form>
+    <div id="block_11">
+        <div class="container">
+            <p>Мы организовали 476 сафари - туров по Восточной Африке, 1488 туристов из <br/> России, Украины и Белоруссии
+                остались довольны и получили массу <br/>незабываемых впечатлений.</p>
+        </div>
     </div>
-</footer>
+    {% if review %}
+    <div id="block_12">
+        <div class="container">
+            <h3>Вот, что говорят о нас клиенты:</h3>
+
+            <div class="slider_1">
+                <ul class="slides_1">
+                {% for item in review %}
+                    <li>
+                        <div class="photo">
+                            <img src="{{ item.photo.url }}" alt="{{ item.name }}"/>
+                        </div>
+                        <div class="content">
+                            <span class="name">{{ item.name }}</span>
+                            <span class="datetime">{{ item.created }}</span>
+
+                            <p>{{ item.content|striptags }}</p>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if slider %}
+    <div id="block_13">
+        <div class="container">
+            <div class="slider_2">
+                <ul class="slides">
+                {% for item in slider %}
+                    <li>
+                        <img src="{{ item.image.url }}" alt="{{ item.name|default:'' }}"/>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <footer>
+        <div class="container">
+            <form class="ticket" action="" method="post">{% csrf_token %}
+                <input type="text" name="name" placeholder="Ваше имя"/>
+                <input type="email" name="email" placeholder="Ваше E-mail"/>
+                <input type="submit" value="Да! Я хочу на САФАРИ!"/>
+            </form>
+        </div>
+    </footer>
+</div>
 <div class="modal">
     {% include 'form.html' %}
 </div>

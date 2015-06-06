@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b5690ff-3341-4cfe-b4d2-1a4c9e19a3c0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/img/kilimanjaro.jpg" afterPath="$PROJECT_DIR$/static/img/kilimanjaro.jpg" />
+    <list default="true" id="4b5690ff-3341-4cfe-b4d2-1a4c9e19a3c0" name="Default" comment="fix block_&amp; width">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.less" afterPath="$PROJECT_DIR$/static/css/style.less" />
@@ -88,8 +87,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.5555553" vertical-offset="4044" max-vertical-offset="4410">
-              <caret line="233" column="6" selection-start-line="233" selection-start-column="6" selection-end-line="233" selection-end-column="6" />
+            <state vertical-scroll-proportion="-6.888889" vertical-offset="3954" max-vertical-offset="4428">
+              <caret line="230" column="0" selection-start-line="230" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -118,8 +117,8 @@
       <file leaf-file-name="style.less" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/style.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.052478135" vertical-offset="0" max-vertical-offset="8838">
-              <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.89504373" vertical-offset="8513" max-vertical-offset="8964">
+              <caret line="490" column="17" selection-start-line="490" selection-start-column="17" selection-end-line="490" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -647,7 +646,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433619124121</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix block_&amp; width">
+      <created>1433621571981</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1433621571981</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -724,7 +729,8 @@
     <MESSAGE value="fix STATIC_ROOT" />
     <MESSAGE value="fix mail" />
     <MESSAGE value="add lider and reviews models" />
-    <option name="LAST_COMMIT_MESSAGE" value="add lider and reviews models" />
+    <MESSAGE value="fix block_&amp; width" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix block_&amp; width" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1107,16 +1113,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5555553" vertical-offset="4044" max-vertical-offset="4410">
-          <caret line="233" column="6" selection-start-line="233" selection-start-column="6" selection-end-line="233" selection-end-column="6" />
+        <state vertical-scroll-proportion="-6.888889" vertical-offset="3954" max-vertical-offset="4428">
+          <caret line="230" column="0" selection-start-line="230" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/style.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.052478135" vertical-offset="0" max-vertical-offset="8838">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.89504373" vertical-offset="8513" max-vertical-offset="8964">
+          <caret line="490" column="17" selection-start-line="490" selection-start-column="17" selection-end-line="490" selection-end-column="17" />
           <folding />
         </state>
       </provider>

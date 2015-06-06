@@ -486,3 +486,10 @@ label.error {
 .modal form input {
   margin-bottom: 10px;
 }
+.creator {
+  position: absolute;
+  right: 0;
+}
+.creator img {
+  height: 40px;
+}

@@ -3,17 +3,19 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
 from django.core.mail import send_mail
-from .models import Setup
+from .models import Setup, Slider, Review
 from .forms import TicketForm
 
 # Create your views here.
 def home(request):
+    slider = Slider.objects.all()
+    review = Review.objects.all()
     form = TicketForm()
     try:
         setup = Setup.objects.all()[0]
     except:
         setup = None
-    return render(request, 'base.html', {'setup': setup, 'form': form})
+    return render(request, 'base.html', {'setup': setup, 'form': form, 'slider': slider, 'review': review })
 
 def ticket(request):
     try:

@@ -430,6 +430,10 @@ header button {
 #block_13 .slider_2 a.flex-next {
   background: url("../img/next.png");
 }
+#block_13 .slider_2 img {
+  width: 179px;
+  height: 217px;
+}
 #block_13 ul {
   list-style: none;
 }

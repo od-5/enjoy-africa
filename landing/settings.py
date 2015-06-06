@@ -150,7 +150,8 @@ SUIT_CONFIG = {
         # {'app': 'auth', 'icon':'icon-lock', 'models': ('user', 'group')},
         {'label': u'Настройки', 'icon':'icon-cog', 'models': ('auth.user', 'auth.group', 'core.setup')},
         {'label': u'Заявки', 'icon':'icon-user', 'models': ('core.ticket',)},
-        # {'label': 'Support', 'icon':'icon-question-sign', 'url': '/support/'},
+        {'label': u'Слайдер', 'icon':'icon-picture', 'models': ('core.slider',)},
+        {'label': u'Отзывы', 'icon':'icon-comment', 'models': ('core.review',)},
     ),
 
 }

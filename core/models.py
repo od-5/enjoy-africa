@@ -37,3 +37,41 @@ class Setup(models.Model):
         verbose_name = u'Настройки сайта'
         verbose_name_plural = u'Настройки сайта'
         app_label = 'core'
+
+
+class Slider(models.Model):
+    name = models.CharField(verbose_name=u'Название', max_length=256, blank=True)
+    image = models.ImageField(upload_to='top_slider', verbose_name=u'Слайд')
+
+    def __unicode__(self):
+        if self.name:
+            return self.name
+        else:
+            return u'Изожение %s' % self.id
+
+    def pic(self):
+        return '<img src="%s"/>' % self.image.url
+    pic.allow_tags = True
+
+    class Meta:
+        verbose_name = u'Слайд'
+        verbose_name_plural = u'Слайды'
+        app_label = 'core'
+
+
+class Review(Common):
+    name = models.CharField(verbose_name=u'Имя', max_length=256)
+    photo = models.ImageField(upload_to='review', verbose_name=u'Фотография')
+    content = models.TextField(verbose_name=u'Текст')
+
+    def __unicode__(self):
+        return self.name
+
+    def pic(self):
+        return '<img src="%s"/>' % self.photo.url
+    pic.allow_tags = True
+
+    class Meta:
+        verbose_name = u'Отзыв'
+        verbose_name_plural = u'Отзывы'
+        app_label = 'core'

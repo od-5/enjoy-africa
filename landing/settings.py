@@ -21,11 +21,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '*v8a)%ljj*@&mj^$@n2o(p1tt2yeq7a8))rz3yq4jyl6r$t$xy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['enjoy-africa.ru', 'www.enjoy-africa.ru']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'admin@enjoy-africa.ru'

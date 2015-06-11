@@ -37,19 +37,19 @@
         <div class="container">
             <ul>
                 <li>
-                    <p class="title one">Мы не посредники</p>
+                    <p class="title"><img src="{{ STATIC_URL }}img/one.png" alt=""/>Мы не посредники</p>
                     <p class="content">Вы приобретаете сафари напрямую у местного туроператора, минуя всех посредников, оставляющих себе до 30% от стоимости тура.</p>
                 </li>
                 <li>
-                    <p class="title two">Мы говорим по-русски</p>
+                    <p class="title"><img src="{{ STATIC_URL }}img/two.png" alt=""/>Мы говорим по-русски</p>
                     <p class="content">Мы единственный полностью "русский туроператор" в Восточной Африке</p>
                 </li>
                 <li>
-                    <p class="title three">Мы гарантируем</p>
+                    <p class="title"><img src="{{ STATIC_URL }}img/three.png" alt=""/>Мы гарантируем</p>
                     <p class="content">Заключение договора гарантирует строгое выполнение условий тура.</p>
                 </li>
                 <li>
-                    <p class="title four">Мы делаем Ваш отдых удобнее</p>
+                    <p class="title"><img src="{{ STATIC_URL }}img/four.png" alt=""/>Мы делаем Ваш отдых удобнее</p>
                     <p class="content">Вы можете оплатить полную стоимость тура на месте при встрече с нашим гидом. Заранее взымается лишь организационная часть сборов в размере 100 USD с человека.</p>
                 </li>
             </ul>
@@ -112,6 +112,11 @@
                 <strong>Предложение ограниченно!</strong>
             </p>
         </div>
+        {% if setup.timer %}
+        <div class="timer">
+            {{ setup.timer|safe }}
+        </div>
+        {% endif %}
     </div>
     <div id="block_8">
         <div class="container">
@@ -168,7 +173,7 @@
                         <img src="{{ STATIC_URL }}img/block_10_5.png" alt=""/>
                     </div>
                     <div class="content">
-                        <p>Фотосессия из Африки.</p>
+                        <p>Одна экскурсия на выбор в подарок.</p>
                     </div>
                     <div class="clear"></div>
                 </li>

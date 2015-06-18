@@ -7,6 +7,7 @@ body {
   -webkit-box-shadow: 0 0 10px #333;
   -moz-box-shadow: 0 0 10px #333;
   box-shadow: 0 0 10px #333;
+  background-color: #fff;
 }
 header,
 footer,

@@ -10,9 +10,12 @@
     <script src="{{ STATIC_URL }}js/jquery.validate.js"></script>
     <script src="{{ STATIC_URL }}js/jquery.form.js"></script>
     <script src="{{ STATIC_URL }}js/jquery.flexslider-min.js"></script>
+    <script src="{{ STATIC_URL }}js/lightgallery.min.js"></script>
     <script src="{{ STATIC_URL }}js/common.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/reset.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/lightbox.css">
+    <script>lightgallery.init();</script>
 </head>
 <body>
 <div id="wrapper">
@@ -86,7 +89,9 @@
                 <div class="col-4">
                     <div class="lic">
                         <div class="lic-box">
-                            <img src="{{ STATIC_URL }}img/document/lic1.jpg" alt=""/>
+                            <a href="{{ STATIC_URL }}img/document/lic1.jpg" rel="lightgallery[lic]" title="Лицензция">
+                                <img src="{{ STATIC_URL }}img/document/lic1.jpg" alt=""/>
+                            </a>
                         </div>
 
                     </div>
@@ -94,7 +99,9 @@
                 <div class="col-4">
                     <div class="lic">
                         <div class="lic-box">
-                            <img src="{{ STATIC_URL }}img/document/lic2.jpg" alt=""/>
+                            <a href="{{ STATIC_URL }}img/document/lic2.jpg" rel="lightgallery[lic]" title="Лицензция">
+                                <img src="{{ STATIC_URL }}img/document/lic2.jpg" alt=""/>
+                            </a>
                         </div>
 
                     </div>
@@ -102,7 +109,9 @@
                 <div class="col-4">
                     <div class="lic">
                         <div class="lic-box">
-                            <img src="{{ STATIC_URL }}img/document/lic3.jpg" alt=""/>
+                            <a href="{{ STATIC_URL }}img/document/lic3.jpg" rel="lightgallery[lic]" title="Лицензция">
+                                <img src="{{ STATIC_URL }}img/document/lic3.jpg" alt=""/>
+                            </a>
                         </div>
 
                     </div>
@@ -110,7 +119,9 @@
                 <div class="col-4">
                     <div class="lic">
                         <div class="lic-box">
-                            <img src="{{ STATIC_URL }}img/document/lic4.jpg" alt=""/>
+                            <a href="{{ STATIC_URL }}img/document/lic4.jpg" rel="lightgallery[lic]" title="Лицензция">
+                                <img src="{{ STATIC_URL }}img/document/lic4.jpg" alt=""/>
+                            </a>
                         </div>
 
                     </div>
@@ -282,6 +293,8 @@
             {% include 'form.html' %}
             <a href="" class="creator"><img src="/static/img/our-logo.png" alt=""></a>
         </div>
+    </footer>
+    <div class="address">
         <div class="container">
             <address>
                 <ul>
@@ -292,7 +305,7 @@
                 </ul>
             </address>
         </div>
-    </footer>
+    </div>
 </div>
 <div class="modal">
     {% include 'modal_form.html' %}

@@ -27,9 +27,13 @@ def ticket(request):
         if form.is_valid():
             ticket = form.save(commit=False)
             ticket.save()
+            if ticket.comment:
+                message = u'Имя: %s\nE-mail: %s\nСообщение: %s\n' % (ticket.name, ticket.email, ticket.comment)
+            else:
+                message = u'Имя: %s\nE-mail: %s\n' % (ticket.name, ticket.email)
             send_mail(
                 u'enjoy-africa.ru - Заявка с сайта',
-                u'Имя: %s\nE-mail: %s\n' % (ticket.name, ticket.email),
+                message,
                 settings.DEFAULT_FROM_EMAIL,
                 [email, ]
             )

@@ -23,7 +23,8 @@ footer,
 #block_10,
 #block_11,
 #block_12,
-#block_13 {
+#block_13,
+.address {
   width: 100%;
   position: relative;
 }
@@ -98,8 +99,7 @@ header button {
   border: none;
   display: inline-block;
   float: right;
-  padding: 8px;
-  margin-top: 12px;
+  padding: 20px;
 }
 #block_1 {
   background: url("../img/kilimanjaro.jpg");
@@ -525,14 +525,18 @@ label.error {
 .creator img {
   height: 40px;
 }
-address {
+.address {
+  padding: 20px 0;
+  background: #2C3E50;
+}
+.address address {
   padding: 25px 0;
   color: #fff;
 }
-address ul {
+.address address ul {
   list-style: none;
   text-align: center;
 }
-address ul li {
+.address address ul li {
   margin-bottom: 10px;
 }

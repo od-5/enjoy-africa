@@ -10,7 +10,7 @@ body {
   background-color: #fff;
 }
 header, footer, #block_1, #block_2, #block_3, #block_4, #block_5, #block_6,
-#block_7, #block_8, #block_9, #block_10, #block_11, #block_12, #block_13 {
+#block_7, #block_8, #block_9, #block_10, #block_11, #block_12, #block_13, .address {
   width: 100%;
   position: relative;
 }
@@ -81,9 +81,7 @@ header {
     border: none;
     display: inline-block;
     float: right;
-    padding: 8px;
-    margin-top: 12px;
-
+    padding: 20px;
   }
 }
 
@@ -531,15 +529,18 @@ label.error {
     height: 40px;
   }
 }
-
-address {
-  padding: 25px 0;
-  color: #fff;
-  ul {
-    list-style: none;
-    text-align: center;
-    li {
-      margin-bottom: 10px;
+.address {
+  padding: 20px 0;
+  background: #2C3E50;
+  address {
+    padding: 25px 0;
+    color: #fff;
+    ul {
+      list-style: none;
+      text-align: center;
+      li {
+        margin-bottom: 10px;
+      }
     }
   }
 }

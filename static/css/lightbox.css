@@ -13,6 +13,7 @@
   background-position: center;
   background-repeat: no-repeat;
   font: normal 12px verdana, arial, sans-serif;
+  display: none;
 }
 #LG_loading {
   background: url(ico-loading.gif) no-repeat center;

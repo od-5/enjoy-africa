@@ -39,9 +39,11 @@
 //}
 #LG_prevLink{
 	left:0;
+    background: url('prev.png') no-repeat left 40%;
 }
 #LG_nextLink{
 	right:0;
+    background: url('next.png') no-repeat right 40%;
 }
 
 #LG_imgIndex{
@@ -69,7 +71,11 @@
 	opacity:0;
 	filter:Alpha(opacity=0);
 }
-#LG_pic{display:none;margin:0 auto}
+#LG_pic{
+  display:none;
+  margin:0 auto;
+  max-height: 80%;
+}
 
 #LG_zoomIn, #LG_zoomOut, #LG_zoomNormal, #LG_fitScreen, #LG_zoom_disabled{
 	width:20px;

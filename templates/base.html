@@ -292,7 +292,7 @@
     <footer>
         <div class="container">
             {% include 'form.html' %}
-            <a href="" class="creator"><img src="/static/img/our-logo.png" alt=""></a>
+
         </div>
     </footer>
     <div class="address">
@@ -305,11 +305,13 @@
                     <li><strong>PIN: A007062478U</strong></li>
                 </ul>
             </address>
+            <a href="" class="creator"><img src="/static/img/our-logo.png" alt=""></a>
         </div>
     </div>
 </div>
 <div class="modal">
     {% include 'modal_form.html' %}
+    <button class="close">X</button>
 </div>
 {{ setup.bottom_js|safe|default:'' }}
 </body>

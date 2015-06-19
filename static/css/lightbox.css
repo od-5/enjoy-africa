@@ -40,9 +40,11 @@
 }
 #LG_prevLink {
   left: 0;
+  background: url('prev.png') no-repeat left 40%;
 }
 #LG_nextLink {
   right: 0;
+  background: url('next.png') no-repeat right 40%;
 }
 #LG_imgIndex {
   float: left;
@@ -72,6 +74,7 @@
 #LG_pic {
   display: none;
   margin: 0 auto;
+  max-height: 80%;
 }
 #LG_zoomIn,
 #LG_zoomOut,

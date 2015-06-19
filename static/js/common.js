@@ -69,9 +69,16 @@ $(window).load(function() {
     });
 
     // Закрытие модального окна
-    $(document).mouseup(function (e) {
+    //$(document).mouseup(function (e) {
+    //    var container = $(".modal");
+    //    if (container.has(e.target).length === 0){
+    //        container.hide();
+    //        $('#overlay').remove();
+    //    }
+    //});
+    $('.modal .close').click(function (e) {
         var container = $(".modal");
-        if (container.has(e.target).length === 0){
+        if ($('#overlay')){
             container.hide();
             $('#overlay').remove();
         }

@@ -19,7 +19,7 @@
     <header>
         <div class="container">
             <img src="{{ STATIC_URL }}img/logotype.png" alt="Enjoy Africa Travel companies"/>
-            <button>Узнать подробнее</button>
+            <button>Узнайте подробности</button>
             <div class="clear"></div>
         </div>
     </header>
@@ -79,6 +79,51 @@
             <p>Наш гид имеет высшее образование по направлению "Специалист по языкам и культуре Восточной Африки"</p>
         </div>
     </div>
+    <div id="document">
+        <div class="container">
+            <h2>Наши документы</h2>
+            <div class="license">
+                <div class="col-3">
+                    <div class="lic">
+                        <div class="lic-box">
+                            <img src="{{ STATIC_URL }}img/document/lic1.jpg" alt=""/>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="lic">
+                        <div class="lic-box">
+                            <img src="{{ STATIC_URL }}img/document/lic2.jpg" alt=""/>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="lic">
+                        <div class="lic-box">
+                            <img src="{{ STATIC_URL }}img/document/lic3.jpg" alt=""/>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="lic">
+                        <div class="lic-box">
+                            <img src="{{ STATIC_URL }}img/document/lic4.jpg" alt=""/>
+                        </div>
+
+                    </div>
+                </div>
+{#                <div class="col-3">#}
+{#                    <div class="lic">#}
+{#                        <img src="{{ STATIC_URL }}img/document/lic4.jpg" alt=""/>#}
+{#                    </div>#}
+{#                </div>#}
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
     <div id="block_6">
         <div class="container">
             <h2>Сафари - это просто!</h2>
@@ -120,7 +165,11 @@
     </div>
     <div id="block_8">
         <div class="container">
-            {% include 'form.html' %}
+            <form class="ticket" action="{% url 'form' %}" method="post">{% csrf_token %}
+                <input type="text" name="name" placeholder="Ваше имя"/>
+                <input type="email" name="email" placeholder="Ваш E-mail"/>
+                <button>Узнайте стоимость<br /><span class="underline">получив актуальную информацию на Ваш e-mail</span></button>
+            </form>
         </div>
     </div>
     <div id="block_9">
@@ -231,10 +280,21 @@
         <div class="container">
             <form class="ticket" action="" method="post">{% csrf_token %}
                 <input type="text" name="name" placeholder="Ваше имя"/>
-                <input type="email" name="email" placeholder="Ваше E-mail"/>
+                <input type="email" name="email" placeholder="Ваш E-mail"/>
                 <input type="submit" value="Да! Я хочу на САФАРИ!"/>
             </form>
             <a href="" class="creator"><img src="/static/img/our-logo.png" alt=""></a>
+        </div>
+        <div class="container">
+            <address>
+                <ul>
+                    <li><strong>Company “Enjoy Kenya Tours & Safaris”</strong></li>
+                    <li><strong>Nairobi, Tom Mboya st. Philadelphia house, First floor, Suite 19B, PO Box.:
+                        57590-00200</strong></li>
+                    <li><strong>PIN: A007062478U</strong></li>
+                    <li>+255773073331</li>
+                </ul>
+            </address>
         </div>
     </footer>
 </div>

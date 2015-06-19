@@ -20,9 +20,9 @@ $(window).load(function() {
 
     $.validator.messages.required = "* поле обязательно для заполнения";
     $("input[type='text'], input[type='email']").addClass("required");
-    $("#block_4 form").validate();
-    $("#block_8 form").validate();
-    $("footer form").validate();
+    //$("#block_4 form").validate();
+    //$("#block_8 form").validate();
+    //$("footer form").validate();
     $(".modal form").validate();
 
     $('form.ticket').ajaxForm({
@@ -37,8 +37,21 @@ $(window).load(function() {
         }
     });
 
+    // текс кнопки формы в footer и в #block_8
+    $('#block_8 .button').html('Узнайте стоимость<br /><span class="underline">получив актуальную информацию на Ваш e-mail</span>');
+    //$('#block_8 .button').html('Узнайте стоимость' + '<br />' + 'asd');
+    $('footer .button').text('Да! Я хочу на сафари!');
+
     // Затемнение фона
-    $('header button').click(function(){
+    $('header button, form .button').click(function(){
+        username = $(this).parent('form').find('input[name="name"]').val();
+        email = $(this).parent('form').find('input[name="email"]').val();
+        if (username) {
+            $('.modal input[name="name"]').val(username);
+        }
+        if (email) {
+            $('.modal input[name="email"]').val(email);
+        }
         $('.modal').fadeIn();
         var docHeight = $(document).height();
         $("body").append("<div id='overlay'></div>");
@@ -59,8 +72,8 @@ $(window).load(function() {
     $(document).mouseup(function (e) {
         var container = $(".modal");
         if (container.has(e.target).length === 0){
-        container.hide();
-        $('#overlay').remove();
+            container.hide();
+            $('#overlay').remove();
         }
     });
 

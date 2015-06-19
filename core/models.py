@@ -12,6 +12,7 @@ class Common(models.Model):
 class Ticket(Common):
     name = models.CharField(verbose_name=u'Имя', max_length=256)
     email = models.EmailField(verbose_name=u'e-mail', max_length=256)
+    comment = models.TextField(verbose_name=u'Сообщение', blank=True, null=True)
 
     def __unicode__(self):
         return self.name

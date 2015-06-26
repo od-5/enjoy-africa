@@ -15,7 +15,12 @@ def home(request):
         setup = Setup.objects.all()[0]
     except:
         setup = None
-    return render(request, 'base.html', {'setup': setup, 'form': form, 'slider': slider, 'review': review })
+    return render(request, 'base.html', {
+        'setup': setup,
+        'form': form,
+        'slider': slider,
+        'review': review
+    })
 
 def ticket(request):
     try:

@@ -12,10 +12,12 @@
     <script src="{{ STATIC_URL }}js/jquery.form.js"></script>
     <script src="{{ STATIC_URL }}js/jquery.flexslider-min.js"></script>
     <script src="{{ STATIC_URL }}js/lightgallery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.lwtCountdown-1.0.js"></script>
     <script src="{{ STATIC_URL }}js/common.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/reset.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/lightbox.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
     <script>lightgallery.init();</script>
 </head>
 <body>
@@ -169,11 +171,16 @@
                 <strong>Предложение ограниченно!</strong>
             </p>
         </div>
-        {% if setup.timer %}
+{#        {% if setup.timer %}#}
+{#        <div class="timer">#}
+{#            {{ setup.timer|safe }}#}
+{#        </div>#}
+        {% if timer %}
         <div class="timer">
-            {{ setup.timer|safe }}
+        {% include 'countdown/coundown.html' %}
         </div>
         {% endif %}
+{#        {% endif %}#}
     </div>
     <div id="block_8">
         <div class="container">

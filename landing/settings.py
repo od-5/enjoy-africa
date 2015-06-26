@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'countdown',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -65,6 +66,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
+    'countdown.context_processors.timer.countdown'
 )
 
 TEMPLATE_LOADERS = (
@@ -148,7 +150,7 @@ SUIT_CONFIG = {
     'MENU': (
         'sites',
         # {'app': 'auth', 'icon':'icon-lock', 'models': ('user', 'group')},
-        {'label': u'Настройки', 'icon':'icon-cog', 'models': ('auth.user', 'auth.group', 'core.setup')},
+        {'label': u'Настройки', 'icon':'icon-cog', 'models': ('auth.user', 'auth.group', 'core.setup', 'countdown.timer')},
         {'label': u'Заявки', 'icon':'icon-user', 'models': ('core.ticket',)},
         {'label': u'Слайдер', 'icon':'icon-picture', 'models': ('core.slider',)},
         {'label': u'Отзывы', 'icon':'icon-comment', 'models': ('core.review',)},

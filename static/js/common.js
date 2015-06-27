@@ -84,4 +84,32 @@ $(window).load(function() {
         }
     });
 
+
+    var video_code = $('.modal_video iframe').attr('src');
+    $('.video-button img').click(function(){
+        $('.modal_video iframe').attr('src', video_code);
+        $('.modal_video').fadeIn();
+        var docHeight = $(document).height();
+        $("body").append("<div id='overlay'></div>");
+        $("#overlay")
+           .height(docHeight)
+           .css({
+              'opacity' : 0.4,
+              'position': 'fixed',
+              'top': 0,
+              'left': 0,
+              'background-color': 'black',
+              'width': '100%',
+              'z-index': 9
+           });
+    });
+    $('.modal_video .close').click(function (e) {
+        $('.modal_video iframe').removeAttr('src');
+        var container = $('.modal_video');
+        if ($('#overlay')){
+            container.hide();
+            $('#overlay').remove();
+        }
+    });
+
 })

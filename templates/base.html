@@ -18,7 +18,10 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/lightbox.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
-    <script>lightgallery.init();</script>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/animate.css">
+    <script>
+        lightgallery.init();
+    </script>
 </head>
 <body>
 <div id="wrapper">
@@ -32,6 +35,11 @@
     <div id="block_1">
         <div class="container">
             <p>Хотите совершить сафари-путешествие по <br/> Африке и сэкономить до 30% <br/> от стоимости тура?</p>
+            <div class="video">
+                <div class="video-button">
+                    <img src="{{ STATIC_URL }}img/play-button.png"  alt="Посмотреть видео"/>
+                </div>
+            </div>
         </div>
     </div>
     <div id="block_2">
@@ -318,6 +326,12 @@
 </div>
 <div class="modal">
     {% include 'modal_form.html' %}
+    <button class="close">X</button>
+</div>
+<div class="modal_video">
+    {% if setup.video %}
+        {{ setup.video|safe }}
+    {% endif %}
     <button class="close">X</button>
 </div>
 {{ setup.bottom_js|safe|default:'' }}

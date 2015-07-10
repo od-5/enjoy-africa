@@ -10,17 +10,49 @@ class Common(models.Model):
 
 
 class Ticket(Common):
-    name = models.CharField(verbose_name=u'Имя', max_length=256)
-    email = models.EmailField(verbose_name=u'e-mail', max_length=256)
-    comment = models.TextField(verbose_name=u'Сообщение', blank=True, null=True)
-
-    def __unicode__(self):
-        return self.name
 
     class Meta:
         verbose_name = u'Заявка'
         verbose_name_plural = u'Заявки'
         app_label = 'core'
+
+    def __unicode__(self):
+        return self.name
+
+    # def save(self, force_insert=False, force_update=False, using=None,
+    #          update_fields=None):
+    #     super(Ticket, self).save()
+    #     self.total_price = self.price + self.commission
+    #     self.save()
+
+    TICKET_STATUS_CHOICE = (
+        (0, u'В обработке'),
+        (1, u'Новая заявка'),
+        (2, u'Отклонена'),
+    )
+
+    SALE_STATUS_CHOICE = (
+        (0, u'Ожидание оплаты'),
+        (1, u'Уточнение деталей'),
+        (2, u'Оплачено'),
+    )
+
+    name = models.CharField(verbose_name=u'Имя', max_length=256)
+    email = models.EmailField(verbose_name=u'e-mail', max_length=256)
+    comment = models.TextField(verbose_name=u'Сообщение клиента', blank=True, null=True)
+    sale = models.BooleanField(verbose_name=u'Продажа', default=False)
+    ticket_status = models.PositiveSmallIntegerField(verbose_name=u'Статус заявки',  choices=TICKET_STATUS_CHOICE, default=0)
+    ticket_comment = models.TextField(verbose_name=u'Комментарий', blank=True, null=True)
+
+    travel_start = models.DateField(verbose_name=u'Начало тура', blank=True, null=True)
+    travel_end = models.DateField(verbose_name=u'Конец тура', blank=True, null=True)
+    sale_status = models.PositiveSmallIntegerField(verbose_name=u'Статус продажи', choices=SALE_STATUS_CHOICE, default=0)
+    sale_comment = models.TextField(verbose_name=u'Комментарий', blank=True, null=True)
+    price = models.PositiveIntegerField(verbose_name=u'Сумма', default=0)
+    commission = models.PositiveIntegerField(verbose_name=u'Коммисия', default=0)
+    total_price = models.PositiveIntegerField(verbose_name=u'Итого', default=0)
+
+
 
 
 class Setup(models.Model):

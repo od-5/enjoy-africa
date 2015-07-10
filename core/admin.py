@@ -6,7 +6,7 @@ from .models import Ticket, Setup, Slider, Review
 
 class TicketAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'created')
-
+    date_hierarchy = 'created'
 
 class SetupAdmin(admin.ModelAdmin):
     list_display = ('title', 'email')

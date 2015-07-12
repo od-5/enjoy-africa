@@ -12,12 +12,26 @@
 {% block breadcrumbs %}{% endblock %}
 
 {% block content %}
+    <script>
+    $(function(){
+        $('th.mon').text('пн');
+        $('th.tue').text('вт');
+        $('th.wed').text('ср');
+        $('th.thu').text('чт');
+        $('th.fri').text('пт');
+        $('th.sat').text('сб');
+        $('th.sun').text('вск');
+    });
+    </script>
   <style>
     .container {
         text-align: center;
     }
     .calendar table {
        width: 100%;
+    }
+    .calendar a:hover {
+        background: none !important;
     }
     .calendar tr, .calendar th {
       height: 40px;
@@ -42,46 +56,3 @@
 
   </div>
 {% endblock %}
-
-
-{#{% block sidebar %}#}
-{#  <div id="content-related">#}
-{#    <div class="module" id="recent-actions-module">#}
-{#      <h4 class="italic-title">{% trans 'My Actions' %}</h4>#}
-{##}
-{#      {% load log %}#}
-{#      {% get_admin_log 10 as admin_log for_user user %}#}
-{#      {% if not admin_log %}#}
-{#        <p>{% trans 'None available' %}</p>#}
-{#      {% else %}#}
-{#        <ul class="actionlist">#}
-{#          {% for entry in admin_log %}#}
-{#            <li class="{% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}text-error{% endif %}">#}
-{##}
-{#              <i class="{% if entry.is_addition %}icon-plus{% endif %}{% if entry.is_change %}icon-pencil{% endif %}{% if entry.is_deletion %}icon-trash{% endif %} icon-alpha5"></i>#}
-{##}
-{#              {% spaceless %}#}
-{#                {% if entry.is_addition %}{% trans 'added'|capfirst %}{% endif %}#}
-{#                {% if entry.is_change %}{% trans 'changed'|capfirst %}{% endif %}#}
-{#                {% if entry.is_deletion %}{% trans 'deleted'|capfirst %}{% endif %}#}
-{##}
-{#                {% if entry.content_type %}#}
-{#                  <span class="mini quiet">{% filter capfirst %}#}
-{#                    {% trans entry.content_type.name %}{% endfilter %}</span>#}
-{#                {% else %}#}
-{#                  <span class="mini quiet">{% trans 'Unknown content' %}</span>#}
-{#                {% endif %}#}
-{#              {% endspaceless %}&nbsp;#}
-{##}
-{#              {% if entry.is_deletion or not entry.get_admin_url %}#}
-{#                <span class="color-grey">{{ entry.object_repr }}</span>#}
-{#              {% else %}#}
-{#                <a href="{{ entry.get_admin_url }}">{{ entry.object_repr }}</a>#}
-{#              {% endif %}#}
-{#            </li>#}
-{#          {% endfor %}#}
-{#        </ul>#}
-{#      {% endif %}#}
-{#    </div>#}
-{#  </div>#}
-{#{% endblock %}#}

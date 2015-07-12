@@ -16,7 +16,7 @@ class TicketAdminForm(ModelForm):
 
 
 class TicketAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'created', 'ticket_status')
+    list_display = ('name', 'email', 'created', 'ticket_status', 'ticket_comment')
     list_filter = ['created', 'ticket_status']
     date_hierarchy = 'created'
     fields = ('name', 'email', 'comment', 'sale', 'ticket_status', 'ticket_comment')
@@ -73,9 +73,9 @@ class SaleAdmin(admin.ModelAdmin):
         if css_class:
             return {'class': css_class, 'data': obj.name}
 
-    list_display = ('name', 'email', 'price', 'commission', 'total_price', 'sale_status')
-    list_filter = ['created', 'sale_status', ]
-    date_hierarchy = 'created'
+    list_display = ('name', 'email', 'price', 'commission', 'total_price', 'sale_status', 'sale_comment')
+    list_filter = ['travel_start', 'sale_status', ]
+    date_hierarchy = 'travel_start'
     fields = ('name', 'email', 'comment', 'sale_status', 'sale_comment', 'travel_start', 'travel_end', 'price', 'commission', 'total_price')
     form = SaleAdminForm
 

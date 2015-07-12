@@ -24,6 +24,8 @@ class Ticket(Common):
     #     super(Ticket, self).save()
     #     self.total_price = self.price + self.commission
     #     self.save()
+    def performed_at(self):
+        pass
 
     TICKET_STATUS_CHOICE = (
         (0, u'В обработке'),

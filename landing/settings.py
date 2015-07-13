@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '*v8a)%ljj*@&mj^$@n2o(p1tt2yeq7a8))rz3yq4jyl6r$t$xy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -147,7 +147,7 @@ SUIT_CONFIG = {
     #    'auth': 'icon-lock',
     # },
     # 'MENU_OPEN_FIRST_CHILD': True, # Default True
-    'MENU_EXCLUDE': ('auth.group',),
+    # 'MENU_EXCLUDE': ('auth.group',),
     'MENU': (
         'sites',
         # {'app': 'auth', 'icon':'icon-lock', 'models': ('user', 'group')},

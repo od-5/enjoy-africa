@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
 from django.core.mail import send_mail
+from django.views.decorators.csrf import csrf_exempt
 from .models import Setup, Slider, Review
 from .forms import TicketForm
 
@@ -22,6 +23,8 @@ def home(request):
         'review': review
     })
 
+
+@csrf_exempt
 def ticket(request):
     try:
         email = Setup.objects.all()[0].email
@@ -31,6 +34,7 @@ def ticket(request):
         form = TicketForm(data=request.POST)
         if form.is_valid():
             ticket = form.save(commit=False)
+            ticket.ticket_status = 1
             ticket.save()
             if ticket.comment:
                 message = u'Имя: %s\nE-mail: %s\nСообщение: %s\n' % (ticket.name, ticket.email, ticket.comment)
@@ -42,6 +46,6 @@ def ticket(request):
                 settings.DEFAULT_FROM_EMAIL,
                 [email, ]
             )
-        return HttpResponse(ticket.email)
+        return HttpResponse('true')
 
     return HttpResponse('fail')

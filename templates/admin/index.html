@@ -47,12 +47,27 @@
     <h1>График поездок</h1>
 
   {% load travels %}
-
+  {% if months %}
+    <div style="padding-bottom: 20px;">
     {% for date in months %}
         <div class="calendar span4">
         {% calendar date.year date.month %}
         </div>
     {% endfor %}
+      <div class="clearfix"></div>
+    </div>
+
+  {% endif %}
+  {% if months1 %}
+    <div style="padding-bottom: 20px;">
+    {% for date in months1 %}
+        <div class="calendar span4">
+        {% calendar date.year date.month %}
+        </div>
+    {% endfor %}
+      <div class="clearfix"></div>
+    </div>
+  {% endif %}
 
   </div>
 {% endblock %}

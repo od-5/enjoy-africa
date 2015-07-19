@@ -34,8 +34,13 @@ def travels(requst):
         current = datetime.now()
     date1 = next_month(current)
     date2 = next_month(date1)
+    date3 = next_month(date2)
+    date4 = next_month(date3)
+    date5 = next_month(date4)
+    monts1 = [date3, date4, date5]
     return {
-        'months': [current, date1, date2]
+        'months': [current, date1, date2],
+        'months1': monts1
     }
 
 

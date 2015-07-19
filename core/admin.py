@@ -61,8 +61,18 @@ class SaleAdmin(admin.ModelAdmin):
         return False
 
     def save_model(self, request, obj, form, change):
+        #if obj.price:
+        #    obj.total_price = obj.price
+        #    if obj.commission:
+        #        obj.total_price = obj.price + obj.commission
+        #    obj.save()
+        if not obj.price:
+            obj.price = 0
+        if not obj.commission:
+            obj.commission = 0
         obj.total_price = obj.price + obj.commission
         obj.save()
+            
 
     def suit_row_attributes(self, obj, request):
         css_class = {
@@ -76,7 +86,7 @@ class SaleAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'price', 'commission', 'total_price', 'sale_status', 'sale_comment')
     list_filter = ['travel_start', 'sale_status', ]
     date_hierarchy = 'travel_start'
-    fields = ('name', 'email', 'comment', 'sale_status', 'sale_comment', 'travel_start', 'travel_end', 'price', 'commission', 'total_price')
+    fields = ('name', 'email', 'comment', 'sale', 'sale_status', 'sale_comment', 'travel_start', 'travel_end', 'price', 'commission', 'total_price')
     form = SaleAdminForm
 
 

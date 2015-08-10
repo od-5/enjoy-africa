@@ -132,7 +132,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Django Suit configuration example
 SUIT_CONFIG = {
     # header
-    'ADMIN_NAME': u'Сафари',
+    'ADMIN_NAME': u'ENJOY-AFRICA',
     'HEADER_DATE_FORMAT': 'l, j. F Y',
     'HEADER_TIME_FORMAT': 'H:i',
 

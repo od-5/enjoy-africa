@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '*v8a)%ljj*@&mj^$@n2o(p1tt2yeq7a8))rz3yq4jyl6r$t$xy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -32,7 +32,7 @@ DEFAULT_FROM_EMAIL = 'admin@enjoy-africa.ru'
 EMAIL_HOST = 'smtp.fullspace.ru'
 EMAIL_HOST_USER = 'admin@enjoy-africa.ru'
 EMAIL_HOST_PASSWORD = 'alena2010'
-
+сщьь
 # Application definition
 
 INSTALLED_APPS = (
@@ -56,6 +56,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
@@ -157,6 +158,7 @@ SUIT_CONFIG = {
         {'label': u'Продажи', 'icon':'icon-user', 'models': ('core.sale',)},
         {'label': u'Слайдер', 'icon':'icon-picture', 'models': ('core.slider',)},
         {'label': u'Отзывы', 'icon':'icon-comment', 'models': ('core.review',)},
+        {'label': u'enjoy-safari.ru', 'url': 'http://www.enjoy-safari.ru/admin'},
     ),
 
 }

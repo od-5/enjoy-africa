@@ -7,19 +7,25 @@
     <meta name="description" content="{{ setup.meta_desc|striptags|default:'' }}"/>
     <meta name="keywords" content="{{ setup.meta_key|striptags|default:'' }}"/>
     {{ setup.top_js|safe|default:'' }}
-    <script src="{{ STATIC_URL }}js/jquery-1.11.2.min.js"></script>
-    <script src="{{ STATIC_URL }}js/jquery.validate.js"></script>
-    <script src="{{ STATIC_URL }}js/jquery.form.js"></script>
-    <script src="{{ STATIC_URL }}js/jquery.flexslider-min.js"></script>
-    <script src="{{ STATIC_URL }}js/lightgallery.min.js"></script>
-    <script src="{{ STATIC_URL }}js/jquery.lwtCountdown-1.0.js"></script>
+    <script src="{{ STATIC_URL }}js/lib/jquery-1.11.2.min.js"></script>
+    <script src="{{ STATIC_URL }}js/lib/jquery.validate.js"></script>
+    <script src="{{ STATIC_URL }}js/lib/jquery.form.js"></script>
+    <script src="{{ STATIC_URL }}js/lib/jquery.flexslider-min.js"></script>
+    <script src="{{ STATIC_URL }}js/lib/lightgallery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/lib/jquery.lwtCountdown-1.0.js"></script>
+    <script src="{{ STATIC_URL }}js/lib/jquery.fancybox.pack.js"></script>
+    <script src="{{ STATIC_URL }}js/lib/bootstrap.min.js"></script>
+    <script src="{{ STATIC_URL }}js/lib/notify-combined.min.js"></script>
     <script src="{{ STATIC_URL }}js/common.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Marck+Script&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/reset.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/reset.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/jquery.fancybox.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/lightbox.css">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/animate.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/lightbox.css">
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/animate.css">
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
     <script>
         lightgallery.init();
     </script>
@@ -27,23 +33,41 @@
 <body>
 <div id="wrapper">
     <header>
-      {% include "__includes/menu.html" %}
+{#      {% include "__includes/menu.html" %}#}
         <div class="container">
+          <a href="{% url 'home' %}" class="logotype col-4">
             <img src="{{ STATIC_URL }}img/logotype.png" alt="Enjoy Africa Travel companies"/>
-            <button>Узнайте подробности</button>
-            <div class="clear"></div>
+          </a>
+          <div class="col-8">
+            <nav>
+              <ul>
+                <li class="active"><a href="#" class="icon-about">О НАС</a></li>
+                <li><a href="#" class="icon-reviews">ОТЗЫВЫ</a></li>
+                <li><a href="#" class="icon-group">ГРУППОВЫЕ ТУРЫ</a></li>
+              </ul>
+              {% if user.is_authenticated %}
+                <span class="auth-user">{{ user.email }}</span>
+                <a href="{% url 'logout' %}?next=/" class="auth-button button">Выход</a>
+              {% else %}
+                <a href="#pop-auth" class="auth-button button">Вход</a>
+              {% endif %}
+              <div class="clear"></div>
+            </nav>
+          </div>
+          <div class="clear"></div>
         </div>
     </header>
     <div id="block_1">
         <div class="container">
-            <p>Хотите совершить сафари-путешествие по <br/> Африке и сэкономить до 30% <br/> от стоимости тура?</p>
-            <div class="video">
+          <p>Хотите совершить путешествие по Восточной <br/> Африке и сэкономить до <span class="yellow">30%</span><br/> от стоимости тура?</p>
+          <a href="#pop" class="popupbutton">Узнайте подробности</a>
+          <div class="video">
                 <div class="video-title">
                     <span>Что вас ждёт</span>
                 </div>
-                <div class="video-button">
+                <a href="{{ setup.video|safe|default:'' }}" class="video-button">
                     <img src="{{ STATIC_URL }}img/play-button.png"  alt="Посмотреть видео"/>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -52,106 +76,90 @@
             <h1>Почему именно мы? 4 железных аргумента:</h1>
         </div>
     </div>
-    <div id="block_3">
-        <div class="container">
-            <ul>
-                <li>
-                    <p class="title"><img src="{{ STATIC_URL }}img/one.png" alt=""/>Мы не посредники</p>
-                    <p class="content">Вы приобретаете сафари напрямую у местного туроператора, минуя всех посредников, оставляющих себе до 30% от стоимости тура.</p>
-                </li>
-                <li>
-                    <p class="title"><img src="{{ STATIC_URL }}img/two.png" alt=""/>Мы говорим по-русски</p>
-                    <p class="content">Мы единственный полностью "русский туроператор" в Восточной Африке</p>
-                </li>
-                <li>
-                    <p class="title"><img src="{{ STATIC_URL }}img/three.png" alt=""/>Мы гарантируем</p>
-                    <p class="content">Заключение договора гарантирует строгое выполнение условий тура.</p>
-                </li>
-                <li>
-                    <p class="title"><img src="{{ STATIC_URL }}img/four.png" alt=""/>Мы делаем Ваш отдых удобнее</p>
-                    <p class="content">Вы можете оплатить полную стоимость тура на месте при встрече с нашим гидом. Заранее взымается лишь организационная часть сборов в размере 100 USD с человека.</p>
-                </li>
-            </ul>
+    <div class="block3">
+      <div class="container">
+        <div class="col-half">
+          <div class="block3-item block3-icon block3-icon-posr">
+            <div class="block3-item__title">Мы не являемся посредником.</div>
+            <div class="block3-item__content">
+              <p>
+                Мы являемся принимающим туроператором, находимся непосредственно в Восточной Африке.
+                Самостоятельно разрабатываем и обслуживаем свои туры, что позволяет экономить до 30% от стоимости тура.
+                Вы засрахованы от овербукинга, отмен экскурсий по личным обстоятельствам гидов, ошибок в планировании маршрута
+                и других неприятностей, которые могут омрачить ваш отдых.
+              </p>
+            </div>
+          </div>
         </div>
+        <div class="col-half">
+          <div class="block3-item block3-icon block3-icon-24h">
+            <div class="block3-item__title">Мы всегда на связи с Вами! 24 часа в сутки  дней в неделю.</div>
+            <div class="block3-item__content">
+              <p>
+                По прибытию в Африку вам будет выдан телефон с местной сим картой для круглосуточной связи с нами.
+                Оператор любезно окажет вам необходимую помощь на русском языке и поможет в переводу в любое время суток.
+              </p>
+            </div>
+          </div>
+          <div class="block3-item block3-icon block3-icon-zvuk">
+            <div class="block3-item__title">Мы говорим по-русски.</div>
+            <div class="block3-item__content">
+              <p>
+                Мы единственный полностью русский туроператор в Восточной Африке.
+              </p>
+            </div>
+          </div>
+          <div class="block3-item block3-icon block3-icon-money">
+            <div class="block3-item__title">Мы работаем без предоплаты.</div>
+            <div class="block3-item__content">
+              <p>
+                Стоимость тура оплачивается на месте, по прибытию.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
     </div>
     <div id="block_4">
         <div class="container">
             <h2>Совершите самое необычное путешествие в Вашей жизни!</h2>
-
-            {% include 'form.html' %}
+            {% include 'form.html' with first=True %}
         </div>
     </div>
-    <div id="block_5">
+    <div class="block5">
         <div class="container">
-            <h2>Почему выбирают именно нас?</h2>
+            <h2>Наш сопровождающий</h2>
 
-            <p>Мы единственный полностью "русский туроператор" в Восточной Африке. Все наши сотрудники свободно общаются на
-                русском языке. Мы единственный туроператор в Восточной Африке, работающий исключительно с русскоговорящими
-                туристами.</p>
-
-            <p>Мы работает на рынке сафари-путешествий для русскоязычных туристов с 2009 года. Мы знаем, как сделать сафари
-                незабываемым.</p>
-
-            <p>Наша компания «Enjoy Africa Group of Companies» - это зарегистрированный в Кении и Танзании туроператор по
-                странам Восточной Африки. Мы имеем все необходимые лицензии для данной деятельности.</p>
-
-            <p>Наш гид имеет высшее образование по направлению "Специалист по языкам и культуре Восточной Африки"</p>
-        </div>
-    </div>
-    <div id="document">
-        <div class="container">
-            <h2>Наши документы</h2>
-            <div class="license">
-                <div class="col-4">
-                    <div class="lic">
-                        <div class="lic-box">
-                            <a href="{{ STATIC_URL }}img/document/lic1.jpg" rel="lightgallery[lic]" title="Лицензция">
-                                <img src="{{ STATIC_URL }}img/document/lic1.jpg" alt=""/>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="lic">
-                        <div class="lic-box">
-                            <a href="{{ STATIC_URL }}img/document/lic2.jpg" rel="lightgallery[lic]" title="Лицензция">
-                                <img src="{{ STATIC_URL }}img/document/lic2.jpg" alt=""/>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="lic">
-                        <div class="lic-box">
-                            <a href="{{ STATIC_URL }}img/document/lic3.jpg" rel="lightgallery[lic]" title="Лицензция">
-                                <img src="{{ STATIC_URL }}img/document/lic3.jpg" alt=""/>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="lic">
-                        <div class="lic-box">
-                            <a href="{{ STATIC_URL }}img/document/lic4.jpg" rel="lightgallery[lic]" title="Лицензция">
-                                <img src="{{ STATIC_URL }}img/document/lic4.jpg" alt=""/>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-{#                <div class="col-3">#}
-{#                    <div class="lic">#}
-{#                        <img src="{{ STATIC_URL }}img/document/lic4.jpg" alt=""/>#}
-{#                    </div>#}
-{#                </div>#}
-                <div class="clear"></div>
+          <div class="col-4">
+            <div class="block5-avatar">
+              <img src="{{ STATIC_URL }}img/avatar.jpg" alt="" class="block5-avatar__photo">
+              <p>Вячеслав <br> Куликов</p>
             </div>
+          </div>
+          <div class="col-8">
+            <div class="block5-content">
+              <p>
+                Привет!<br>
+                Коротко о себе: путешествую всю жизнь, позади сотни тысяч км
+                автостопом или на велосипеде по всему миру. Влюбился в Африку,
+                перевёз из Москвы в Кению свою семью. Живём с тремя маленькими
+                детьми на океане в небольшом городке Малинди. <br>
+                "Сделай своё любимое дело работой и ты никогда в жизни больше не
+                будешь работать". <br>
+                В Африке я занят своим люимым делом - путешествиями.
+              </p>
+              <ul class="block5-list">
+                <li class="block5-list-item block5-icon block5-icon-browser">Организую сафари по национальным парка Кении, Танзании, Уганды, Руанды.</li>
+                <li class="block5-list-item block5-icon block5-icon-aircraft">Полёты на легкомоторных самолётах, рафтинг, путешествия на велосипедах.</li>
+                <li class="block5-list-item block5-icon block5-icon-umbrella">Отдых на океане в Кении: Диане, Ватаму, Малинди, Ламу.</li>
+                <li class="block5-list-item block5-icon block5-icon-camera">Работа со съёмочными групами.</li>
+              </ul>
+            </div>
+          </div>
         </div>
     </div>
-    <div id="block_6">
+    <div class="block6">
         <div class="container">
             <h2>Сафари - это просто!</h2>
             <div class="step">
@@ -171,6 +179,7 @@
                 <p>Приготовьтесь к сафари</p>
             </div>
             <div class="clear"></div>
+            <p class="text-center block6__end-text">До встречи в Африке!</p>
         </div>
     </div>
     <div id="block_7">
@@ -197,7 +206,7 @@
     </div>
     <div id="block_8">
         <div class="container">
-            {% include 'form.html' %}
+            {% include 'form.html' with second=True %}
 {#            <form class="ticket" action="{% url 'form' %}" method="post">{% csrf_token %}#}
 {#                <input type="text" name="name" placeholder="Ваше имя"/>#}
 {#                <input type="email" name="email" placeholder="Ваш E-mail"/>#}
@@ -205,60 +214,96 @@
 {#            </form>#}
         </div>
     </div>
-    <div id="block_9">
+    <div class="block9">
         <div class="container">
             <p>93% наших клиентов советуют нас друзьям и обращаются к нам повторно!</p>
         </div>
     </div>
-    <div id="block_10">
+    <div class="block10">
         <div class="container">
             <h2>Что включено в стоимость?</h2>
             <ul>
-                <li>
-                    <div class="icon">
-                        <img src="{{ STATIC_URL }}img/block_10_1.png" alt=""/>
-                    </div>
-                    <div class="content">
-                        <p>Трансферы из аэропорта и назад</p>
-                    </div>
-                    <div class="clear"></div>
-                </li>
-                <li>
-                    <div class="icon">
-                        <img src="{{ STATIC_URL }}img/block_10_2.png" alt=""/>
-                    </div>
-                    <div class="content">
-                        <p>Трансферы и сафари по утвержденному <br/>маршруту на протяжении всего тура на <br/>комфортабельных минивенах и джипах.</p>
-                    </div>
-                    <div class="clear"></div>
-                </li>
-                <li>
-                    <div class="icon">
-                        <img src="{{ STATIC_URL }}img/block_10_3.png" alt=""/>
-                    </div>
-                    <div class="content">
-                        <p>Проживание в гостиницах (3-4*) в <br/>национальных парках с полным пансионом <br/>(трех разовое питание).</p>
-                    </div>
-                    <div class="clear"></div>
-                </li>
-                <li>
-                    <div class="icon">
-                        <img src="{{ STATIC_URL }}img/block_10_4.png" alt=""/>
-                    </div>
-                    <div class="content">
-                        <p>Сопровождение опытного русскоязычного гида.</p>
-                    </div>
-                    <div class="clear"></div>
-                </li>
-                <li>
-                    <div class="icon">
-                        <img src="{{ STATIC_URL }}img/block_10_5.png" alt=""/>
-                    </div>
-                    <div class="content">
-                        <p>Одна экскурсия на выбор в подарок.</p>
-                    </div>
-                    <div class="clear"></div>
-                </li>
+              <li>
+{#                <div class="icon">#}
+{#                  <img src="{{ STATIC_URL }}img/block_10_1.png" alt=""/>#}
+{#                </div>#}
+                <div class="content block10-icon block10-icon-1">
+                  <p>Трансферы из аэропорта и назад</p>
+                </div>
+                <div class="clear"></div>
+              </li>
+              <li>
+{#                <div class="icon">#}
+{#                  <img src="{{ STATIC_URL }}img/block_10_2.png" alt=""/>#}
+{#                </div>#}
+                <div class="content block10-icon block10-icon-2">
+                  <p>Трансферы и сафари по утвержденному <br/>маршруту на протяжении всего тура на <br/>комфортабельных минивенах и джипах.</p>
+                </div>
+                <div class="clear"></div>
+              </li>
+              <li>
+{#                <div class="icon">#}
+{#                  <img src="{{ STATIC_URL }}img/block_10_3.png" alt=""/>#}
+{#                </div>#}
+                <div class="content block10-icon block10-icon-3">
+                  <p>Проживание в гостиницах (3-4*) в <br/>национальных парках с полным пансионом <br/>(трех разовое питание).</p>
+                </div>
+                <div class="clear"></div>
+              </li>
+              <li>
+{#                <div class="icon">#}
+{#                  <img src="{{ STATIC_URL }}img/block_10_4.png" alt=""/>#}
+{#                </div>#}
+                <div class="content block10-icon block10-icon-4">
+                    <p>Сопровождение опытного русскоязычного гида.</p>
+                </div>
+                <div class="clear"></div>
+              </li>
+              <li>
+{#                <div class="icon">#}
+{#                  <img src="{{ STATIC_URL }}img/block_10_5.png" alt=""/>#}
+{#                </div>#}
+                <div class="content block10-icon block10-icon-5">
+                  <p>Одна экскурсия на выбор в подарок.</p>
+                </div>
+                <div class="clear"></div>
+              </li>
+              <li>
+{#                <div class="icon">#}
+{#                  <img src="{{ STATIC_URL }}img/default-icon.png" alt=""/>#}
+{#                </div>#}
+                <div class="content block10-icon">
+                    <p>Англоговорящий водитель гид.</p>
+                </div>
+                <div class="clear"></div>
+              </li>
+              <li>
+{#                <div class="icon">#}
+{#                  <img src="{{ STATIC_URL }}img/default-icon.png" alt=""/>#}
+{#                </div>#}
+                <div class="content block10-icon">
+                    <p>Входная плата в Национальные парки по утверждённому маршруту.</p>
+                </div>
+                <div class="clear"></div>
+              </li>
+              <li>
+{#                <div class="icon">#}
+{#                  <img src="{{ STATIC_URL }}img/default-icon.png" alt=""/>#}
+{#                </div>#}
+                <div class="content block10-icon">
+                    <p>Вода в машине.</p>
+                </div>
+                <div class="clear"></div>
+              </li>
+              <li>
+{#                <div class="icon">#}
+{#                  <img src="{{ STATIC_URL }}img/default-icon.png" alt=""/>#}
+{#                </div>#}
+                <div class="content block10-icon">
+                    <p>Местаная симкарта с небольшим балансом для круглосуточной телефонной поддержки на русском языке.</p>
+                </div>
+                <div class="clear"></div>
+              </li>
             </ul>
         </div>
     </div>
@@ -311,8 +356,7 @@
     {% endif %}
     <footer>
         <div class="container">
-            {% include 'form.html' %}
-
+            {% include 'form.html' with third=True %}
         </div>
     </footer>
     <div class="address">
@@ -329,16 +373,10 @@
         </div>
     </div>
 </div>
-<div class="modal">
+<div id="pop">
     {% include 'modal_form.html' %}
-    <button class="close">X</button>
 </div>
-<div class="modal_video">
-    {% if setup.video %}
-        {{ setup.video|safe }}
-    {% endif %}
-    <button class="close">X</button>
-</div>
+{% include "__includes/login.html" %}
 {{ setup.bottom_js|safe|default:'' }}
 </body>
 </html>

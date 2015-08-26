@@ -1,5 +1,13 @@
 <form class="ticket" action="{% url 'form' %}" method="post">{% csrf_token %}
-    <input type="text" name="name" placeholder="Ваше имя"/>
-    <input type="email" name="email" placeholder="Ваш E-mail"/>
-    <div class="button">Отправьте заявку</div>
+    <input type="text" name="name" class="ticket__name" placeholder="Ваше имя"/>
+    <input type="email" name="email" class="ticket__email" placeholder="Ваш E-mail"/>
+    {% if first %}
+      <a href="#pop" class="button popupbutton">Отправьте заявку</a>
+    {% elif second %}
+      <a href="#pop" class="button popupbutton">
+        Узнайте стоимость<br /><span class="underline">получив актуальную информацию на Ваш e-mail</span>
+      </a>
+    {% elif third %}
+      <a href="#pop" class="button popupbutton">Да! Я хочу на сафари!</a>
+    {% endif %}
 </form>

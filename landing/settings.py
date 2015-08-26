@@ -32,7 +32,8 @@ DEFAULT_FROM_EMAIL = 'admin@enjoy-africa.ru'
 EMAIL_HOST = 'smtp.fullspace.ru'
 EMAIL_HOST_USER = 'admin@enjoy-africa.ru'
 EMAIL_HOST_PASSWORD = 'alena2010'
-# Application definition
+
+LOGIN_REDIRECT_URL = '/'
 
 INSTALLED_APPS = (
     'suit',

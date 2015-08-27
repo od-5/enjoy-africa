@@ -416,13 +416,13 @@ header .logotype:hover {
   list-style: none;
   width: 670px;
   margin: 0 auto;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
 }
-.block10 ul li:last-child {
+me .block10 ul li:last-child {
   margin-bottom: 0;
 }
 .block10 ul li .content {
-  min-height: 75px;
+  min-height: 100px;
   width: 510px;
   display: table;
   color: #fff;

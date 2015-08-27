@@ -1,22 +1,14 @@
-<!--[if gte IE 9]>
-  <style type="text/css">
-    nav {
-       filter: none;
-    }
-  </style>
-<![endif]-->
 <nav>
-  <div class="container">
-    <ul>
-      <li><a href="#" class="active">Главная</a></li>
-      <li><a href="#">Отзывы\Блог</a></li>
-      <li><a href="#">О нас</a></li>
-      <li><a href="#">Групповые туры</a></li>
-    </ul>
-    {% if user.is_authenticated %}
-       <a href="{% url 'logout' %}?next=/" class="auth-button button">Выход</a>
-    {% else %}
-      <a href="#pop-auth" class="auth-button button">Вход</a>
-    {% endif %}
-  </div>
+  <ul>
+    <li class="active"><a href="#" class="icon-about">О НАС</a></li>
+    <li><a href="#" class="icon-reviews">ОТЗЫВЫ</a></li>
+    <li><a href="#" class="icon-group">ГРУППОВЫЕ ТУРЫ</a></li>
+  </ul>
+  {% if user.is_authenticated %}
+    <span class="auth-user">{{ user.email }}</span>
+    <a href="{% url 'logout' %}?next=/" class="auth-button button">Выход</a>
+  {% else %}
+    <a href="#pop-auth" class="auth-button button">Вход</a>
+  {% endif %}
+  <div class="clear"></div>
 </nav>

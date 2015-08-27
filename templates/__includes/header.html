@@ -1,0 +1,11 @@
+<header>
+  <div class="container">
+    <a href="{% url 'home' %}" class="logotype col-4">
+      <img src="{{ STATIC_URL }}img/logotype.png" alt="Enjoy Africa Travel companies"/>
+    </a>
+    <div class="col-8">
+      {% include "__includes/menu.html" %}
+    </div>
+    <div class="clear"></div>
+  </div>
+</header>

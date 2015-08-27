@@ -21,7 +21,7 @@ def home(request):
         setup = Setup.objects.all()[0]
     except:
         setup = None
-    return render(request, 'base.html', {
+    return render(request, 'index.html', {
         'setup': setup,
         'form': form,
         'slider': slider,

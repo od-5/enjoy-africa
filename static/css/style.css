@@ -646,9 +646,9 @@ label.error {
 .footer {
   padding: 20px 0;
   background: #2C3E50;
-  color: #fff;
 }
 .footer__title {
+  color: #fff;
   display: block;
   font-weight: bold;
   margin-top: 20px;
@@ -660,13 +660,13 @@ label.error {
   margin-left: 50px;
 }
 .footer ul li {
-  color: #898989;
+  color: #ccc;
 }
 .footer-social {
   margin-top: 10px;
 }
 .footer-menu__item a {
-  color: #898989;
+  color: #cccccc;
 }
 .footer .icon {
   background-repeat: no-repeat;

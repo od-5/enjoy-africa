@@ -31,7 +31,7 @@
     </script>
 </head>
 <body>
-<div id="wrapper">
+<footer id="wrapper">
     <header>
 {#      {% include "__includes/menu.html" %}#}
         <div class="container">
@@ -354,24 +354,41 @@
         </div>
     </div>
     {% endif %}
-    <footer>
+    <div class="block14">
         <div class="container">
             {% include 'form.html' with third=True %}
         </div>
-    </footer>
-    <div class="address">
-        <div class="container">
-            <address>
-                <ul>
-                    <li><strong>Company “Enjoy Kenya Tours & Safaris”</strong></li>
-                    <li><strong>Nairobi, Tom Mboya st. Philadelphia house, First floor, Suite 19B, PO Box.:
-                        57590-00200</strong></li>
-                    <li><strong>PIN: A007062478U</strong></li>
-                </ul>
-            </address>
-            <a href="" class="creator"><img src="/static/img/our-logo.png" alt=""></a>
-        </div>
     </div>
+    <footer class="footer">
+        <div class="container">
+          <div class="col-third">
+            <div class="footer-logotype">
+              <a href="{% url 'home' %}">
+                <img src="{{ STATIC_URL }}img/logotype.png" alt="На главную страницу">
+              </a>
+            </div>
+            <div class="footer-social">
+              <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,odnoklassniki,moimir"></div>
+            </div>
+          </div>
+          <div class="col-third">
+            <span class="footer__title">Страницы</span>
+            <ul class="footer-menu">
+              <li class="footer-menu__item"><a href="#">О нас</a></li>
+              <li class="footer-menu__item"><a href="#">Отзывы</a></li>
+              <li class="footer-menu__item"><a href="#">Групповые туры</a></li>
+            </ul>
+          </div>
+          <div class="col-third">
+            <span class="footer__title">Контакты</span>
+            <ul class="footer-contacts">
+              <li class="footer-contacts__item icon icon-phone">8-888-888-88-88</li>
+              <li class="footer-contacts__item icon icon-letter"><a href="mailto:manager@vlifte.pro">manager@vlifte.pro</a></li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        </div>
+    </footer>
 </div>
 <div id="pop">
     {% include 'modal_form.html' %}

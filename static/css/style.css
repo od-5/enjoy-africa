@@ -454,8 +454,17 @@ me .block10 ul li:last-child {
   background-image: url('../img/block_10_4.png');
   height: 100px;
 }
-.block10-icon-5 {
-  background-image: url('../img/block_10_5.png');
+.block10-icon-6 {
+  background-image: url('../img/block_10_6.png');
+}
+.block10-icon-7 {
+  background-image: url('../img/block_10_7.png');
+}
+.block10-icon-8 {
+  background-image: url('../img/block_10_8.png');
+}
+.block10-icon-9 {
+  background-image: url('../img/block_10_9.png');
 }
 #block_11 {
   background: #21a8ff;

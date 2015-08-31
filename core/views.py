@@ -9,7 +9,7 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
-from .models import Setup, Slider, Review, Avatar
+from .models import Setup, Slider, Review
 from .forms import TicketForm, UserForm
 
 
@@ -32,6 +32,8 @@ def home(request):
 
 def profile_view(request):
     user = request.user
+    if not user.is_authenticated():
+        return HttpResponseRedirect('/')
     try:
         avatar = user.avatar.image
     except:

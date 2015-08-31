@@ -4,7 +4,7 @@ from django.contrib import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
 from django.contrib.auth.models import User
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.core.mail import send_mail
@@ -42,21 +42,28 @@ def profile_view(request):
         setup = None
 
     if request.method == 'POST':
-        form = UserForm(request.POST, request.FILES)
-        email = request.POST.get('email')
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
+        data = request.POST.copy()
+        email = data['email']
+        first_name = data['first_name']
+        last_name = data['last_name']
         user.first_name = first_name
         user.last_name = last_name
         if user.is_superuser:
             user.email = email
         else:
             user.email = user.username = email
+        if request.FILES and user.avatar:
+            print 'delete ***************'
+            user.avatar.delete()
         user.save()
+        form = UserForm(request.POST, request.FILES)
+
+        print form
         if form.is_valid():
-            print form
-            new_avatar = form.save()
-            new_avatar.save()
+            print 'form save ************'
+            if request.FILES:
+                form.save()
+        return HttpResponseRedirect('/accounts/')
 
     return render(request, 'profile.html', {
         'setup': setup,

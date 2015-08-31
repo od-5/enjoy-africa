@@ -54,3 +54,14 @@ class TravelReview(Common):
     text = RichTextField(verbose_name=u'Текст')
     moderated = models.BooleanField(verbose_name=u'Одобрено', default=False)
     slug = models.SlugField(max_length=100, verbose_name=u'url', blank=True)
+
+
+class TravelReviewComment(Common):
+    class Meta:
+        verbose_name = u'Коментарий'
+        verbose_name_plural = u'Комментарии'
+        app_label = 'travel'
+
+    user = models.ForeignKey(to=User, verbose_name=u'Пользователь')
+    travel_review = models.ForeignKey(to=TravelReview, verbose_name=u'Статья')
+    text = RichTextField(verbose_name=u'Текст')

@@ -11,5 +11,7 @@
         {{ article.text|safe|default:'' }}
       </div>
     </div>
+    <hr>
   </div>
+  {% include 'travel/travel_comment.html' %}
 {% endblock %}

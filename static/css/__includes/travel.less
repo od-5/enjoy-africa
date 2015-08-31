@@ -8,7 +8,11 @@
   }
   &-list {
     list-style: none;
-    text-align: center;
+    &__title {
+      padding-bottom: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
     &__item {
       display: inline-block;
     }
@@ -78,6 +82,55 @@
       width: 350px;
       border-radius: 10px;
       text-align: center;
+    }
+  }
+  &-comment {
+    padding: 20px 0 40px;
+    &__header {
+      font-size: 24px;
+      font-weight: bold;
+      padding-bottom: 40px;
+    }
+    &__auth-text {
+      padding: 20px 0;
+      a {
+        margin-right: 20px;
+      }
+    }
+    &-item {
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.5);
+      &:hover {
+        background: #fff;
+        -webkit-box-shadow: 0 0 5px #666;
+        -moz-box-shadow: 0 0 5px #666;
+        box-shadow: 0 0 5px #666;
+      }
+      &__title {
+        padding: 10px;
+      }
+      &__user {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      &__created {
+        color: #999;
+        float: right;
+        padding-left: 20px;
+      }
+      &-text {
+        padding: 10px;
+        &__avatar {
+          display: inline-block;
+          width: 20%;
+          text-align: center;
+          vertical-align: top;
+        }
+        &__content {
+          display: inline-block;
+          width: 79%;
+        }
+      }
     }
   }
 }

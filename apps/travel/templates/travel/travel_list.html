@@ -6,6 +6,10 @@
   {% if travel_list %}
     <div class="travels">
       <ul class="travels-list">
+        <li class="travels-list__title">Наши направления: </li>
+        <li class="travels-list__item">
+            <a href="{% url 'travel:list' %}" class="btn btn-info">Все</a>
+          </li>
       {% for travel in travel_list %}
         <li class="travels-list__item">
 {#          <a href="{{ travel.get_absolute_url }}" class="btn btn-success">{{ travel.title|default:'' }}</a>#}
@@ -39,7 +43,7 @@
   {% endif %}
     <div class="travels-author">
       <p class="title_middle text-center">Наши авторы</p>
-      {% for item in '123456' %}
+      {% for item in '123' %}
       <div class="travels-author-item">
         <div class="travels-author-item__avatar"><img src="{{ STATIC_URL }}img/author-default.png" alt=""></div>
         <div class="travels-author-item-content">
@@ -57,12 +61,6 @@
     {% else %}
       <a href="#pop-auth" class="auth-button button">Стать автором</a>
     {% endif %}
-    </div>
-  </div>
-  <div id="block_4">
-    <div class="container">
-      <h2>Совершите самое необычное путешествие в Вашей жизни!</h2>
-      {% include 'form.html' with first=True %}
     </div>
   </div>
 {% endblock %}

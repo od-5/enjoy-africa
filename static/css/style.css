@@ -890,7 +890,11 @@ label.error {
 }
 .travels-list {
   list-style: none;
-  text-align: center;
+}
+.travels-list__title {
+  padding-bottom: 20px;
+  font-weight: bold;
+  font-size: 18px;
 }
 .travels-list__item {
   display: inline-block;
@@ -957,6 +961,55 @@ label.error {
   width: 350px;
   border-radius: 10px;
   text-align: center;
+}
+.travels-comment {
+  padding: 20px 0 40px;
+}
+.travels-comment__header {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 40px;
+}
+.travels-comment__auth-text {
+  padding: 20px 0;
+}
+.travels-comment__auth-text a {
+  margin-right: 20px;
+}
+.travels-comment-item {
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.5);
+}
+.travels-comment-item:hover {
+  background: #fff;
+  -webkit-box-shadow: 0 0 5px #666;
+  -moz-box-shadow: 0 0 5px #666;
+  box-shadow: 0 0 5px #666;
+}
+.travels-comment-item__title {
+  padding: 10px;
+}
+.travels-comment-item__user {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.travels-comment-item__created {
+  color: #999;
+  float: right;
+  padding-left: 20px;
+}
+.travels-comment-item-text {
+  padding: 10px;
+}
+.travels-comment-item-text__avatar {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  vertical-align: top;
+}
+.travels-comment-item-text__content {
+  display: inline-block;
+  width: 79%;
 }
 .article {
   padding-bottom: 40px;

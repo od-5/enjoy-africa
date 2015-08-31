@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>{{ setup.title|striptags|default:'Safari Travel' }}</title>
-    <meta name="description" content="{{ setup.meta_desc|striptags|default:'' }}"/>
-    <meta name="keywords" content="{{ setup.meta_key|striptags|default:'' }}"/>
-    {{ setup.top_js|safe|default:'' }}
-    <script src="{{ STATIC_URL }}js/lib/jquery-1.11.2.min.js"></script>
-    <script src="{{ STATIC_URL }}js/lib/jquery.validate.js"></script>
-    <script src="{{ STATIC_URL }}js/lib/jquery.form.js"></script>
-    <script src="{{ STATIC_URL }}js/lib/jquery.flexslider-min.js"></script>
-    <script src="{{ STATIC_URL }}js/lib/lightgallery.min.js"></script>
-    <script src="{{ STATIC_URL }}js/lib/jquery.lwtCountdown-1.0.js"></script>
-    <script src="{{ STATIC_URL }}js/lib/jquery.fancybox.pack.js"></script>
-    <script src="{{ STATIC_URL }}js/lib/bootstrap.min.js"></script>
-    <script src="{{ STATIC_URL }}js/lib/notify-combined.min.js"></script>
-    <script src="{{ STATIC_URL }}js/common.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Marck+Script&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/reset.css">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/bootstrap-theme.css">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/jquery.fancybox.css">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/lightbox.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>{{ setup.title|striptags|default:'Safari Travel' }}</title>
+  <meta name="description" content="{{ setup.meta_desc|striptags|default:'' }}"/>
+  <meta name="keywords" content="{{ setup.meta_key|striptags|default:'' }}"/>
+  {{ setup.top_js|safe|default:'' }}
+  <script src="{{ STATIC_URL }}js/lib/jquery-1.11.2.min.js"></script>
+  <script src="{{ STATIC_URL }}js/lib/jquery.validate.js"></script>
+  <script src="{{ STATIC_URL }}js/lib/jquery.form.js"></script>
+  <script src="{{ STATIC_URL }}js/lib/jquery.flexslider-min.js"></script>
+  <script src="{{ STATIC_URL }}js/lib/lightgallery.min.js"></script>
+  <script src="{{ STATIC_URL }}js/lib/jquery.lwtCountdown-1.0.js"></script>
+  <script src="{{ STATIC_URL }}js/lib/jquery.fancybox.pack.js"></script>
+  <script src="{{ STATIC_URL }}js/lib/bootstrap.min.js"></script>
+  <script src="{{ STATIC_URL }}js/lib/notify-combined.min.js"></script>
+  <script src="{{ STATIC_URL }}js/common.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Marck+Script&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/reset.css">
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/bootstrap-theme.css">
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/jquery.fancybox.css">
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/lightbox.css">
   <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/__includes/animate.css">
   <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
+  {% block extra_media %}
+  {% endblock %}
     <script>
         lightgallery.init();
     </script>

@@ -52,7 +52,11 @@
         <div class="clear"></div>
       </div>
     {% endfor %}
+    {% if user.is_authenticated %}
+      <a href="#" class="button">Новая публикация</a>
+    {% else %}
       <a href="#pop-auth" class="auth-button button">Стать автором</a>
+    {% endif %}
     </div>
   </div>
   <div id="block_4">

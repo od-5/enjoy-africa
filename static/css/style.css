@@ -48,6 +48,7 @@ nav .auth-button {
 nav .auth-user {
   display: block;
   position: absolute;
+  color: #fff;
   top: 0;
   right: 0;
   text-shadow: 1px 1px 1px #ff5c5c;
@@ -939,6 +940,12 @@ label.error {
   text-align: center;
   vertical-align: top;
 }
+.travels-author-item__avatar img {
+  width: 124px;
+  -webkit-border-radius: 124px;
+  -moz-border-radius: 124px;
+  border-radius: 124px;
+}
 .travels-author-item-content {
   display: inline-block;
   width: 69%;
@@ -1007,6 +1014,12 @@ label.error {
   text-align: center;
   vertical-align: top;
 }
+.travels-comment-item-text__avatar img {
+  width: 124px;
+  -webkit-border-radius: 124px;
+  -moz-border-radius: 124px;
+  border-radius: 124px;
+}
 .travels-comment-item-text__content {
   display: inline-block;
   width: 79%;
@@ -1019,4 +1032,17 @@ label.error {
 }
 .article__cover {
   margin-bottom: 20px;
+}
+.profile {
+  padding-bottom: 40px;
+}
+.profile-title {
+  font-size: 24px;
+  padding: 20px 0;
+}
+.profile-info {
+  width: 400px;
+}
+.profile-info__submit {
+  margin-top: 20px;
 }

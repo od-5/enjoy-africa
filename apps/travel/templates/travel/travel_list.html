@@ -8,12 +8,12 @@
       <ul class="travels-list">
         <li class="travels-list__title">Наши направления: </li>
         <li class="travels-list__item">
-            <a href="{% url 'travel:list' %}" class="btn btn-info">Все</a>
+            <a href="{% url 'travel:list' %}" class="btn {% if not travel_id %}btn-info{% else %}btn-success{% endif %}">Все</a>
           </li>
       {% for travel in travel_list %}
         <li class="travels-list__item">
 {#          <a href="{{ travel.get_absolute_url }}" class="btn btn-success">{{ travel.title|default:'' }}</a>#}
-          <a href="#" class="btn btn-success">{{ travel.title|default:'' }}</a>
+          <a href="?travel={{ travel.id }}" class="btn {% if travel_id == travel.id %}btn-info{% else %}btn-success{% endif %}">{{ travel.title|default:'' }}</a>
         </li>
       {% endfor %}
       </ul>
@@ -39,23 +39,27 @@
     {% endfor %}
       <div class="clear"></div>
     </div>
+  {% else %}
+    <p>Здесь пока ничего не опубликовано</p>
     <hr>
   {% endif %}
     <div class="travels-author">
       <p class="title_middle text-center">Наши авторы</p>
-      {% for item in '123' %}
+      {% for user in author_list %}
+{#      {% if user.travelreview_set.all %}#}
       <div class="travels-author-item">
-        <div class="travels-author-item__avatar"><img src="{{ STATIC_URL }}img/author-default.png" alt=""></div>
+        <div class="travels-author-item__avatar"><img src="{{ user.avatar.image.url }}" alt=""></div>
         <div class="travels-author-item-content">
-          <p class="travels-author-item-content__name">Lorem Ipsum Dolor</p>
+          <p class="travels-author-item-content__name">{{ user }}</p>
           <p class="travels-author-item-content__text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias in tempore velit. A accusamus asperiores aspernatur consequuntur corporis culpa cum dolorem enim expedita minima nulla odio officiis, temporibus vitae voluptatem.
           </p>
-          <a href="#">Читать >></a>
+          <a href="?author={{ user.id }}">Читать >></a>
         </div>
         <div class="clear"></div>
       </div>
-    {% endfor %}
+{#      {% endif %}#}
+      {% endfor %}
     {% if user.is_authenticated %}
       <a href="#" class="button">Новая публикация</a>
     {% else %}

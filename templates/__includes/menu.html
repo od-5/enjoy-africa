@@ -5,7 +5,7 @@
     <li><a href="#" class="icon-group">ГРУППОВЫЕ ТУРЫ</a></li>
   </ul>
   {% if user.is_authenticated %}
-    <span class="auth-user">{{ user.email }}</span>
+    <a href="{% url 'profile' %}" class="auth-user">{{ user.email }}</a>
     <a href="{% url 'logout' %}?next=/" class="auth-button button">Выход</a>
   {% else %}
     <a href="#pop-auth" class="auth-button button">Вход</a>

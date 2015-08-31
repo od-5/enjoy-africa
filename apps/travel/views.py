@@ -1,4 +1,5 @@
 # coding=utf-8
+from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from apps.travel.forms import TravelReviewCommentForm
@@ -15,12 +16,23 @@ def travel_list(request):
     except:
         setup = None
     travel_qs = Travel.objects.all()
+
     travel_review_qs = TravelReview.objects.filter(moderated=True)
+    travel = request.GET.get('travel')
+    if travel:
+        travel = int(travel)
+        travel_review_qs = travel_review_qs.filter(travel=travel)
+    author = request.GET.get('author')
+    if author:
+        travel_review_qs = travel_review_qs.filter(user=int(author))
+    author_list = User.objects.filter(is_active=True)
 
     return render(request, 'travel/travel_list.html', {
         'setup': setup,
         'travel_list': travel_qs,
         'travel_review_list': travel_review_qs,
+        'author_list': author_list,
+        'travel_id': travel,
     })
 
 

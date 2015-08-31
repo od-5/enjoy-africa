@@ -1,4 +1,5 @@
 # coding=utf-8
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -112,3 +113,11 @@ class Review(Common):
         verbose_name = u'Отзыв'
         verbose_name_plural = u'Отзывы'
         app_label = 'core'
+
+
+class Avatar(Common):
+    user = models.OneToOneField(to=User, verbose_name=u'Пользователь')
+    image = models.ImageField(verbose_name=u'Аватар', upload_to='profile/', blank=True, null=True)
+
+    def __unicode__(self):
+        return self.user

@@ -135,4 +135,20 @@ $(window).load(function() {
     }
   });
 
+  // валидация формы профиля
+  $( "#personal_info_form" ).validate({
+    rules: {
+      email: {
+        required: true
+      },
+      first_name: {
+        required: true
+      },
+      last_name: {
+        required: true
+      }
+    }
+  });
+
+
 });

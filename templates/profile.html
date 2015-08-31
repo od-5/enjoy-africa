@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container">
+    <div class="profile">
+      <p class="profile-title text-center">Профиль пользователя <strong>{{ user.email }}</strong></p>
+      <ul class="nav nav-tabs" id="login_tab">
+        <li class="active">
+          <a href="#info" data-toggle="tab">Персональная информация</a>
+        </li>
+        <li>
+          <a href="#article" data-toggle="tab">Статьи</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="info">
+          <div class="col-half">
+            <form method="post" action="" id="personal_info_form" role="form" class="profile-info" enctype="multipart/form-data">{% csrf_token %}
+              <label for="email">e-mail:</label>
+              <input type="text" name="email" id="email" class="form-control" placeholder="e-mail" value="{{ user.email|default:'' }}">
+              <input type="hidden" name="user" id="username" class="form-control" placeholder="e-mail" value="{{ user.id }}">
+              <label for="first_name">Имя:</label>
+              <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Имя" value="{{ user.first_name|default:'' }}">
+              <label for="last_name">Фамилия:</label>
+              <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Фамилия" value="{{ user.last_name|default:'' }}">
+              <label for="image">Новый аватар:</label>
+              <input type="file" name="image" id="image" class="form-control" value="{{ user.avatar.image }}">
+              <button type="submit" class="btn btn-default profile-info__submit">Сохранить</button>
+            </form>
+          </div>
+          <div class="col-half">
+            <img src="{{ user.avatar.image.url }}" alt="">
+          </div>
+        </div>
+        <div class="tab-pane" id="article">
+          {% for article in user.travelreview_set.all %}
+            {{ article }} - {{ article.created }}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

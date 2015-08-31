@@ -9,8 +9,9 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
-from .models import Setup, Slider, Review
-from .forms import TicketForm
+from .models import Setup, Slider, Review, Avatar
+from .forms import TicketForm, UserForm
+
 
 # Create your views here.
 def home(request):
@@ -26,6 +27,40 @@ def home(request):
         'form': form,
         'slider': slider,
         'review': review
+    })
+
+
+def profile_view(request):
+    user = request.user
+    try:
+        avatar = user.avatar.image
+    except:
+        avatar = None
+    try:
+        setup = Setup.objects.all()[0]
+    except:
+        setup = None
+
+    if request.method == 'POST':
+        form = UserForm(request.POST, request.FILES)
+        email = request.POST.get('email')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        user.first_name = first_name
+        user.last_name = last_name
+        if user.is_superuser:
+            user.email = email
+        else:
+            user.email = user.username = email
+        user.save()
+        if form.is_valid():
+            print form
+            new_avatar = form.save()
+            new_avatar.save()
+
+    return render(request, 'profile.html', {
+        'setup': setup,
+        'user': user,
     })
 
 

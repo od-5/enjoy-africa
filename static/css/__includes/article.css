@@ -1,0 +1,9 @@
+.article {
+  padding-bottom: 40px;
+}
+.article__title {
+  margin: 20px 0;
+}
+.article__cover {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container">
+  {% for article in about_list %}
+    <div class="about">
+      <div class="about__title">
+        <h1>{{ article.title|default:'' }}</h1>
+      </div>
+      <div class="about__text">
+        {{ article.text|safe|default:'' }}
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}

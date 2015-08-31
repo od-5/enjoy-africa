@@ -21,9 +21,9 @@ def next_month(origin_date):
     month = origin_date.month
     year = origin_date.year
     if origin_date.month == 12:
-        return datetime(year + 1, 1, day)
+        return datetime(year + 1, 1, 1)
     else:
-        return datetime(year, month+1, day)
+        return datetime(year, month+1, 1)
 
 def travels(requst):
     # получаем значение текущего месяца

@@ -59,6 +59,26 @@ h2 {
   text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
                  0px -5px 35px rgba(255,255,255,0.3);
 }
+.title {
+  &_big {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  &_middle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px 0;
+    background-image: -webkit-linear-gradient(top, #428bca 0%, #357ebd 100%);
+    background-image: -o-linear-gradient(top, #428bca 0%, #357ebd 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#428bca), to(#357ebd));
+    background-image: linear-gradient(to bottom, #428bca 0%, #357ebd 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff357ebd', GradientType=0);
+  }
+}
+
 form.ticket {
   text-align: center;
   padding-bottom: 5px;
@@ -738,34 +758,9 @@ label.error {
   }
 }
 
-.modal_video {
-  display: none;
-  z-index: 10;
-  width: 600px;
-  height: 400px;
-  background: #f1f1f1;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -200px;
-  margin-left: -300px;
-  text-align: center;
-  box-shadow: 0 0 10px #999;
-  .close {
-    position: absolute;
-    top: -30px;
-    right: -10px;
-    border-radius: 20px;
-    width: 30px;
-    height: 30px;
-    background: rgb(253, 138, 138);
-  }
-  iframe {
-    width: 100% !important;
-    height: 100% !important;
-  }
-}
-
 .notifyjs-corner {
   z-index: 9999 !important;
 }
+
+@import "__includes/about.less";
+@import "__includes/travel.less";

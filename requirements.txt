@@ -2,3 +2,5 @@ Django==1.7
 Pillow==2.8.1
 django-suit==0.2.13
 django-annoying==0.8.3
+django-ckeditor==4.5.1
+pytils==0.3

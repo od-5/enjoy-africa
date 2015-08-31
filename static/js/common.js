@@ -2,6 +2,12 @@
  * Created by alexy on 28.05.15.
  */
 $(window).load(function() {
+
+  var current_url = '/'+location.href.split('/')[3]+'/'
+  $('nav > ul > li >a').each(function () {
+    if($(this).attr('href') == current_url) $(this).addClass('active');
+  });
+
     $('.slider_1').flexslider({
         animation: "slide",
         selector: ".slides_1 > li",
@@ -96,6 +102,7 @@ $(window).load(function() {
               $.notify(error, 'error');
             } else {
               $.fancybox.close();
+              location.reload(true);
             }
           }
       });

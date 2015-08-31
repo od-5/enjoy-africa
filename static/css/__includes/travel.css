@@ -1,0 +1,78 @@
+.travels {
+  padding: 30px 0;
+}
+.travels__bg {
+  background-image: url('../img/travels__bg.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.travels-list {
+  list-style: none;
+  text-align: center;
+}
+.travels-list__item {
+  display: inline-block;
+}
+.travels-review-item {
+  width: 90%;
+  margin-bottom: 40px;
+}
+.travels-review-item-cover__img {
+  background-color: #000;
+}
+.travels-review-item-cover__img:hover {
+  opacity: .5;
+  -moz-opacity: .5;
+  filter: alpha(opacity=50) #000000;
+  -khtml-opacity: .5;
+}
+.travels-review-item__travel {
+  color: #666;
+  padding: 10px 0;
+}
+.travels-review-item__title {
+  font-size: 16px;
+}
+.travels-author {
+  margin-bottom: 40px;
+}
+.travels-author-item {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+}
+.travels-author-item:hover {
+  background: #f1f1f1;
+}
+.travels-author-item__avatar {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  vertical-align: top;
+}
+.travels-author-item-content {
+  display: inline-block;
+  width: 69%;
+}
+.travels-author-item-content__name {
+  font-weight: bold;
+  padding: 10px 0;
+}
+.travels-author-item-content__text {
+  margin-bottom: 10px;
+}
+.travels-author .button {
+  padding: 21px;
+  color: #101b3f;
+  background: #fff66d;
+  text-transform: uppercase;
+  font-size: 28px;
+  display: block;
+  margin: 25px auto !important;
+  width: 250px;
+  border-radius: 10px;
+}

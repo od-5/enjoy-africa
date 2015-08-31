@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block wrapper_style %}class="travels__bg"{% endblock %}
+{% block content %}
+  <div class="container">
+    <p class="title_big text-center">Журнал путешествий</p>
+  {% if travel_list %}
+    <div class="travels">
+      <ul class="travels-list">
+      {% for travel in travel_list %}
+        <li class="travels-list__item">
+{#          <a href="{{ travel.get_absolute_url }}" class="btn btn-success">{{ travel.title|default:'' }}</a>#}
+          <a href="#" class="btn btn-success">{{ travel.title|default:'' }}</a>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+
+  {% endif %}
+
+  {% if travel_review_list %}
+    <div class="travels-review">
+    {% for item in '123456' %}
+      {% for review in travel_review_list %}
+      <div class="col-third">
+        <div class="travels-review-item">
+{#          <a href="{{ review.get_absolute_url }}" class="travels-review-item-cover">#}
+          <a href="#" class="travels-review-item-cover">
+            <img src="{{ review.image.url }}" alt="{{ review.title|default:'' }}" class="travels-review-item-cover__img" >
+          </a>
+          <p class="travels-review-item__travel">{{ review.travel }}</p>
+          <a href="{{ review.get_absolute_url }}" class="travels-review-item__title">{{ review.title|default:'' }}</a>
+        </div>
+      </div>
+      {% endfor %}
+    {% endfor %}
+      <div class="clear"></div>
+    </div>
+    <hr>
+  {% endif %}
+    <div class="travels-author">
+      <p class="title_middle text-center">Наши авторы</p>
+      {% for item in '123456' %}
+      <div class="travels-author-item">
+        <div class="travels-author-item__avatar"><img src="{{ STATIC_URL }}img/author-default.png" alt=""></div>
+        <div class="travels-author-item-content">
+          <p class="travels-author-item-content__name">Lorem Ipsum Dolor</p>
+          <p class="travels-author-item-content__text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias in tempore velit. A accusamus asperiores aspernatur consequuntur corporis culpa cum dolorem enim expedita minima nulla odio officiis, temporibus vitae voluptatem.
+          </p>
+          <a href="#">Читать >></a>
+        </div>
+        <div class="clear"></div>
+      </div>
+    {% endfor %}
+      <a href="#pop-auth" class="auth-button button">Стать автором</a>
+    </div>
+  </div>
+  <div id="block_4">
+    <div class="container">
+      <h2>Совершите самое необычное путешествие в Вашей жизни!</h2>
+      {% include 'form.html' with first=True %}
+    </div>
+  </div>
+{% endblock %}

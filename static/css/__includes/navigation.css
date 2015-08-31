@@ -21,6 +21,11 @@ nav ul li a:hover {
   opacity: 0.6;
   color: #f2f2f2;
 }
+nav ul li a.active {
+  text-decoration: none;
+  text-shadow: 0 0 2px red;
+  color: #f2eec7;
+}
 nav ul li .icon-group {
   background-image: url('../img/menu-icon-group.png');
 }

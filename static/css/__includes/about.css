@@ -1,0 +1,10 @@
+.about {
+  margin: 20px 0 40px;
+}
+.about__title {
+  text-align: center;
+  line-height: 70px;
+}
+.about img {
+  max-width: 100%;
+}

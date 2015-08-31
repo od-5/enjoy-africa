@@ -2,17 +2,17 @@ from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.contrib.auth.views import login
-from django.contrib.auth.views import logout
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.views.generic import TemplateView
 
-urlpatterns = patterns('',
-    url(r'^$', 'core.views.home', name='home'),
-    url(r'', include('core.urls')),
 
-    url(r'^accounts/logout/$', logout, name='logout'),
+urlpatterns = patterns(
+    '',
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^ckeditor/', include('ckeditor.urls')),
+
+    url(r'^about/', include('apps.about.urls', namespace='about'),),
+    url(r'^travels/', include('apps.travel.urls', namespace='travel'),),
+    url(r'', include('core.urls')),
 )
 
 if settings.DEBUG:

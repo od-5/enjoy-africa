@@ -43,8 +43,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
     'core',
     'countdown',
+    'apps.about',
+    'apps.travel',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -69,6 +72,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'countdown.context_processors.timer.countdown',
     'core.context_processors.travels.travels',
+    'core.context_processors.page.current_page',
 )
 
 TEMPLATE_LOADERS = (
@@ -158,7 +162,25 @@ SUIT_CONFIG = {
         {'label': u'Продажи', 'icon':'icon-user', 'models': ('core.sale',)},
         {'label': u'Слайдер', 'icon':'icon-picture', 'models': ('core.slider',)},
         {'label': u'Отзывы', 'icon':'icon-comment', 'models': ('core.review',)},
+        {'label': u'О нас', 'app': 'about'},
+        {'label': u'Журнал путешествий', 'app': 'travel'},
         {'label': u'enjoy-safari.ru', 'url': 'http://www.enjoy-safari.ru/admin'},
     ),
 
+}
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'width': 700,
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['FontSize', 'TextColor'],
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink', 'Image'],
+            ['RemoveFormat', 'Source']
+        ]
+    },
 }

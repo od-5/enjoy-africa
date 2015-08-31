@@ -46,7 +46,7 @@
   padding: 10px;
 }
 .travels-author-item:hover {
-  background: #f1f1f1;
+  background: rgba(255, 255, 255, 0.5);
 }
 .travels-author-item__avatar {
   display: inline-block;

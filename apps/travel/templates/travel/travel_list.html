@@ -23,8 +23,8 @@
       {% for review in travel_review_list %}
       <div class="col-third">
         <div class="travels-review-item">
-{#          <a href="{{ review.get_absolute_url }}" class="travels-review-item-cover">#}
-          <a href="#" class="travels-review-item-cover">
+          <a href="{{ review.get_absolute_url }}" class="travels-review-item-cover">
+{#          <a href="#" class="travels-review-item-cover">#}
             <img src="{{ review.image.url }}" alt="{{ review.title|default:'' }}" class="travels-review-item-cover__img" >
           </a>
           <p class="travels-review-item__travel">{{ review.travel }}</p>

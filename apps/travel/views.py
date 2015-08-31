@@ -21,3 +21,16 @@ def travel_list(request):
         'travel_list': travel_qs,
         'travel_review_list': travel_review_qs,
     })
+
+
+def travel_detail(request, slug):
+    try:
+        setup = Setup.objects.all()[0]
+    except:
+        setup = None
+    travel_qs = TravelReview.objects.get(slug=slug)
+
+    return render(request, 'travel/travel_detail.html', {
+        'setup': setup,
+        'article': travel_qs,
+    })

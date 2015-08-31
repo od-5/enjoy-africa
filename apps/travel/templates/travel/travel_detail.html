@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block wrapper_style %}class="travels__bg"{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="article">
+      <h1 class="article__title text-center">{{ article.title|default:'' }}</h1>
+      <div class="article__cover">
+        <img src="{{ article.image.url }}" alt="{{ article.title|default:'' }}">
+      </div>
+      <div class="article__text">
+        {{ article.text|safe|default:'' }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

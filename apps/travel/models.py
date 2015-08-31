@@ -45,7 +45,7 @@ class TravelReview(Common):
         super(TravelReview, self).save()
 
     def get_absolute_url(self):
-        return u"/travels_review/%s" % self.slug
+        return u"/travels/review/%s" % self.slug
 
     user = models.ForeignKey(to=User, verbose_name=u'Пользователь')
     travel = models.ForeignKey(to=Travel, verbose_name=u'направление')

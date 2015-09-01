@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container">
+    <h2 class="title_big text-center">Создание статьи</h2>
+    {% load widget_tweaks %}
+    <form action="" method="post" role="form" class="travels-review-add-form" enctype="multipart/form-data">{% csrf_token %}
+      <input type="hidden" name="user" value="{{ user.id }}">
+{#      <input type="hidden" name="slug" value="{{ form.slug.value }}">#}
+{#      <input type="hidden" name="moderated" value="{{ form.moderated.value }}">#}
+        {{ form.media }}
+{#        {{ form.user|add_class:"hide"|attr:user.id }}#}
+        <label for='travel'>{{ form.travel.label }}</label>
+        {{ form.travel|add_class:"form-control" }}
+        <label for="title">{{ form.title.label }}</label>
+        {{ form.title|add_class:"form-control" }}
+        <label for="text">{{ form.text.label }}</label>
+        {{ form.text|add_class:"form-control" }}
+        {{ form.moderated|add_class:"hide" }}
+        {{ form.slug|add_class:"hide" }}
+        <label for="image">{{ form.image.label }}</label>
+        {{ form.image|add_class:"form-control" }}
+        <input type="submit" value="Сохранить" class="btn btn-default" />
+    </form>
+  </div>
+{% endblock %}

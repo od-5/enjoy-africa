@@ -47,6 +47,9 @@ class TravelReview(Common):
     def get_absolute_url(self):
         return u"/travels/review/%s" % self.slug
 
+    def get_change_url(self):
+        return u"/travels/review-change/%s" % self.slug
+
     user = models.ForeignKey(to=User, verbose_name=u'Пользователь')
     travel = models.ForeignKey(to=Travel, verbose_name=u'направление')
     title = models.CharField(verbose_name=u'Заголовок', max_length=255)

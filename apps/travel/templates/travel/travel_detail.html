@@ -3,7 +3,11 @@
 {% block content %}
   <div class="container">
     <div class="article">
-      <h1 class="article__title text-center">{{ article.title|default:'' }}</h1>
+      <h1 class="article__title text-center">{{ article.title|default:'' }}
+      {% if user == article.user or user.is_superuser %}
+        <a href="{{ article.get_change_url }}" class="btn btn-info">Редактировать</a>
+      {% endif %}
+      </h1>
       <div class="article__cover">
         <img src="{{ article.image.url }}" alt="{{ article.title|default:'' }}">
       </div>

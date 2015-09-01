@@ -48,7 +48,7 @@
       {% for user in author_list %}
 {#      {% if user.travelreview_set.all %}#}
       <div class="travels-author-item">
-        <div class="travels-author-item__avatar"><img src="{{ user.avatar.image.url }}" alt=""></div>
+        <div class="travels-author-item__avatar"><img src="{% if user.avatar %}{{ user.avatar.image.url }}{% else %}{{ STATIC_URL }}img/no_avatar.gif{% endif %}" alt=""></div>
         <div class="travels-author-item-content">
           <p class="travels-author-item-content__name">{{ user }}</p>
           <p class="travels-author-item-content__text">
@@ -61,7 +61,7 @@
 {#      {% endif %}#}
       {% endfor %}
     {% if user.is_authenticated %}
-      <a href="#" class="button">Новая публикация</a>
+      <a href="{% url 'travel:add' %}" class="button">Новая публикация</a>
     {% else %}
       <a href="#pop-auth" class="auth-button button">Стать автором</a>
     {% endif %}

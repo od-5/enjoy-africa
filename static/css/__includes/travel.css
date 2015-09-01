@@ -38,6 +38,19 @@
 .travels-review-item__title {
   font-size: 16px;
 }
+.travels-review-change-form input[type=text],
+.travels-review-add-form input[type=text],
+.travels-review-change-form select,
+.travels-review-add-form select {
+  width: 400px;
+}
+.travels-review-change-form label, .travels-review-add-form label {
+  display: block;
+  margin-top: 20px;
+}
+.travels-review-change-form .btn, .travels-review-add-form .btn {
+  margin: 20px 0;
+}
 .travels-author {
   margin-bottom: 40px;
 }

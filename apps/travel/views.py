@@ -17,7 +17,7 @@ def travel_list(request):
         setup = None
     travel_qs = Travel.objects.all()
 
-    travel_review_qs = TravelReview.objects.filter(moderated=True)
+    travel_review_qs = TravelReview.objects.all()
     travel = request.GET.get('travel')
     if travel:
         travel = int(travel)

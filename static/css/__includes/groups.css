@@ -1,0 +1,63 @@
+.groups {
+  margin-bottom: 40px;
+}
+.groups__title {
+  line-height: 80px;
+  text-align: center;
+}
+.groups-list-item {
+  -webkit-box-shadow: inset 0 0 3px #101b3f;
+  -moz-box-shadow: inset 0 0 3px #101b3f;
+  box-shadow: inset 0 0 3px #101b3f;
+  background: #f5f5ff;
+  margin: 0 10px 20px 0;
+}
+.groups-list-item__title {
+  padding: 5px 5px 5px 20px;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px #000;
+  font-weight: bold;
+}
+.groups-list-item-content__cover {
+  padding: 5px;
+}
+.groups-list-item-content__cover img {
+  -webkit-box-shadow: 0 0 5px #333333;
+  -moz-box-shadow: 0 0 5px #333333;
+  box-shadow: 0 0 5px #333333;
+  width: 90%;
+}
+.groups-list-item-content__cover img:hover {
+  opacity: 0.5;
+}
+.theme__title {
+  padding: 5px;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px #fff;
+  text-align: center;
+  font-weight: bold;
+}
+.theme-item {
+  padding: 10px 5px;
+  border-bottom: 1px solid #ccc;
+  background: #FAFFF9;
+}
+.theme-item__title {
+  border-bottom: 1px solid #bbdfe7;
+}
+.theme-item__title a {
+  font-weight: bold;
+  color: #666;
+}
+.theme-item-content__author {
+  font-weight: bold;
+  color: #999;
+  font-size: 12px;
+  display: block;
+}
+.theme-item-content__date {
+  font-weight: bold;
+  font-size: 12px;
+  display: block;
+}

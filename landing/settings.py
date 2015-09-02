@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'core',
     'countdown',
     'apps.about',
+    'apps.groups',
     'apps.travel',
 )
 

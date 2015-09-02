@@ -12,6 +12,7 @@ urlpatterns = patterns(
 
     url(r'^about/', include('apps.about.urls', namespace='about'),),
     url(r'^travels/', include('apps.travel.urls', namespace='travel'),),
+    url(r'^groups/', include('apps.groups.urls', namespace='groups'),),
     url(r'', include('core.urls')),
 )
 

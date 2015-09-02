@@ -140,6 +140,7 @@ def landing_registration(request):
             }
         else:
             user = User.objects.create_user(username, username, password)
+            user.is_staff = True
             user.save()
             user.backend = 'django.contrib.auth.backends.ModelBackend'
             auth.login(request, user)

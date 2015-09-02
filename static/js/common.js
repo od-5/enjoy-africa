@@ -34,6 +34,13 @@ $(window).load(function() {
   // заполненяем поля модальной формы
   $('.popupbutton').on('click', function(e){
     var form = $(this).parent('form');
+
+    if ($(this).data('group')){
+      var group = $(this).data('group');
+      //alert(group);
+      $('.pop-form__group').val(group);
+    }
+
     if (form.length != 0) {
       var name = form.find('.ticket__name').val();
       var email = form.find('.ticket__email').val();

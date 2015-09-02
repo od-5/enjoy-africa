@@ -1,8 +1,7 @@
 # coding=utf-8
 from ckeditor.fields import RichTextField
 from django.db import models
-from core.models import Common
-
+from core.base_model import Common
 
 __author__ = 'alexy'
 

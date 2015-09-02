@@ -1,13 +1,8 @@
 # coding=utf-8
 from django.contrib.auth.models import User
 from django.db import models
-
-
-# Create your models here.
-
-
-class Common(models.Model):
-    created = models.DateField(verbose_name=u'Дата создания', auto_now=True)
+from apps.groups.models import Groups
+from core.base_model import Common
 
 
 class Ticket(Common):
@@ -41,6 +36,7 @@ class Ticket(Common):
         (2, u'Оплачено'),
     )
 
+    group = models.ForeignKey(Groups, verbose_name=u'Групповой тур', blank=True, null=True)
     name = models.CharField(verbose_name=u'Имя', max_length=256)
     email = models.EmailField(verbose_name=u'e-mail', max_length=256)
     comment = models.TextField(verbose_name=u'Сообщение клиента', blank=True, null=True)

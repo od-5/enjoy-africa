@@ -5,6 +5,18 @@
   line-height: 80px;
   text-align: center;
 }
+.groups__cover {
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.groups__text {
+  margin-bottom: 10px;
+}
+.groups__button {
+  margin: 20px 0;
+  text-align: center;
+}
 .groups-list-item {
   -webkit-box-shadow: inset 0 0 3px #101b3f;
   -moz-box-shadow: inset 0 0 3px #101b3f;
@@ -14,6 +26,8 @@
 }
 .groups-list-item__title {
   padding: 5px 5px 5px 20px;
+}
+.groups-list-item__title a {
   color: #fff;
   text-transform: uppercase;
   text-shadow: 0 0 2px #000;

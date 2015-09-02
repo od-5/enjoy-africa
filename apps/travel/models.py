@@ -3,8 +3,7 @@ from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 from django.db import models
 from pytils.translit import slugify
-from core.models import Common
-
+from core.base_model import Common
 
 __author__ = 'alexy'
 

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block wrapper_style %}class="travels__bg"{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="groups">
+      <h1 class="groups__title">{{ group.travel }} {{ group.title|default:'' }}</h1>
+      <div class="groups__cover">
+        <img src="{{ group.cover.url }}" alt="{{ group.travel }} {{ group.title|default:'' }}">
+      </div>
+      <div class="groups__text">
+        {{ group.description|safe|default:'' }}
+      </div>
+      <div class="groups__button">
+        <a href="#pop" class="btn btn-success popupbutton" data-group="{{ group.id }}">Присоединиться к группе</a>
+      </div>
+    </div>
+    <hr>
+    {% include 'groups/groups_comment.html' %}
+  </div>
+{% endblock %}

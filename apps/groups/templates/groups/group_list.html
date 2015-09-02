@@ -5,29 +5,29 @@
       <h1 class="groups__title">Групповые туры</h1>
       <div class="col-8">
         <div class="groups-list">
-          {% for group in '1234' %}
+          {% for group in group_list %}
           <div class="panel panel-primary groups-list-item">
-            <div class="panel-heading groups-list-item__title">Направление</div>
+            <div class="panel-heading groups-list-item__title"><a href="{{ group.get_absolute_url }}">{{ group.travel }} {{ group.title|default:'' }}</a></div>
             <div class="panel-body groups-list-item-content">
               <div class="col-4">
                 <div class="groups-list-item-content__cover">
-                  <img src="{{ STATIC_URL }}img/default-tour.jpg" alt="">
+                  <img src="{{ group.cover.url }}" alt="">
                 </div>
               </div>
               <div class="col-8">
                 <div class="groups-list-item-content__table">
                   <table class="table">
                     <tr>
-                      <td>Прибытие: <strong>00-00-00</strong></td>
-                      <td>Забронировано мест: <strong>1</strong></td>
+                      <td>Прибытие: <strong>{{ group.travel_start|default:'' }}</strong></td>
+                      <td>Забронировано мест: <strong>{{ group.reserved|default:'0' }}</strong></td>
                     </tr>
                     <tr>
-                      <td>Отъезд: <strong>00-00-00</strong></td>
-                      <td>Доступно мест: <strong>5</strong></td>
+                      <td>Отъезд: <strong>{{ group.travel_end|default:'' }}</strong></td>
+                      <td>Доступно мест: <strong>{{ group.seats|default:'' }}</strong></td>
                     </tr>
                     <tr>
                       <td>Стоимость: <strong>123123</strong></td>
-                      <td><a href="#" class="btn btn-success">Присоединиться к группе</a></td>
+                      <td><a href="#pop" class="btn btn-success popupbutton" data-group="{{ group.id }}">Присоединиться к группе</a></td>
                     </tr>
                   </table>
                 </div>

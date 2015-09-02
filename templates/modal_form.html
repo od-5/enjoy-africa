@@ -1,6 +1,7 @@
 <form class="ticket pop-form" action="{% url 'form' %}" method="post">{% csrf_token %}
-    <input type="text" name="name" class="pop-form__name" placeholder="Ваше имя"/>
-    <input type="email" name="email" class="pop-form__email" placeholder="Ваш E-mail"/>
-    <textarea id="id_comment" name="comment" placeholder="Вы можете оставить сообщение"></textarea>
-    <input type="submit" value="Отправьте заявку"/>
+  <input type="text" name="name" class="pop-form__name" placeholder="Ваше имя" {% if user.is_authenticated %}value="{{ user.last_name }} {{ user.first_name }}"{% endif %}/>
+  <input type="email" name="email" class="pop-form__email" placeholder="Ваш E-mail" {% if user.is_authenticated %}value="{{ user.email }}"{% endif %}/>
+  <textarea id="id_comment" name="comment" placeholder="Вы можете оставить сообщение"></textarea>
+  <input type="hidden" name="group" class="pop-form__group">
+  <input type="submit" value="Отправьте заявку"/>
 </form>

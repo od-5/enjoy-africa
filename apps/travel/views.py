@@ -59,7 +59,7 @@ def travel_detail(request, slug):
         else:
             comment_form = TravelReviewCommentForm()
 
-    return render(request, 'travel/travel_detail.html', {
+    return render(request, 'travel/travel_review_detail.html', {
         'setup': setup,
         'article': travel_qs,
         'comment_form': comment_form,

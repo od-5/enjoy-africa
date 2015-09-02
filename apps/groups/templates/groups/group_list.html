@@ -1,51 +1,60 @@
 {% extends 'base.html' %}
 {% block content %}
   <div class="container">
-    <h1>Групповые туры</h1>
-    <div class="col-8">
-      <p class="title">Группы (только актуальные по дате группы).</p>
-      {% for group in '1234' %}
-      <div class="panel panel-primary">
-        <div class="panel-heading">Направление</div>
-        <div class="panel-body">
-          <div class="col-4">
-            <img src="{{ STATIC_URL }}img/author-default.png" alt="">
+    <div class="groups">
+      <h1 class="groups__title">Групповые туры</h1>
+      <div class="col-8">
+        <div class="groups-list">
+          {% for group in '1234' %}
+          <div class="panel panel-primary groups-list-item">
+            <div class="panel-heading groups-list-item__title">Направление</div>
+            <div class="panel-body groups-list-item-content">
+              <div class="col-4">
+                <div class="groups-list-item-content__cover">
+                  <img src="{{ STATIC_URL }}img/default-tour.jpg" alt="">
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="groups-list-item-content__table">
+                  <table class="table">
+                    <tr>
+                      <td>Прибытие: <strong>00-00-00</strong></td>
+                      <td>Забронировано мест: <strong>1</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Отъезд: <strong>00-00-00</strong></td>
+                      <td>Доступно мест: <strong>5</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Стоимость: <strong>123123</strong></td>
+                      <td><a href="#" class="btn btn-success">Присоединиться к группе</a></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-8">
-            <table class="table">
-              <tr>
-                <td>Прибытие 00-00-00</td>
-                <td>Забронировано мест</td>
-              </tr>
-              <tr>
-                <td>Отъезд 00-00-00</td>
-                <td>Доступно мест</td>
-              </tr>
-              <tr>
-                <td>Стоимость: 123123</td>
-                <td><a href="#" class="btn btn-success">Присоединиться к группе</a></td>
-              </tr>
-            </table>
-
-          </div>
+          {% endfor %}
         </div>
       </div>
-      {% endfor %}
-    </div>
 
-    <div class="col-4">
-      <p class="title">Темы (будет ссылкой на список всех тем)</p>
-      {% for group in '1234' %}
-      <div class="panel panel-info">
-        <div class="panel-heading">Название темы</div>
-        <div class="panel-body">
-          <span>Автор темы</span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur distinctio eaque est ipsum obcaecati repudiandae sunt voluptatibus. Alias eius harum hic inventore laudantium mollitia quis similique tenetur unde voluptates? Reprehenderit?</p>
-          <a>br href="#">Читать >></a><br>
-          <span>Дата создания темы</span>
+      <div class="col-4">
+        <div class="theme panel panel-success">
+          <p class="theme__title panel-heading">Темы:</p>
+          {% for group in '1234' %}
+          <div class="theme-item">
+            <div class="theme-item__title"><a href="">Название темы очень длинное, ну очень длинное</a></div>
+            <div class="theme-item-content">
+              <p class="theme-item-content__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur distinctio eaque est ipsum obcaecati repudiandae sunt voluptatibus...</p>
+              <a href="#" class="theme-item-content__link">Читать >></a><br>
+              <span class="theme-item-content__author">Автор: Иван Иванов</span>
+              <span class="theme-item-content__date">02.09.2015г.</span>
+            </div>
+          </div>
+          {% endfor %}
         </div>
       </div>
-      {% endfor %}
     </div>
+    <div class="clear"></div>
   </div>
 {% endblock %}

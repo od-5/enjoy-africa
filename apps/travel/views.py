@@ -18,6 +18,7 @@ def travel_list(request):
     travel_qs = Travel.objects.all()
 
     travel_review_qs = TravelReview.objects.all()
+
     travel = request.GET.get('travel')
     if travel:
         travel = int(travel)

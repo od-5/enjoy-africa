@@ -120,4 +120,4 @@ class Avatar(Common):
     image = models.ImageField(verbose_name=u'Аватар', upload_to='profile/', blank=True, null=True)
 
     def __unicode__(self):
-        return self.user
+        return self.user.username

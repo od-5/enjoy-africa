@@ -9,7 +9,7 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
-from .models import Setup, Slider, Review
+from .models import Setup, Slider, Review, Avatar
 from .forms import TicketForm, UserForm
 
 
@@ -54,18 +54,25 @@ def profile_view(request):
             user.email = email
         else:
             user.email = user.username = email
-        if request.FILES and user.avatar:
-            print 'delete ***************'
-            user.avatar.delete()
         user.save()
-        form = UserForm(request.POST, request.FILES)
 
-        print form
-        if form.is_valid():
-            print 'form save ************'
-            if request.FILES:
-                form.save()
-        return HttpResponseRedirect('/accounts/')
+        if request.FILES:
+            print "check user avatar"
+            try:
+                print 'delete ***************'
+                user.avatar.delete()
+            except:
+                pass
+            form = UserForm(request.POST, request.FILES)
+            if form.is_valid():
+                print 'form save ************'
+                if request.FILES:
+                    avatar = Avatar(user=user, image=request.FILES['image'])
+                    avatar.save()
+                return HttpResponseRedirect('/accounts/')
+
+
+
 
     return render(request, 'profile.html', {
         'setup': setup,

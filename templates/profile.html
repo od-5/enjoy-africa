@@ -23,7 +23,7 @@
               <label for="last_name">Фамилия:</label>
               <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Фамилия" value="{{ user.last_name|default:'' }}">
               <label for="image">Новый аватар:</label>
-              <input type="file" name="image" id="image" class="form-control" value="{{ user.avatar.image }}">
+              <input type="file" name="image" id="image" class="form-control">
               <button type="submit" class="btn btn-default profile-info__submit">Сохранить</button>
             </form>
           </div>

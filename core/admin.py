@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.core.checks import messages
 from django.core.exceptions import FieldError
-from .models import Ticket, Setup, Slider, Review
+from .models import Ticket, Setup, Slider, Review, Avatar
 from django.forms import ModelForm
 from suit.widgets import EnclosedInput, AutosizedTextarea
 
@@ -106,3 +106,4 @@ admin.site.register(Sale, SaleAdmin)
 admin.site.register(Setup, SetupAdmin)
 admin.site.register(Slider, SliderAdmin)
 admin.site.register(Review, ReviewAdmin)
+admin.site.register(Avatar)

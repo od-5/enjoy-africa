@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block top_js %}
+  {{ form.media }}
+{% endblock %}
 {% block content %}
   <div class="container">
     <h2 class="title_big text-center">Создание статьи</h2>
@@ -7,7 +10,7 @@
       <input type="hidden" name="user" value="{{ user.id }}">
 {#      <input type="hidden" name="slug" value="{{ form.slug.value }}">#}
 {#      <input type="hidden" name="moderated" value="{{ form.moderated.value }}">#}
-        {{ form.media }}
+
 {#        {{ form.user|add_class:"hide"|attr:user.id }}#}
         <label for='travel'>{{ form.travel.label }}</label>
         {{ form.travel|add_class:"form-control" }}

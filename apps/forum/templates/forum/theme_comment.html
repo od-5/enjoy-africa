@@ -1,8 +1,7 @@
 <div class="comment">
   <div class="container">
-    <p class="comment__header">Комментарии:</p>
-    {% if group.groupscomment_set.all %}
-      {% for comment in group.groupscomment_set.all %}
+    {% if theme.themecomment_set.all %}
+      {% for comment in theme.themecomment_set.all %}
       <div class="comment-item panel panel-success">
         <div class="comment-item__title panel-heading">
           <span>#{{ forloop.counter }}</span>
@@ -28,7 +27,7 @@
         <label for="text">Оставить комментарий:</label><br>
 
         {{ comment_form.user }}
-        {{ comment_form.groups }}
+        {{ comment_form.theme }}
         {{ comment_form.text }}<br>
 {#        <textarea name="text" id="" cols="30" rows="10" class="form-control travels-comment-form__text"></textarea>#}
         <button type="submit" class="btn btn-default">Отправить</button>

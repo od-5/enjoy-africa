@@ -1,0 +1,52 @@
+.forum {
+  &__title {
+    line-height: 80px;
+    text-align: center;
+  }
+  &-theme {
+    margin-bottom: 40px;
+    &__title {
+      padding: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      text-shadow: 0 0 1px #fff;
+    }
+    &-container {
+      &-list {
+        list-style: none;
+        &-item {
+          display: block;
+          border: 1px solid #c8e5bc;
+          &:hover {
+            background: #eafbdc;
+          }
+          dl {
+            padding: 5px;
+            dt {
+              display: inline-block;
+              width: 80%;
+            }
+            dd {
+              vertical-align: top;
+              display: inline-block;
+              width: 19%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .themes {
+    &__title {
+      font-weight: bold;
+    }
+    &__author {
+      font-weight: bold;
+      font-size: 12px;
+    }
+    &__created {
+      font-size: 12px;
+      color: #999;
+    }
+  }
+}

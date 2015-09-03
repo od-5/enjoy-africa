@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block top_js %}
+  {{ comment_form.media }}
+{% endblock %}
+{% block wrapper_style %}class="travels__bg"{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="comment">
+      <div class="container">
+        <p class="comment__header">{{ theme.title|default:'' }}</p>
+        <div class="comment-item panel panel-success">
+          <div class="comment-item__title panel-heading">
+            <span>#0</span>
+            <span class="comment-item__created">{{ theme.created }}</span>
+          </div>
+          <div class="comment-item-text panel-body">
+            <div class="comment-item-text__avatar">
+              <img src="{% if theme.user.avatar %}{{ theme.user.avatar.image.url }}{% else %}{{ STATIC_URL }}img/no_avatar.gif{% endif %}" alt="">
+            </div>
+            <div class="comment-item-text__content">
+              <p class="comment-item__user">{{ theme.user }}</p>
+              {{ theme.description|safe|default:'' }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include 'forum/theme_comment.html' %}
+  </div>
+{% endblock %}

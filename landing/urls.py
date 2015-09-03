@@ -13,6 +13,7 @@ urlpatterns = patterns(
     url(r'^about/', include('apps.about.urls', namespace='about'),),
     url(r'^travels/', include('apps.travel.urls', namespace='travel'),),
     url(r'^groups/', include('apps.groups.urls', namespace='groups'),),
+    url(r'^forum/', include('apps.forum.urls', namespace='forum'),),
     url(r'', include('core.urls')),
 )
 

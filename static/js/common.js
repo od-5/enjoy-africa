@@ -143,7 +143,7 @@ $(window).load(function() {
   });
 
   // валидация формы профиля
-  $( "#personal_info_form" ).validate({
+  $("#personal_info_form" ).validate({
     rules: {
       email: {
         required: true
@@ -152,6 +152,24 @@ $(window).load(function() {
         required: true
       },
       last_name: {
+        required: true
+      }
+    }
+  });
+
+  // валидация формы добавления статьи
+  $(".travels-review-add-form" ).validate({
+    rules: {
+      travel: {
+        required: true
+      },
+      title: {
+        required: true
+      },
+      text: {
+        required: true
+      },
+      image: {
         required: true
       }
     }

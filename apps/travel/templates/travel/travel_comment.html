@@ -1,19 +1,19 @@
-<div class="travels-comment">
+<div class="comment">
   <div class="container">
-    <p class="travels-comment__header">Комментарии:</p>
+    <p class="comment__header">Комментарии:</p>
     {% if article.travelreviewcomment_set.all %}
       {% for comment in article.travelreviewcomment_set.all %}
-      <div class="travels-comment-item panel panel-success">
-        <div class="travels-comment-item__title panel-heading">
+      <div class="comment-item panel panel-success">
+        <div class="comment-item__title panel-heading">
           <span>#{{ forloop.counter }}</span>
-          <span class="travels-comment-item__created">{{ comment.created }}</span>
+          <span class="comment-item__created">{{ comment.created }}</span>
         </div>
-        <div class="travels-comment-item-text panel-body">
-          <div class="travels-comment-item-text__avatar">
+        <div class="comment-item-text panel-body">
+          <div class="comment-item-text__avatar">
             <img src="{% if comment.user.avatar %}{{ comment.user.avatar.image.url }}{% else %}{{ STATIC_URL }}img/no_avatar.gif{% endif %}" alt="">
           </div>
-          <div class="travels-comment-item-text__content">
-            <p class="travels-comment-item__user">{{ comment.user }}</p>
+          <div class="comment-item-text__content">
+            <p class="comment-item__user">{{ comment.user }}</p>
             {{ comment.text|safe|default:'' }}
           </div>
         </div>
@@ -24,9 +24,9 @@
     {% endif %}
     <hr>
     {% if user.is_authenticated %}
-      <form action="" role="form" method="post" class="travels-comment-form">{% csrf_token %}
+      <form action="" role="form" method="post" class="comment-form">{% csrf_token %}
         <label for="text">Оставить комментарий:</label><br>
-        {{ comment_form.media }}
+
         {{ comment_form.user }}
         {{ comment_form.travel_review }}
         {{ comment_form.text }}<br>
@@ -34,7 +34,7 @@
         <button type="submit" class="btn btn-default">Отправить</button>
       </form>
     {% else %}
-      <p class="travels-comment__auth-text">
+      <p class="comment__auth-text">
         <a href="#pop-auth" class="auth-button btn btn-warning">Авторизуйтесь</a>
         Только зарегистрированные пользователи могут оставлять комментарии
       </p>

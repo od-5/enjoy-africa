@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block top_js %}
+  {{ comment_form.media }}
+{% endblock %}
 {% block wrapper_style %}class="travels__bg"{% endblock %}
 {% block content %}
   <div class="container">

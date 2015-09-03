@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'apps.about',
     'apps.groups',
     'apps.travel',
+    'apps.forum',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -168,6 +169,7 @@ SUIT_CONFIG = {
         {'label': u'О нас', 'app': 'about'},
         {'label': u'Журнал путешествий', 'app': 'travel'},
         {'label': u'Групповые туры', 'app': 'groups'},
+        {'label': u'Форум', 'app': 'forum'},
         {'label': u'enjoy-safari.ru', 'url': 'http://www.enjoy-safari.ru/admin'},
     ),
 

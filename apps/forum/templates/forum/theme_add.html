@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block top_js %}
+  {{ form.media }}
+{% endblock %}
+{% block content %}
+  <div class="container">
+    <h2 class="title_big text-center">новая тема</h2>
+    {% load widget_tweaks %}
+    <form action="" method="post" role="form" class="forum-add-form" enctype="multipart/form-data">{% csrf_token %}
+      <input type="hidden" name="user" value="{{ user.id }}">
+{#      <input type="hidden" name="slug" value="{{ form.slug.value }}">#}
+{#      <input type="hidden" name="moderated" value="{{ form.moderated.value }}">#}
+
+{#        {{ form.user|add_class:"hide"|attr:user.id }}#}
+        <label for="title">{{ form.title.label }}</label>
+        {{ form.title|add_class:"form-control" }}
+        <label for="text">{{ form.text.label }}</label>
+        {{ form.description|add_class:"form-control" }}
+        {{ form.slug|add_class:"hide" }}
+      <br>
+        <input type="submit" value="Сохранить" class="btn btn-default" />
+    </form>
+  </div>
+{% endblock %}

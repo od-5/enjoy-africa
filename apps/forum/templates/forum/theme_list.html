@@ -4,6 +4,9 @@
     <div class="forum">
       <h1 class="forum__title">Вопросы и ответы</h1>
       <div class="panel panel-success forum-theme">
+      {% if user.is_autheticated %}
+        <a href="{% url 'forum:add' %}" class="btn btn-success forum-button__add">Создать новую тему</a>
+      {% endif %}
         <div class="panel-heading forum-theme__title">
           <p>Темы</p>
         </div>

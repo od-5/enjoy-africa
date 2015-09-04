@@ -28,7 +28,7 @@ class Theme(Common):
     user = models.ForeignKey(to=User, verbose_name=u'Пользователь')
     title = models.CharField(max_length=255, verbose_name=u'Название')
     description = RichTextField(verbose_name=u'Описание')
-    file = models.FileField(verbose_name=u'Файл', upload_to='forum/', blank=True, null=True)
+    # file = models.FileField(verbose_name=u'Файл', upload_to='forum/', blank=True, null=True)
     slug = models.SlugField(max_length=100, verbose_name=u'url', blank=True)
 
 

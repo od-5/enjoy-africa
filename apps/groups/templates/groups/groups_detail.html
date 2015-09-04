@@ -7,6 +7,15 @@
   <div class="container">
     <div class="groups">
       <h1 class="groups__title">{{ group.travel }} {{ group.title|default:'' }}</h1>
+      <div class="groups-info">
+        <ul class="groups-info-list">
+          <li class="groups-info-list-item">Прибытие: {{ group.travel_start|default:'' }}</li>
+          <li class="groups-info-list-item">Отъезд: {{ group.travel_end|default:'' }}</li>
+          <li class="groups-info-list-item">Забронировано мест: {{ group.reserved|default:'' }}</li>
+          <li class="groups-info-list-item">Доступно мест: {{ group.seats|default:'' }}</li>
+          <li class="groups-info-list-item">Стоимость: {{ group.seats|default:'' }}</li>
+        </ul>
+      </div>
       <div class="groups__cover">
         <img src="{{ group.cover.url }}" alt="{{ group.travel }} {{ group.title|default:'' }}">
       </div>

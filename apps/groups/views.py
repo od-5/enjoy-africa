@@ -1,6 +1,7 @@
 # coding=utf-8
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+from apps.forum.models import Theme
 from apps.groups.forms import GroupsCommentForm
 from apps.groups.models import Groups
 from core.models import Setup
@@ -14,9 +15,11 @@ def groups_view(request):
     except:
         setup = None
     groups_qs = Groups.objects.all()
+    theme_qs = Theme.objects.all()[:5]
     return render(request, 'groups/group_list.html', {
         'setup': setup,
-        'group_list': groups_qs
+        'group_list': groups_qs,
+        'theme_list': theme_qs
     })
 
 

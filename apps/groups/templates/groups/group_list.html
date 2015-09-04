@@ -41,13 +41,15 @@
       <div class="col-4">
         <div class="theme panel panel-success">
           <p class="theme__title panel-heading"><a href="{% url 'forum:list' %}">Темы:</a></p>
-          {% for group in '1234' %}
+          {% for theme in theme_list %}
           <div class="theme-item">
-            <div class="theme-item__title"><a href="">Название темы очень длинное, ну очень длинное</a></div>
+            <div class="theme-item__title"><a href="{{ theme.get_absolute_url }}">{{ theme.title|default:'Название темы' }}</a></div>
             <div class="theme-item-content">
-              <p class="theme-item-content__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur distinctio eaque est ipsum obcaecati repudiandae sunt voluptatibus...</p>
-              <a href="#" class="theme-item-content__link">Читать >></a><br>
-              <span class="theme-item-content__author">Автор: Иван Иванов</span>
+              <div class="theme-item-content__description">
+                {{ theme.description|safe|truncatewords:20 }}
+              </div>
+              <a href="{{ theme.get_absolute_url }}" class="theme-item-content__link">Читать >></a><br>
+              <span class="theme-item-content__author">Автор: {% if theme.first_name %}{{ theme.user.last_name }} {{ theme.user.first_name }}{% else %}{{ theme.user }}{% endif %}</span>
               <span class="theme-item-content__date">02.09.2015г.</span>
             </div>
           </div>

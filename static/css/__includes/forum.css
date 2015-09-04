@@ -2,6 +2,19 @@
   line-height: 80px;
   text-align: center;
 }
+.forum-button__add {
+  margin: 20px 0;
+}
+.forum-add-form input[type=text], .forum-add-form select {
+  width: 400px;
+}
+.forum-add-form label {
+  display: block;
+  margin-top: 20px;
+}
+.forum-add-form .btn {
+  margin: 20px 0;
+}
 .forum-theme {
   margin-bottom: 40px;
 }

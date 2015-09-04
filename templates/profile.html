@@ -10,6 +10,9 @@
         <li>
           <a href="#article" data-toggle="tab">Статьи</a>
         </li>
+        <li>
+          <a href="#themes" data-toggle="tab">Темы на форуме</a>
+        </li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="info">
@@ -53,6 +56,31 @@
             </tbody>
           </table>
         </div>
+
+        <div class="tab-pane" id="themes">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>#ID</th>
+              <th>Заголовок</th>
+              <th>Дата создания</th>
+              <th>Сообщений в теме</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for theme in user.theme_set.all %}
+            <tr>
+              <td><a href="{{ theme.get_absolute_url }}">#{{ theme.id }}</a></td>
+              <td><a href="{{ theme.get_absolute_url }}">{{ theme.title }}</a></td>
+              <td>{{ theme.created }}</td>
+              <td>{{ theme.themecomment_set.all|length }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+
       </div>
     </div>
   </div>

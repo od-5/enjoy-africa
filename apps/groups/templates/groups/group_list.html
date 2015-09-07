@@ -16,8 +16,8 @@
           <div class="group-select">
             <span class="group-select-title">цене:</span>
             <ul class="group-select-list">
-              <li><a href="{% url 'groups:list' %}?date_sort=lt">по возрастанию</a></li>
-              <li><a href="{% url 'groups:list' %}?date_sort=gt">по убыванию</a></li>
+              <li><a href="{% url 'groups:list' %}?price_sort=lt">по возрастанию</a></li>
+              <li><a href="{% url 'groups:list' %}?price_sort=gt">по убыванию</a></li>
             </ul>
           </div>
           {% for group in group_list %}

@@ -250,20 +250,19 @@
     {% if review %}
     <div id="block_12">
         <div class="container">
-            <h3>Вот, что говорят о нас клиенты:</h3>
+            <h3>Впечатления от поездок</h3>
 
             <div class="slider_1">
                 <ul class="slides_1">
                 {% for item in review %}
                     <li>
                         <div class="photo">
-                            <img src="{{ item.photo.url }}" alt="{{ item.name }}"/>
+                            <img src="{{ item.image.url }}" alt="{{ item.title }}"/>
                         </div>
                         <div class="content">
-                            <span class="name">{{ item.name }}</span>
+                            <span class="name">{{ item.user.last_name }} {{ item.user.first_name }}</span>
                             <span class="datetime">{{ item.created }}</span>
-
-                            <p>{{ item.content|striptags }}</p>
+                            <p>{{ item.text|striptags|safe|truncatewords:30 }}</p>
                         </div>
                         <div class="clear"></div>
                     </li>

@@ -44,7 +44,7 @@
     <div class="travels-author">
       <p class="title_middle text-center">Наши авторы</p>
       {% for user in author_list %}
-      {% if user.travelreview_set.all %}
+      {% if user.travelreview_set.all and user.avatar.description and user.avatar.image != '' %}
       <div class="travels-author-item">
         <div class="travels-author-item__avatar"><img src="{% if user.avatar %}{{ user.avatar.image.url }}{% else %}{{ STATIC_URL }}img/no_avatar.gif{% endif %}" alt=""></div>
         <div class="travels-author-item-content">

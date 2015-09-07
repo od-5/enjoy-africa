@@ -2,6 +2,7 @@
 {% block content %}
   <div class="container">
     <div class="profile">
+
       <p class="profile-title text-center">Профиль пользователя <strong>{{ user.email }}</strong></p>
       <ul class="nav nav-tabs" id="login_tab">
         <li class="active">
@@ -17,6 +18,7 @@
       <div class="tab-content">
         <div class="tab-pane active" id="info">
           <div class="col-half">
+            <p>Для того, что бы стать автором необходимо загрузить аватар и заполнить подпись</p><br>
             <form method="post" action="" id="personal_info_form" role="form" class="profile-info" enctype="multipart/form-data">{% csrf_token %}
               <label for="email">e-mail:</label>
               <input type="text" name="email" id="email" class="form-control" placeholder="e-mail" value="{{ user.email|default:'' }}">

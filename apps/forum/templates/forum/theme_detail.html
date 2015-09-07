@@ -18,7 +18,7 @@
               <img src="{% if theme.user.avatar %}{{ theme.user.avatar.image.url }}{% else %}{{ STATIC_URL }}img/no_avatar.gif{% endif %}" alt="">
             </div>
             <div class="comment-item-text__content">
-              <p class="comment-item__user">{{ theme.user }}</p>
+              <p class="comment-item__user">{% if theme.user.last_name %}{{ theme.user.first_name }}{% else %}{{ theme.user }}{% endif %}</p>
               {{ theme.description|safe|default:'' }}
             </div>
           </div>

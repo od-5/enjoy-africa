@@ -9,6 +9,7 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
+from apps.travel.models import TravelReview
 from .models import Setup, Slider, Review, Avatar
 from .forms import TicketForm, UserForm
 
@@ -16,7 +17,7 @@ from .forms import TicketForm, UserForm
 # Create your views here.
 def home(request):
     slider = Slider.objects.all()
-    review = Review.objects.all()
+    review = TravelReview.objects.all()[:3]
     form = TicketForm()
     try:
         setup = Setup.objects.all()[0]

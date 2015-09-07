@@ -901,7 +901,7 @@ label.error {
 }
 .travels__bg {
   background-image: url('../img/travels__bg.jpg');
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }

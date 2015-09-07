@@ -50,7 +50,9 @@
         <div class="travels-author-item-content">
           <p class="travels-author-item-content__name">{% if user.last_name %}{{ user.last_name }} {{ user.first_name }}{% else %}{{ user }}{% endif %}</p>
           <p class="travels-author-item-content__text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias in tempore velit. A accusamus asperiores aspernatur consequuntur corporis culpa cum dolorem enim expedita minima nulla odio officiis, temporibus vitae voluptatem.
+            {% if user.avatar.description %}
+              {{ user.avatar.description|safe|default:'' }}
+            {% endif %}
           </p>
           <a href="?author={{ user.id }}">Читать >></a>
         </div>

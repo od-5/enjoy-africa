@@ -5,6 +5,7 @@ from apps.forum.models import Theme
 from apps.groups.forms import GroupsCommentForm
 from apps.groups.models import Groups
 from core.models import Setup
+from datetime import date
 
 __author__ = 'alexy'
 
@@ -14,7 +15,7 @@ def groups_view(request):
         setup = Setup.objects.all()[0]
     except:
         setup = None
-    groups_qs = Groups.objects.all()
+    groups_qs = Groups.objects.filter(travel_start__gte=date.today())
     theme_qs = Theme.objects.all()[:5]
     return render(request, 'groups/group_list.html', {
         'setup': setup,

@@ -14,7 +14,7 @@ class Groups(Common):
         verbose_name = u'Групповые туры'
         verbose_name_plural = u'Групповые туры'
         app_label = 'groups'
-        ordering = ['-created']
+        ordering = ['-travel_start']
 
     def __unicode__(self):
         return u'Тур %s %s, с %s по %s' % (self.travel, self.title, self.travel_start, self.travel_end)

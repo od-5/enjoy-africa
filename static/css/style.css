@@ -1159,6 +1159,30 @@ label.error {
   font-size: 12px;
   display: block;
 }
+.group-select {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  background-color: #c8e5bc;
+  width: 130px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.group-select-title {
+  font-weight: bold;
+  cursor: pointer;
+}
+.group-select-list {
+  position: absolute;
+  z-index: 99;
+  list-style: none;
+  background-color: #c8e5bc;
+  width: 130px;
+  display: none;
+}
+.group-select-list a {
+  color: #333333;
+}
 .forum__title {
   line-height: 80px;
   text-align: center;

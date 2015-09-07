@@ -16,6 +16,20 @@ def groups_view(request):
     except:
         setup = None
     groups_qs = Groups.objects.filter(travel_start__gte=date.today())
+
+    date_sort = request.GET.get('date_sort')
+    if date_sort:
+        if date_sort == 'lt':
+            groups_qs = groups_qs.order_by('-travel_start')
+        else:
+            groups_qs = groups_qs.order_by('travel_start')
+    price_sort = request.GET.get('price_sort')
+    if price_sort:
+        if price_sort == 'lt':
+            groups_qs = groups_qs.order_by('-price')
+        else:
+            groups_qs = groups_qs.order_by('price')
+
     theme_qs = Theme.objects.all()[:5]
     return render(request, 'groups/group_list.html', {
         'setup': setup,

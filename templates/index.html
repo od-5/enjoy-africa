@@ -263,6 +263,7 @@
                             <span class="name">{{ item.user.last_name }} {{ item.user.first_name }}</span>
                             <span class="datetime">{{ item.created }}</span>
                             <p>{{ item.text|striptags|safe|truncatewords:30 }}</p>
+                            <a href="{{ item.get_absolute_url }}">Читать далее >></a>
                         </div>
                         <div class="clear"></div>
                     </li>

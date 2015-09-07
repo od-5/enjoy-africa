@@ -1,8 +1,9 @@
 <nav>
   <ul>
     <li><a href="{% url 'about:list' %}" class="icon-about">О НАС</a></li>
-    <li><a href="{% url 'travel:list' %}" class="icon-reviews">ЖУРНАЛ ПУТЕШЕСТВИЙ</a></li>
-    <li><a href="{% url 'groups:list' %}" class="icon-group">ГРУППОВЫЕ ТУРЫ</a></li>
+    <li><a href="{% url 'travel:list' %}" class="icon-reviews">ЖУРНАЛ <br> ПУТЕШЕСТВИЙ</a></li>
+    <li><a href="{% url 'groups:list' %}" class="icon-group">ГРУППОВЫЕ <br>ТУРЫ</a></li>
+    <li><a href="{% url 'forum:list' %}" class="icon-faq">ВОПРОСЫ <br>И ОТВЕТЫ</a></li>
   </ul>
   {% if user.is_authenticated %}
     <a href="{% url 'profile' %}" class="auth-user">{{ user.email }}</a>

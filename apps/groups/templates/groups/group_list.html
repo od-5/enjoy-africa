@@ -49,7 +49,7 @@
                 {{ theme.description|safe|truncatewords:20 }}
               </div>
               <a href="{{ theme.get_absolute_url }}" class="theme-item-content__link">Читать >></a><br>
-              <span class="theme-item-content__author">Автор: {% if theme.first_name %}{{ theme.user.last_name }} {{ theme.user.first_name }}{% else %}{{ theme.user }}{% endif %}</span>
+              <span class="theme-item-content__author">Автор: {% if theme.user.first_name %}{{ theme.user.last_name }} {{ theme.user.first_name }}{% else %}{{ theme.user }}{% endif %}</span>
               <span class="theme-item-content__date">02.09.2015г.</span>
             </div>
           </div>

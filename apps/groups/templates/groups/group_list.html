@@ -43,7 +43,9 @@
           <p class="theme__title panel-heading"><a href="{% url 'forum:list' %}">Темы:</a></p>
           {% for theme in theme_list %}
           <div class="theme-item">
-            <div class="theme-item__title"><a href="{{ theme.get_absolute_url }}">{{ theme.title|default:'Название темы' }}</a></div>
+            <div class="theme-item__title">
+              <a href="{{ theme.get_absolute_url }}">{{ theme.title|default:'Название темы' }}</a>
+            </div>
             <div class="theme-item-content">
               <div class="theme-item-content__description">
                 {{ theme.description|safe|truncatewords:20 }}

@@ -10,7 +10,7 @@ nav ul li a {
   display: block;
   padding: 45px 20px 5px;
   background-repeat: no-repeat;
-  background-position-x: 50%;
+  background-position: 50% 0;
   -webkit-background-size: 50px;
   background-size: 50px;
   color: #f1f1f1;

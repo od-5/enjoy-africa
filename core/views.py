@@ -56,20 +56,47 @@ def profile_view(request):
             user.email = user.username = email
         user.save()
 
-        if request.FILES:
-            print "check user avatar"
-            try:
-                print 'delete ***************'
-                user.avatar.delete()
-            except:
-                pass
+        # form = UserForm(request.POST, request.FILES)
+        # print form
+        if user.avatar:
+            profile = user.avatar
+            form = UserForm(request.POST, request.FILES, instance=profile)
+        else:
             form = UserForm(request.POST, request.FILES)
-            if form.is_valid():
-                print 'form save ************'
-                if request.FILES:
-                    avatar = Avatar(user=user, image=request.FILES['image'])
-                    avatar.save()
-                return HttpResponseRedirect('/accounts/')
+        # try:
+        #     profile = user.avatar
+        #     if request.FILES:
+        #         print '******** has picture'
+        #         profile.image = request.FILES['image']
+        #     profile.description = data['description']
+        #     profile.save()
+        #     print '********** has avatar'
+        # except:
+        #     print '********** create new avatar'
+        #     profile = form.save()
+        #     profile.save()
+        # return HttpResponseRedirect('/accounts/')
+        if form.is_valid():
+            print '*********** ok'
+            avatar = form.save(commit=False)
+            avatar.save()
+        else:
+            print '******** no ok'
+
+        # if request.FILES or data['description']:
+        #     print "check user avatar"
+        #     try:
+        #         print 'delete ***************'
+        #         user.avatar.delete()
+        #     except:
+        #         pass
+        #     form = UserForm(request.POST, request.FILES)
+        #     if form.is_valid():
+        #         print 'form save ************'
+        #         if request.FILES:
+        #             avatar = Avatar(user=user, image=request.FILES['image'], description=data['description'])
+        #             avatar.save()
+        #         return HttpResponseRedirect('/accounts/')
 
 
 

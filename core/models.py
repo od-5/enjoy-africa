@@ -114,6 +114,7 @@ class Review(Common):
 class Avatar(Common):
     user = models.OneToOneField(to=User, verbose_name=u'Пользователь')
     image = models.ImageField(verbose_name=u'Аватар', upload_to='profile/', blank=True, null=True)
+    description = models.TextField(verbose_name=u'Подпись', blank=True, null=True)
 
     def __unicode__(self):
         return self.user.username

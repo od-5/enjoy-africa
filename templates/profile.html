@@ -25,13 +25,15 @@
               <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Имя" value="{{ user.first_name|default:'' }}">
               <label for="last_name">Фамилия:</label>
               <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Фамилия" value="{{ user.last_name|default:'' }}">
+              <label for="description">Подпись:</label>
+              <textarea name="description" id="description" class="form-control" placeholder="Подпись автора">{{ user.avatar.description|default:'' }}</textarea>
               <label for="image">Новый аватар:</label>
               <input type="file" name="image" id="image" class="form-control">
               <button type="submit" class="btn btn-default profile-info__submit">Сохранить</button>
             </form>
           </div>
           <div class="col-half">
-            <img src="{{ user.avatar.image.url }}" alt="">
+            <img src="{% if user.avatar.image %}{{ user.avatar.image.url }}{% endif %}" alt="">
           </div>
         </div>
         <div class="tab-pane" id="article">

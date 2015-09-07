@@ -28,7 +28,7 @@ class Groups(Common):
 
     travel = models.ForeignKey(to=Travel, verbose_name=u'Направление')
     title = models.CharField(max_length=255, verbose_name=u'Название', blank=True, null=True)
-    description = RichTextField(max_length=255, verbose_name=u'Описание', blank=True, null=True)
+    description = RichTextField(verbose_name=u'Описание', blank=True, null=True)
     reserved = models.PositiveIntegerField(verbose_name=u'Забронировано мест', default=0)
     seats = models.PositiveIntegerField(verbose_name=u'Количество мест', default=0)
     price = models.PositiveIntegerField(verbose_name=u'Стоимость', default=0)

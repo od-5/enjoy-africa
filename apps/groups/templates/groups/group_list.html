@@ -26,7 +26,7 @@
                       <td>Доступно мест: <strong>{{ group.seats|default:'' }}</strong></td>
                     </tr>
                     <tr>
-                      <td>Стоимость: <strong>123123</strong></td>
+                      <td>Стоимость: <strong>{{ group.price|default:'' }}</strong></td>
                       <td><a href="#pop" class="btn btn-success popupbutton" data-group="{{ group.id }}">Присоединиться к группе</a></td>
                     </tr>
                   </table>

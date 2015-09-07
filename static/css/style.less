@@ -1,15 +1,23 @@
 @import "__includes/navigation.less";
 
+html, body {
+  height: 100%;
+}
+
 body {
   background: #ccc;
 }
 #wrapper {
+  min-height: 100%;
   width: 1280px;
-  margin: 0 auto;
+  margin: 0 auto -50px;
   -webkit-box-shadow: 0 0 10px #333;
      -moz-box-shadow: 0 0 10px #333;
           box-shadow: 0 0 10px #333;
   background-color: #fff;
+}
+.page-buffer {
+    height: 50px;
 }
 header, footer, #block_1, #block_2, #block_3, #block_4, #block_5, #block_6,
 #block_7, #block_8, #block_9, #block_10, #block_11, #block_12, #block_13, .address {
@@ -636,6 +644,8 @@ label.error {
   }
 }
 .footer {
+  width: 1280px;
+  margin: 0 auto;
   padding: 20px 0;
   background: #2C3E50;
   &__title {

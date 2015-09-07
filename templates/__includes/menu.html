@@ -1,7 +1,7 @@
 <nav>
   <ul>
     <li><a href="{% url 'about:list' %}" class="icon-about">О НАС</a></li>
-    <li><a href="{% url 'travel:list' %}" class="icon-reviews">ЖУРНАЛ ПЕТЕШЕСТВИЙ</a></li>
+    <li><a href="{% url 'travel:list' %}" class="icon-reviews">ЖУРНАЛ ПУТЕШЕСТВИЙ</a></li>
     <li><a href="{% url 'groups:list' %}" class="icon-group">ГРУППОВЫЕ ТУРЫ</a></li>
   </ul>
   {% if user.is_authenticated %}

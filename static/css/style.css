@@ -53,16 +53,23 @@ nav .auth-user {
   right: 0;
   text-shadow: 1px 1px 1px #ff5c5c;
 }
+html, body {
+  height: 100%;
+}
 body {
   background: #ccc;
 }
 #wrapper {
+  min-height: 100%;
   width: 1280px;
-  margin: 0 auto;
+  margin: 0 auto -50px;
   -webkit-box-shadow: 0 0 10px #333;
   -moz-box-shadow: 0 0 10px #333;
   box-shadow: 0 0 10px #333;
   background-color: #fff;
+}
+.page-buffer {
+  height: 50px;
 }
 header,
 footer,
@@ -676,6 +683,8 @@ label.error {
   height: 40px;
 }
 .footer {
+  width: 1280px;
+  margin: 0 auto;
   padding: 20px 0;
   background: #2C3E50;
 }

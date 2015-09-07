@@ -39,8 +39,9 @@
   {% include '__includes/header.html' %}
 {% block content %}
 {% endblock %}
-    {% include '__includes/footer.html' %}
+  <div class="page-buffer"></div>
 </div>
+{% include '__includes/footer.html' %}
 <div id="pop">
     {% include 'modal_form.html' %}
 </div>

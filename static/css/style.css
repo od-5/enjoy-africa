@@ -5,6 +5,8 @@ nav ul {
 }
 nav ul li {
   display: inline-block;
+  vertical-align: top;
+  text-align: center;
 }
 nav ul li a {
   display: block;
@@ -34,6 +36,9 @@ nav ul li .icon-about {
 }
 nav ul li .icon-reviews {
   background-image: url('../img/menu-icon-reviews.png');
+}
+nav ul li .icon-faq {
+  background-image: url('../img/menu-icon-faq.png');
 }
 nav .auth-button {
   padding: 10px 20px;

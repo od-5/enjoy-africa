@@ -5,6 +5,21 @@
       <h1 class="groups__title">Групповые туры</h1>
       <div class="col-8">
         <div class="groups-list">
+          Сортировать по
+          <div class="group-select">
+            <span class="group-select-title">дате:</span>
+            <ul class="group-select-list">
+              <li><a href="{% url 'groups:list' %}?date_sort=lt">Раньше</a></li>
+              <li><a href="{% url 'groups:list' %}?date_sort=gt">Позже</a></li>
+            </ul>
+          </div>
+          <div class="group-select">
+            <span class="group-select-title">цене:</span>
+            <ul class="group-select-list">
+              <li><a href="{% url 'groups:list' %}?date_sort=lt">по возрастанию</a></li>
+              <li><a href="{% url 'groups:list' %}?date_sort=gt">по убыванию</a></li>
+            </ul>
+          </div>
           {% for group in group_list %}
           <div class="panel panel-primary groups-list-item">
             <div class="panel-heading groups-list-item__title"><a href="{{ group.get_absolute_url }}">{{ group.travel }} {{ group.title|default:'' }}</a></div>

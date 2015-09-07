@@ -175,5 +175,8 @@ $(window).load(function() {
     }
   });
 
+  $('.group-select').click(function(e){
+    $(this).find('.group-select-list').toggle();
+  });
 
 });

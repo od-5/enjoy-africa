@@ -3,9 +3,9 @@
 <head lang="en">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <title>{{ setup.title|striptags|default:'Safari Travel' }}</title>
-  <meta name="description" content="{{ setup.meta_desc|striptags|default:'' }}"/>
-  <meta name="keywords" content="{{ setup.meta_key|striptags|default:'' }}"/>
+  <title>{% block title %}{{ setup.title|striptags|default:'Safari Travel' }}{% endblock %}</title>
+  <meta name="description" content="{% block meta_desc %}{{ setup.meta_desc|striptags|default:'' }}{% endblock %}"/>
+  <meta name="keywords" content="{% block meta_keys %}{{ setup.meta_key|striptags|default:'' }}{% endblock %}"/>
   {{ setup.top_js|safe|default:'' }}
   {% block top_js %}
   {% endblock %}

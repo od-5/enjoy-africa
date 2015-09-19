@@ -17,4 +17,6 @@ class About(Common):
         return self.title
 
     title = models.CharField(verbose_name=u'Заголовок', max_length=150)
+    # meta_desc = models.CharField(verbose_name=u'Описание', max_length=500, null=True) #Описание SEO
+    # meta_keys = models.CharField(verbose_name=u'Ключевые слова', max_length=500, null=True) #Ключевые слова SEO
     text = RichTextField(verbose_name=u'Текст')

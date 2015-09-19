@@ -3,13 +3,13 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.http import HttpResponse
 
 
 urlpatterns = patterns(
     '',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor.urls')),
-
     url(r'^about/', include('apps.about.urls', namespace='about'),),
     url(r'^travels/', include('apps.travel.urls', namespace='travel'),),
     url(r'^groups/', include('apps.groups.urls', namespace='groups'),),

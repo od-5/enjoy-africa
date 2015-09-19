@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block title %}{{ article.meta_title|default:'' }}{% endblock %}
+{% block meta_desc %}{{ article.meta_desc|default:'' }}{% endblock %}
+{% block meta_keys %}{{ article.meta_keys|default:'' }}{% endblock %}
 {% block top_js %}
   {{ comment_form.media }}
 {% endblock %}

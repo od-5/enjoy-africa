@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block title %}{{ meta_title|default:'' }}{% endblock %}
+{% block meta_desc %}{{ meta_desc|default:'' }}{% endblock %}
+{% block meta_keys %}{{ meta_keys|default:'' }}{% endblock %}
 {% block content %}
   <div class="container">
     <div class="forum">

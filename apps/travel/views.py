@@ -5,7 +5,7 @@ from django.shortcuts import render
 from apps.travel.forms import TravelReviewCommentForm
 from core.models import Setup
 from .models import Travel, TravelReview
-
+from django.conf import settings
 
 __author__ = 'alexy'
 
@@ -31,6 +31,9 @@ def travel_list(request):
     return render(request, 'travel/travel_list.html', {
         'setup': setup,
         'travel_list': travel_qs,
+        'meta_title': settings.TRAVELS_META_TITLE,
+        'meta_desc': settings.TRAVELS_META_DESC,
+        'meta_keys': settings.TRAVELS_META_KEYS,
         'travel_review_list': travel_review_qs,
         'author_list': author_list,
         'travel_id': travel,

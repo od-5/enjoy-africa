@@ -63,6 +63,7 @@ class Setup(models.Model):
     meta_desc = models.TextField(verbose_name=u'Описание META_DESCRIPTION', blank=True)
     top_js = models.TextField(verbose_name=u'Скрипты в <HEAD>..</HEAD>', blank=True)
     bottom_js = models.TextField(verbose_name=u'Скрипты перед закрывающим </BODY>', blank=True)
+    robots_txt = models.TextField(verbose_name=u'robots.txt', blank=True, null=True)
 
     def __unicode__(self):
         return self.title

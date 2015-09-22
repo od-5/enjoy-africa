@@ -20,3 +20,10 @@ class About(Common):
     # meta_desc = models.CharField(verbose_name=u'Описание', max_length=500, null=True) #Описание SEO
     # meta_keys = models.CharField(verbose_name=u'Ключевые слова', max_length=500, null=True) #Ключевые слова SEO
     text = RichTextField(verbose_name=u'Текст')
+
+
+class AboutSEO(Common):
+    verbose_name = u'Настройки'
+    verbose_name_plural = u'Настройки'
+    app_label = 'about'
+    ordering = ['-created']

@@ -8,7 +8,8 @@ __author__ = 'Rylcev Alexy'
 
 urlpatterns = patterns(
     'core.views',
-    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain'), name="robots"),
+    # url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain'), name="robots"),
+    url(r'robots\.txt', 'get_robots_txt', name='robots'),
     url(r'^sitemap\.xml$', TemplateView.as_view(template_name='sitemap.xml', content_type='text/plain'), name="sitemap"),
     url(r'^$', 'home', name='home'),
     url(r'^ticket/', 'ticket', name='form'),

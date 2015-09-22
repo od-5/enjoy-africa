@@ -1,7 +1,7 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from apps.travel.forms import TravelReviewCommentForm
 from core.models import Setup
 from .models import Travel, TravelReview
@@ -41,7 +41,7 @@ def travel_detail(request, slug):
         setup = Setup.objects.all()[0]
     except:
         setup = None
-    travel_qs = TravelReview.objects.get(slug=slug)
+    travel_qs = get_object_or_404(TravelReview, slug=slug)
     if request.method == "POST":
         comment_form = TravelReviewCommentForm(request.POST)
         if comment_form.is_valid():

@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 from django.db import models

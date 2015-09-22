@@ -110,16 +110,13 @@ def profile_view(request):
 
 @csrf_exempt
 def ticket(request):
-    # try:
-    #     email = Setup.objects.all()[0].email
-    # except:
-    email = 'od-5@yandex.ru'
+    try:
+        email = Setup.objects.all()[0].email
+    except:
+        email = 'od-5@yandex.ru'
     if request.method == "POST":
         form = TicketForm(data=request.POST)
-        print u'*************метод POST'
-        print form
         if form.is_valid():
-            print u'*************Форма валидна'
             ticket = form.save(commit=False)
             ticket.ticket_status = 1
             ticket.save()

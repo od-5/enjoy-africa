@@ -12,6 +12,15 @@ class TravelAdmin(admin.ModelAdmin):
 
 class TravelReviewAdmin(admin.ModelAdmin):
     list_display = ('title', 'travel', 'user',)
+    fieldsets = [
+        (None, {
+            'fields': ['user', 'travel', 'title', 'image', 'text', 'mmoderated', 'slug', ]
+        }),
+        ('SEO', {
+            'classes': ('collapse', ),
+            'fields': ['meta_title', 'meta_keys', 'meta_desc']
+        }),
+    ]
 
 admin.site.register(Travel, TravelAdmin)
 admin.site.register(TravelReview, TravelReviewAdmin)

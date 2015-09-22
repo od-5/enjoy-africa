@@ -6,7 +6,6 @@ from apps.groups.forms import GroupsCommentForm
 from apps.groups.models import Groups
 from core.models import Setup
 from datetime import date
-from django.conf import settings
 
 __author__ = 'alexy'
 
@@ -36,9 +35,6 @@ def groups_view(request):
         'setup': setup,
         'group_list': groups_qs,
         'theme_list': theme_qs,
-        'meta_title': settings.GROUPS_META_TITLE,
-        'meta_desc': settings.GROUPS_META_DESC,
-        'meta_keys': settings.GROUPS_META_KEYS,
     })
 
 

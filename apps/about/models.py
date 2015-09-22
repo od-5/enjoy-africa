@@ -1,12 +1,12 @@
 # coding=utf-8
 from ckeditor.fields import RichTextField
 from django.db import models
-from core.base_model import Common
+from core.base_model import Common, CommonPage
 
 __author__ = 'alexy'
 
 
-class About(Common):
+class About(Common, CommonPage):
     class Meta:
         verbose_name = u'Статья'
         verbose_name_plural = u'Статьи'

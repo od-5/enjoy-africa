@@ -3,7 +3,7 @@ from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 from django.db import models
 from pytils.translit import slugify
-from core.base_model import Common
+from core.base_model import Common, CommonPage
 
 __author__ = 'alexy'
 
@@ -30,7 +30,7 @@ class Travel(Common):
     slug = models.SlugField(max_length=100, verbose_name=u'url', blank=True)
 
 
-class TravelReview(Common):
+class TravelReview(Common, CommonPage):
     class Meta:
         verbose_name = u'Статья'
         verbose_name_plural = u'Статьи'

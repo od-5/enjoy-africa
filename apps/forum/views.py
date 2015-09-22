@@ -4,7 +4,6 @@ from django.shortcuts import render
 from .forms import ThemeCommentForm
 from .models import Theme
 from core.models import Setup
-from django.conf import settings
 
 __author__ = 'alexy'
 
@@ -18,9 +17,6 @@ def theme_list(request):
     return render(request, 'forum/theme_list.html', {
         'setup': setup,
         'theme_list': theme_qs,
-        'meta_title': settings.FORUM_META_TITLE,
-        'meta_desc': settings.FORUM_META_DESC,
-        'meta_keys': settings.FORUM_META_KEYS,
     })
 
 

@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block wrapper_style %}class="travels__bg"{% endblock %}
-{% block title %}{{ meta_title|default:'' }}{% endblock %}
-{% block meta_desc %}{{ meta_desc|default:'' }}{% endblock %}
-{% block meta_keys %}{{ meta_keys|default:'' }}{% endblock %}
+{% block title %}{{ seo.meta_title|default:'' }}{% endblock %}
+{% block meta_desc %}{{ seo.meta_desc|default:'' }}{% endblock %}
+{% block meta_keys %}{{ seo.meta_keys|default:'' }}{% endblock %}
 {% block content %}
   <div class="container">
     <p class="title_big text-center">Журнал путешествий</p>

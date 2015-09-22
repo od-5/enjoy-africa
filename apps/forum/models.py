@@ -3,12 +3,12 @@ from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 from django.db import models
 from pytils.translit import slugify
-from core.base_model import Common
+from core.base_model import Common, CommonPage
 
 __author__ = 'alexy'
 
 
-class Theme(Common):
+class Theme(Common, CommonPage):
     class Meta:
         verbose_name = u'Тема'
         verbose_name_plural = u'Темы'

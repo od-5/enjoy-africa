@@ -4,12 +4,12 @@ from django.contrib.auth.models import User
 from django.db import models
 from pytils.translit import slugify
 from apps.travel.models import Travel
-from core.base_model import Common
+from core.base_model import Common, CommonPage
 
 __author__ = 'alexy'
 
 
-class Groups(Common):
+class Groups(Common, CommonPage):
     class Meta:
         verbose_name = u'Групповые туры'
         verbose_name_plural = u'Групповые туры'

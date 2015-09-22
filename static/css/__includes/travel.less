@@ -22,22 +22,38 @@
       width: 90%;
       margin-bottom: 40px;
       &-cover {
+        display: block;
+        padding: 5px;
+        background: #fff;
+        text-align: center;
+        -webkit-box-shadow: 0 0 5px #333;
+        -moz-box-shadow: 0 0 5px #333;
+        box-shadow: 0 0 5px #333;
+        &:hover {
+          webkit-box-shadow: 0 0 15px #333;
+          -moz-box-shadow: 0 0 15px #333;
+          box-shadow: 0 0 15px #333;
+        }
         &__img {
+          height: 185px;
           background-color: #000;
           &:hover {
-            opacity: .5;
-            -moz-opacity: .5;
-            filter: alpha(opacity=50) black;
-            -khtml-opacity: .5;
+            opacity: .8;
+            -moz-opacity: .8;
+            filter: alpha(opacity=80) black;
+            -khtml-opacity: .8;
           }
         }
       }
       &__travel {
         color: #666;
-        padding: 10px 0;
+        padding: 5px;
+        font-weight: bold;
       }
       &__title {
-        font-size: 16px;
+        line-height: 1em;
+        font-size: 14px;
+        height: 40px;
       }
     }
     &-change, &-add {

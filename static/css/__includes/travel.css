@@ -22,21 +22,39 @@
   width: 90%;
   margin-bottom: 40px;
 }
+.travels-review-item-cover {
+  display: block;
+  padding: 5px;
+  background: #fff;
+  text-align: center;
+  -webkit-box-shadow: 0 0 5px #333;
+  -moz-box-shadow: 0 0 5px #333;
+  box-shadow: 0 0 5px #333;
+}
+.travels-review-item-cover:hover {
+  webkit-box-shadow: 0 0 15px #333;
+  -moz-box-shadow: 0 0 15px #333;
+  box-shadow: 0 0 15px #333;
+}
 .travels-review-item-cover__img {
+  height: 185px;
   background-color: #000;
 }
 .travels-review-item-cover__img:hover {
-  opacity: .5;
-  -moz-opacity: .5;
-  filter: alpha(opacity=50) #000000;
-  -khtml-opacity: .5;
+  opacity: .8;
+  -moz-opacity: .8;
+  filter: alpha(opacity=80) #000000;
+  -khtml-opacity: .8;
 }
 .travels-review-item__travel {
   color: #666;
-  padding: 10px 0;
+  padding: 5px;
+  font-weight: bold;
 }
 .travels-review-item__title {
-  font-size: 16px;
+  line-height: 1em;
+  font-size: 14px;
+  height: 40px;
 }
 .travels-review-change-form input[type=text],
 .travels-review-add-form input[type=text],

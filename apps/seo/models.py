@@ -14,7 +14,7 @@ class Page(CommonPage):
 
     PAGE_CHOICES = (
         ('about', u'О нас'),
-        ('travel', u'Журнал путешествий'),
+        ('travels', u'Журнал путешествий'),
         ('groups', u'Групповые туры'),
         ('forum', u'Форум'),
     )

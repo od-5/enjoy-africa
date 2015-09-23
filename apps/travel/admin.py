@@ -14,7 +14,7 @@ class TravelReviewAdmin(admin.ModelAdmin):
     list_display = ('title', 'travel', 'user',)
     fieldsets = [
         (None, {
-            'fields': ['user', 'travel', 'title', 'image', 'text', 'mmoderated', 'slug', ]
+            'fields': ['user', 'travel', 'title', 'image', 'text', 'moderated', 'slug', ]
         }),
         ('SEO', {
             'classes': ('collapse', ),

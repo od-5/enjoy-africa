@@ -14,6 +14,7 @@ urlpatterns = patterns(
     url(r'^travels/', include('apps.travel.urls', namespace='travel'),),
     url(r'^groups/', include('apps.groups.urls', namespace='groups'),),
     url(r'^forum/', include('apps.forum.urls', namespace='forum'),),
+    url(r'^vk/', include('apps.vk.urls', namespace='vk'),),
     url(r'', include('core.urls')),
 )
 

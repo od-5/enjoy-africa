@@ -1,3 +1,4 @@
+/apps/vk/migrations
 .idea/
 *.pyc
 db.sqlite3

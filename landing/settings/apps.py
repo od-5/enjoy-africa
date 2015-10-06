@@ -17,4 +17,5 @@ INSTALLED_APPS = (
     'apps.travel',
     'apps.forum',
     'apps.seo',
+    'apps.vk',
 )

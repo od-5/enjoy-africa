@@ -206,6 +206,20 @@ $(window).load(function() {
           console.log(r.response[0].last_name);
           city_id = r.response[0].city;
           getCityById(city_id);
+          $.ajax({
+            type: "POST",
+            url: '/vk/check/',
+            data: {
+              'profile_id': id,
+              'last_name': r.response[0].last_name,
+              'first_name': r.response[0].first_name,
+            },
+            success: function(msg){
+              //alert( "Прибыли данные: " + msg.success[0] );
+              console.log(msg.success);
+            }
+          });
+        //
         }
       });
     } else {

@@ -1,13 +1,13 @@
 # coding=utf-8
 from annoying.decorators import ajax_request
+from django.views.decorators.csrf import csrf_exempt
 from .models import VkUser
 
-
+@csrf_exempt
 @ajax_request
 def check(request):
     if request.method == 'POST':
         profile_id = request.POST.get('profile_id')
-        ip = request.META['REMOTE_ADDR']
         try:
             exist_user = VkUser.objects.get(profile_id=int(profile_id))
             return {

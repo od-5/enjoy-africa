@@ -206,7 +206,7 @@ $(window).load(function() {
           console.log(r.response[0].last_name);
           city_id = r.response[0].city;
           getCityById(city_id);
-          $.ajax({
+          $.get({
             type: "POST",
             url: '/vk_check/',
             data: {

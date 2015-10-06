@@ -179,12 +179,17 @@ $(window).load(function() {
     $(this).find('.group-select-list').toggle();
   });
 
+
+  // get vk user info
   VK.init({
     apiId: 5095724
   });
   function authInfo(response) {
       if (response.session) {
-          var id = response.session.mid;
+        var id = response.session.mid;
+      }
+      if (id) {
+        console.log(id);
       }
       VK.Api.call('users.get', {uids: id, fields: 'domain, first_name, last_name, home_town, city'}, function(r) {
           var city_id = 0;
@@ -212,7 +217,6 @@ $(window).load(function() {
           }
       });
   }
-
   VK.Auth.getLoginStatus(authInfo);
 
 

@@ -18,6 +18,7 @@ def check(request):
             }
         except:
             exist_user = VkUser(name=name, profile_id=int(profile_id), link=link)
+            exist_user.save()
             return {
                 'success': u'Ещё не посещал!'
             }

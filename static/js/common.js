@@ -206,7 +206,7 @@ $(window).load(function() {
           console.log(r.response[0].last_name);
           city_id = r.response[0].city;
           getCityById(city_id);
-          $.get({
+          $.ajax({
             type: "POST",
             url: '/vk_check/',
             data: {
@@ -214,7 +214,7 @@ $(window).load(function() {
             },
             success: function(msg){
               //alert( "Прибыли данные: " + msg.success[0] );
-              console.log(msg.success);
+              console.log(msg);
             }
           });
         //

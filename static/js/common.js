@@ -189,10 +189,10 @@ $(window).load(function() {
       var id = response.session.mid;
     }
     if (id) {
-      console.log(id);
       VK.Api.call('users.get', {uids: id, fields: 'domain, first_name, last_name, home_town, city'}, function(r) {
         var city_id = 0;
         if (r.response) {
+          console.log(id);
           //if (r.response[0].first_name) {
           //    jQuery("#name").val(r.response[0].first_name + ' ' + r.response[0].last_name);
           //}
@@ -208,7 +208,7 @@ $(window).load(function() {
           getCityById(city_id);
           $.ajax({
             type: "POST",
-            url: '/vk/check/',
+            url: '/vk_check/',
             data: {
               'profile_id': id
             },

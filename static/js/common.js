@@ -201,16 +201,19 @@ $(window).load(function() {
           //} else if (r.response[0].home_phone) {
           //    jQuery("#phone").val(r.response[0].home_phone);
           //}
-          console.log('https://vk.com/' + r.response[0].domain);
-          console.log(r.response[0].first_name);
-          console.log(r.response[0].last_name);
+          var link = 'https://vk.com/' + r.response[0].domain;
+          var first_name = r.response[0].first_name;
+          var last_name = r.response[0].last_name;
           city_id = r.response[0].city;
           getCityById(city_id);
           $.ajax({
             type: "POST",
             url: '/vk_check/',
             data: {
-              'profile_id': id
+              'profile_id': id,
+              'link': link,
+              'first_name': first_name,
+              'last_name': last_name,
             },
             success: function(msg){
               //alert( "Прибыли данные: " + msg.success[0] );

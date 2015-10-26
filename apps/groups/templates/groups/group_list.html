@@ -5,7 +5,7 @@
 {% block content %}
   <div class="container">
     <div class="groups">
-      <h1 class="groups__title">Групповые туры</h1>
+      <h1 class="groups__title">{{ seo.meta_title:'Групповые туры' }}</h1>
       <div class="col-8">
         <div class="groups-list">
           Сортировать по
@@ -25,7 +25,7 @@
           </div>
           {% for group in group_list %}
           <div class="panel panel-primary groups-list-item">
-            <div class="panel-heading groups-list-item__title"><a href="{{ group.get_absolute_url }}">{{ group.travel }} {{ group.title|default:'' }}</a></div>
+            <div class="panel-heading groups-list-item__title"><a href="{{ group.get_absolute_url }}">{{ group.title|default:'' }}</a></div>
             <div class="panel-body groups-list-item-content">
               <div class="col-4">
                 <div class="groups-list-item-content__cover">

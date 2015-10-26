@@ -23,3 +23,4 @@ class Page(CommonPage):
         return self.get_page_display()
 
     page = models.CharField(max_length=100, choices=PAGE_CHOICES, unique=True, verbose_name=u'Название')
+    title = models.CharField(max_length=260, verbose_name=u'Заголовок страницы', blank=True, null=True)

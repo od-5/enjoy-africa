@@ -296,7 +296,7 @@ header .logotype:hover {
 #block_4 .container {
   padding-top: 30px;
 }
-#block_4 .ticker {
+#block_4 .ticket {
   padding-top: 30px;
 }
 #block_4 p,
@@ -307,7 +307,7 @@ header .logotype:hover {
   font-size: 23px;
   color: #fff;
   text-transform: uppercase;
-  line-height: 90px;
+  line-height: 2em;
 }
 .block5 {
   background-color: #fff;

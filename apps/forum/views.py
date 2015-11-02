@@ -1,6 +1,6 @@
 # coding=utf-8
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .forms import ThemeCommentForm
 from .models import Theme
 from core.models import Setup
@@ -25,7 +25,7 @@ def theme_detail(request, slug):
         setup = Setup.objects.all()[0]
     except:
         setup = None
-    theme_qs = Theme.objects.get(slug=slug)
+    theme_qs = get_object_or_404(Theme, slug=slug)
 
     if request.method == "POST":
         comment_form = ThemeCommentForm(request.POST)

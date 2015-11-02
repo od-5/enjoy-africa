@@ -23,7 +23,7 @@ class TicketAdmin(admin.ModelAdmin):
     fields = ('name', 'email', 'comment', 'sale', 'ticket_status', 'ticket_comment')
     form = TicketAdminForm
 
-    def queryset(self, request):
+    def get_queryset(self, request):
         return self.model.objects.filter(sale=False, group__isnull=True)
 
     def suit_row_attributes(self, obj, request):
@@ -50,7 +50,7 @@ class GroupTicketAdmin(admin.ModelAdmin):
     fields = ('name', 'email', 'group', 'comment', 'sale', 'ticket_status', 'ticket_comment')
     form = TicketAdminForm
 
-    def queryset(self, request):
+    def get_queryset(self, request):
         return self.model.objects.filter(sale=False, group__isnull=False)
 
     def suit_row_attributes(self, obj, request):
@@ -82,7 +82,7 @@ class SaleAdminForm(ModelForm):
 
 class SaleAdmin(admin.ModelAdmin):
 
-    def queryset(self, request):
+    def get_queryset(self, request):
         return self.model.objects.filter(sale=True)
 
     def has_add_permission(self, request, obj=None):

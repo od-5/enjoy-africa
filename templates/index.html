@@ -2,7 +2,6 @@
 {% block content %}
     <div id="block_1">
         <div class="container">
-{#          <p>Хотите совершить путешествие по Восточной <br/> Африке и сэкономить до <span class="yellow">30%</span><br/> от стоимости тура?</p>#}
           <p>{{ header1|safe|default:'Заголовок 1' }}</p>
           <a href="#pop" class="popupbutton">Узнайте подробности</a>
           <div class="video">
@@ -17,8 +16,7 @@
     </div>
     <div id="block_2">
         <div class="container">
-{#            <h1>Почему именно мы? 4 железных аргумента:</h1>#}
-            <h1>{{ header2|safe|default:'Заголовок 2' }}</h1>
+            <p>{{ header2|safe|default:'Заголовок 2' }}</p>
         </div>
     </div>
     <div class="block3">
@@ -35,48 +33,12 @@
           </div>
           {% endfor %}
         {% endif %}
-{#          <div class="block3-item block3-icon block3-icon-posr">#}
-{#            <div class="block3-item__title">Мы не являемся посредником.</div>#}
-{#            <div class="block3-item__content">#}
-{#              <p>#}
-{#                Мы являемся принимающим туроператором, находимся непосредственно в Восточной Африке.#}
-{#                Самостоятельно разрабатываем и обслуживаем свои туры, что позволяет экономить до 30% от стоимости тура.#}
-{#                Вы засрахованы от овербукинга, отмен экскурсий по личным обстоятельствам гидов, ошибок в планировании маршрута#}
-{#                и других неприятностей, которые могут омрачить ваш отдых.#}
-{#              </p>#}
-{#            </div>#}
-{#          </div>#}
-{#          <div class="block3-item block3-icon block3-icon-24h">#}
-{#            <div class="block3-item__title">Мы всегда на связи с Вами! 24 часа в сутки  дней в неделю.</div>#}
-{#            <div class="block3-item__content">#}
-{#              <p>#}
-{#                По прибытию в Африку вам будет выдан телефон с местной сим картой для круглосуточной связи с нами.#}
-{#                Оператор любезно окажет вам необходимую помощь на русском языке и поможет в переводу в любое время суток.#}
-{#              </p>#}
-{#            </div>#}
-{#          </div>#}
-{#          <div class="block3-item block3-icon block3-icon-zvuk">#}
-{#            <div class="block3-item__title">Мы говорим по-русски.</div>#}
-{#            <div class="block3-item__content">#}
-{#              <p>#}
-{#                Мы единственный полностью русский туроператор в Восточной Африке.#}
-{#              </p>#}
-{#            </div>#}
-{#          </div>#}
-{#          <div class="block3-item block3-icon block3-icon-money">#}
-{#            <div class="block3-item__title">Мы работаем без предоплаты.</div>#}
-{#            <div class="block3-item__content">#}
-{#              <p>#}
-{#                Стоимость тура оплачивается на месте, по прибытию.#}
-{#              </p>#}
-{#            </div>#}
-{#          </div>#}
         <div class="clear"></div>
       </div>
     </div>
     <div id="block_4">
         <div class="container">
-            <h2>{{ header3|safe|default:'Заголовок 3' }}</h2>
+            {{ header3|safe|default:'Заголовок 3' }}
             {% include 'form.html' with first=True %}
         </div>
     </div>
@@ -93,14 +55,6 @@
           <div class="col-8">
             <div class="block5-content">
               <p>{% if attendant %}{{ attendant.text|safe|default:'' }}{% endif %}
-{#                Привет!<br>#}
-{#                Коротко о себе: путешествую всю жизнь, позади сотни тысяч км#}
-{#                автостопом или на велосипеде по всему миру. Влюбился в Африку,#}
-{#                перевёз из Москвы в Кению свою семью. Живём с тремя маленькими#}
-{#                детьми на океане в небольшом городке Малинди. <br>#}
-{#                "Сделай своё любимое дело работой и ты никогда в жизни больше не#}
-{#                будешь работать". <br>#}
-{#                В Африке я занят своим люимым делом - путешествиями.#}
               </p>
               <ul class="block5-list">
               {% if attendant %}
@@ -108,10 +62,6 @@
                 <li class="block5-list-item block5-icon {{ item.icon }}">{{ item.text|safe|default:'' }}</li>
                 {% endfor %}
               {% endif %}
-{#                <li class="block5-list-item block5-icon block5-icon-browser">Организую сафари по национальным парка Кении, Танзании, Уганды, Руанды.</li>#}
-{#                <li class="block5-list-item block5-icon block5-icon-aircraft">Полёты на легкомоторных самолётах, рафтинг, путешествия на велосипедах.</li>#}
-{#                <li class="block5-list-item block5-icon block5-icon-umbrella">Отдых на океане в Кении: Диане, Ватаму, Малинди, Ламу.</li>#}
-{#                <li class="block5-list-item block5-icon block5-icon-camera">Работа со съёмочными групами.</li>#}
               </ul>
             </div>
           </div>
@@ -146,33 +96,17 @@
               {% if timer_text %}
                 {{ timer_text|safe|default:'' }}
               {% endif %}
-{#                Оставьте заявку <strong>прямо сейчас</strong><br/>#}
-{#                и получите одну экскурсию бесплатно на выбор:<br/>#}
-{#                <strong>"Посещение масайской деревни"</strong><br/>#}
-{#                или <br/>#}
-{#                <strong>"Прогулка на лодке по Озеру Найваша"</strong><br/>#}
-{#                <strong>Предложение ограниченно!</strong>#}
             </p>
         </div>
-{#        {% if setup.timer %}#}
-{#        <div class="timer">#}
-{#            {{ setup.timer|safe }}#}
-{#        </div>#}
         {% if timer %}
         <div class="timer">
         {% include 'countdown/coundown.html' %}
         </div>
         {% endif %}
-{#        {% endif %}#}
     </div>
     <div id="block_8">
         <div class="container">
             {% include 'form.html' with second=True %}
-{#            <form class="ticket" action="{% url 'form' %}" method="post">{% csrf_token %}#}
-{#                <input type="text" name="name" placeholder="Ваше имя"/>#}
-{#                <input type="email" name="email" placeholder="Ваш E-mail"/>#}
-{#                <button>Узнайте стоимость<br /><span class="underline">получив актуальную информацию на Ваш e-mail</span></button>#}
-{#            </form>#}
         </div>
     </div>
     <div class="block9">

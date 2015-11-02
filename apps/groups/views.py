@@ -1,6 +1,6 @@
 # coding=utf-8
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from apps.forum.models import Theme
 from apps.groups.forms import GroupsCommentForm
 from apps.groups.models import Groups
@@ -43,7 +43,7 @@ def groups_detail(request, slug):
         setup = Setup.objects.all()[0]
     except:
         setup = None
-    group_qs = Groups.objects.get(slug=slug)
+    group_qs = get_object_or_404(Groups, slug=slug)
 
     if request.method == "POST":
         comment_form = GroupsCommentForm(request.POST)

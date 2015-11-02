@@ -242,7 +242,7 @@ header .logotype:hover {
   background-color: #1a86cc;
   background: url("../img/count.jpg") repeat;
 }
-#block_2 h1 {
+#block_2 p {
   text-align: center;
   text-transform: uppercase;
   text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 15px rgba(255, 255, 255, 0.3);
@@ -293,7 +293,10 @@ header .logotype:hover {
 #block_4 {
   background: url("../img/count.jpg") repeat;
 }
-#block_4 h2 {
+#block_4 p,
+#block_4 h1,
+#block_4 h2,
+#block_4 h3 {
   text-align: center;
   font-size: 23px;
   color: #fff;

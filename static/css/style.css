@@ -293,6 +293,12 @@ header .logotype:hover {
 #block_4 {
   background: url("../img/count.jpg") repeat;
 }
+#block_4 .container {
+  padding-top: 30px;
+}
+#block_4 .ticker {
+  padding-top: 30px;
+}
 #block_4 p,
 #block_4 h1,
 #block_4 h2,

@@ -10,6 +10,11 @@ def countdown(request):
     try:
         queryset = Timer.objects.all()[0]
         end_date = queryset.date + datetime.timedelta(days=queryset.offset)
+        text = queryset.text
     except:
         end_date = None
-    return {'timer': end_date}
+        text = ''
+    return {
+         'timer': end_date,
+         'timer_text': text
+     }

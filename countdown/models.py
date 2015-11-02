@@ -18,3 +18,4 @@ class Timer(models.Model):
     date = models.DateField(verbose_name=u'Дата запуска')
     cycle = models.BooleanField(verbose_name=u'Зациклить', default=True)
     offset = models.PositiveIntegerField(verbose_name=u'Кол-во дней', default=14)
+    text = models.TextField(verbose_name=u'Текст')

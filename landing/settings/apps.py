@@ -18,4 +18,5 @@ INSTALLED_APPS = (
     'apps.forum',
     'apps.seo',
     'apps.vk',
+    'apps.home',
 )

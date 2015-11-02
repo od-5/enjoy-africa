@@ -2,7 +2,8 @@
 {% block content %}
     <div id="block_1">
         <div class="container">
-          <p>Хотите совершить путешествие по Восточной <br/> Африке и сэкономить до <span class="yellow">30%</span><br/> от стоимости тура?</p>
+{#          <p>Хотите совершить путешествие по Восточной <br/> Африке и сэкономить до <span class="yellow">30%</span><br/> от стоимости тура?</p>#}
+          <p>{{ header1|safe|default:'Заголовок 1' }}</p>
           <a href="#pop" class="popupbutton">Узнайте подробности</a>
           <div class="video">
                 <div class="video-title">
@@ -16,63 +17,72 @@
     </div>
     <div id="block_2">
         <div class="container">
-            <h1>Почему именно мы? 4 железных аргумента:</h1>
+{#            <h1>Почему именно мы? 4 железных аргумента:</h1>#}
+            <h1>{{ header2|safe|default:'Заголовок 2' }}</h1>
         </div>
     </div>
     <div class="block3">
       <div class="container">
-        <div class="col-half">
-          <div class="block3-item block3-icon block3-icon-posr">
-            <div class="block3-item__title">Мы не являемся посредником.</div>
+        {% if block3 %}
+          {% for item in block3 %}
+          <div class="block3-item block3-icon {{ item.icon }}">
+            <div class="block3-item__title">{{ item.title|default:'' }}</div>
             <div class="block3-item__content">
               <p>
-                Мы являемся принимающим туроператором, находимся непосредственно в Восточной Африке.
-                Самостоятельно разрабатываем и обслуживаем свои туры, что позволяет экономить до 30% от стоимости тура.
-                Вы засрахованы от овербукинга, отмен экскурсий по личным обстоятельствам гидов, ошибок в планировании маршрута
-                и других неприятностей, которые могут омрачить ваш отдых.
+                {{ item.text|safe }}
               </p>
             </div>
           </div>
-        </div>
-        <div class="col-half">
-          <div class="block3-item block3-icon block3-icon-24h">
-            <div class="block3-item__title">Мы всегда на связи с Вами! 24 часа в сутки  дней в неделю.</div>
-            <div class="block3-item__content">
-              <p>
-                По прибытию в Африку вам будет выдан телефон с местной сим картой для круглосуточной связи с нами.
-                Оператор любезно окажет вам необходимую помощь на русском языке и поможет в переводу в любое время суток.
-              </p>
-            </div>
-          </div>
-          <div class="block3-item block3-icon block3-icon-zvuk">
-            <div class="block3-item__title">Мы говорим по-русски.</div>
-            <div class="block3-item__content">
-              <p>
-                Мы единственный полностью русский туроператор в Восточной Африке.
-              </p>
-            </div>
-          </div>
-          <div class="block3-item block3-icon block3-icon-money">
-            <div class="block3-item__title">Мы работаем без предоплаты.</div>
-            <div class="block3-item__content">
-              <p>
-                Стоимость тура оплачивается на месте, по прибытию.
-              </p>
-            </div>
-          </div>
-        </div>
+          {% endfor %}
+        {% endif %}
+{#          <div class="block3-item block3-icon block3-icon-posr">#}
+{#            <div class="block3-item__title">Мы не являемся посредником.</div>#}
+{#            <div class="block3-item__content">#}
+{#              <p>#}
+{#                Мы являемся принимающим туроператором, находимся непосредственно в Восточной Африке.#}
+{#                Самостоятельно разрабатываем и обслуживаем свои туры, что позволяет экономить до 30% от стоимости тура.#}
+{#                Вы засрахованы от овербукинга, отмен экскурсий по личным обстоятельствам гидов, ошибок в планировании маршрута#}
+{#                и других неприятностей, которые могут омрачить ваш отдых.#}
+{#              </p>#}
+{#            </div>#}
+{#          </div>#}
+{#          <div class="block3-item block3-icon block3-icon-24h">#}
+{#            <div class="block3-item__title">Мы всегда на связи с Вами! 24 часа в сутки  дней в неделю.</div>#}
+{#            <div class="block3-item__content">#}
+{#              <p>#}
+{#                По прибытию в Африку вам будет выдан телефон с местной сим картой для круглосуточной связи с нами.#}
+{#                Оператор любезно окажет вам необходимую помощь на русском языке и поможет в переводу в любое время суток.#}
+{#              </p>#}
+{#            </div>#}
+{#          </div>#}
+{#          <div class="block3-item block3-icon block3-icon-zvuk">#}
+{#            <div class="block3-item__title">Мы говорим по-русски.</div>#}
+{#            <div class="block3-item__content">#}
+{#              <p>#}
+{#                Мы единственный полностью русский туроператор в Восточной Африке.#}
+{#              </p>#}
+{#            </div>#}
+{#          </div>#}
+{#          <div class="block3-item block3-icon block3-icon-money">#}
+{#            <div class="block3-item__title">Мы работаем без предоплаты.</div>#}
+{#            <div class="block3-item__content">#}
+{#              <p>#}
+{#                Стоимость тура оплачивается на месте, по прибытию.#}
+{#              </p>#}
+{#            </div>#}
+{#          </div>#}
         <div class="clear"></div>
       </div>
     </div>
     <div id="block_4">
         <div class="container">
-            <h2>Совершите самое необычное путешествие в Вашей жизни!</h2>
+            <h2>{{ header3|safe|default:'Заголовок 3' }}</h2>
             {% include 'form.html' with first=True %}
         </div>
     </div>
     <div class="block5">
         <div class="container">
-            <h2>Наш сопровождающий</h2>
+            <h2>{{ header4|safe|default:'Заголовок 4' }}</h2>
 
           <div class="col-4">
             <div class="block5-avatar">
@@ -82,21 +92,26 @@
           </div>
           <div class="col-8">
             <div class="block5-content">
-              <p>
-                Привет!<br>
-                Коротко о себе: путешествую всю жизнь, позади сотни тысяч км
-                автостопом или на велосипеде по всему миру. Влюбился в Африку,
-                перевёз из Москвы в Кению свою семью. Живём с тремя маленькими
-                детьми на океане в небольшом городке Малинди. <br>
-                "Сделай своё любимое дело работой и ты никогда в жизни больше не
-                будешь работать". <br>
-                В Африке я занят своим люимым делом - путешествиями.
+              <p>{% if attendant %}{{ attendant.text|safe|default:'' }}{% endif %}
+{#                Привет!<br>#}
+{#                Коротко о себе: путешествую всю жизнь, позади сотни тысяч км#}
+{#                автостопом или на велосипеде по всему миру. Влюбился в Африку,#}
+{#                перевёз из Москвы в Кению свою семью. Живём с тремя маленькими#}
+{#                детьми на океане в небольшом городке Малинди. <br>#}
+{#                "Сделай своё любимое дело работой и ты никогда в жизни больше не#}
+{#                будешь работать". <br>#}
+{#                В Африке я занят своим люимым делом - путешествиями.#}
               </p>
               <ul class="block5-list">
-                <li class="block5-list-item block5-icon block5-icon-browser">Организую сафари по национальным парка Кении, Танзании, Уганды, Руанды.</li>
-                <li class="block5-list-item block5-icon block5-icon-aircraft">Полёты на легкомоторных самолётах, рафтинг, путешествия на велосипедах.</li>
-                <li class="block5-list-item block5-icon block5-icon-umbrella">Отдых на океане в Кении: Диане, Ватаму, Малинди, Ламу.</li>
-                <li class="block5-list-item block5-icon block5-icon-camera">Работа со съёмочными групами.</li>
+              {% if attendant %}
+                {% for item in attendant.attendantitem_set.all %}
+                <li class="block5-list-item block5-icon {{ item.icon }}">{{ item.text|safe|default:'' }}</li>
+                {% endfor %}
+              {% endif %}
+{#                <li class="block5-list-item block5-icon block5-icon-browser">Организую сафари по национальным парка Кении, Танзании, Уганды, Руанды.</li>#}
+{#                <li class="block5-list-item block5-icon block5-icon-aircraft">Полёты на легкомоторных самолётах, рафтинг, путешествия на велосипедах.</li>#}
+{#                <li class="block5-list-item block5-icon block5-icon-umbrella">Отдых на океане в Кении: Диане, Ватаму, Малинди, Ламу.</li>#}
+{#                <li class="block5-list-item block5-icon block5-icon-camera">Работа со съёмочными групами.</li>#}
               </ul>
             </div>
           </div>
@@ -104,7 +119,7 @@
     </div>
     <div class="block6">
         <div class="container">
-            <h2>Сафари - это просто!</h2>
+            <h2>{{ header5|safe|default:'Заголовок 5' }}</h2>
             <div class="step">
                 <img src="{{ STATIC_URL }}img/block_6_1.png" alt=""/>
                 <p>Заполните <br/>форму</p>
@@ -128,12 +143,15 @@
     <div id="block_7">
         <div class="container">
             <p>
-                Оставьте заявку <strong>прямо сейчас</strong><br/>
-                и получите одну экскурсию бесплатно на выбор:<br/>
-                <strong>"Посещение масайской деревни"</strong><br/>
-                или <br/>
-                <strong>"Прогулка на лодке по Озеру Найваша"</strong><br/>
-                <strong>Предложение ограниченно!</strong>
+              {% if timer_text %}
+                {{ timer_text|safe|default:'' }}
+              {% endif %}
+{#                Оставьте заявку <strong>прямо сейчас</strong><br/>#}
+{#                и получите одну экскурсию бесплатно на выбор:<br/>#}
+{#                <strong>"Посещение масайской деревни"</strong><br/>#}
+{#                или <br/>#}
+{#                <strong>"Прогулка на лодке по Озеру Найваша"</strong><br/>#}
+{#                <strong>Предложение ограниченно!</strong>#}
             </p>
         </div>
 {#        {% if setup.timer %}#}
@@ -159,98 +177,35 @@
     </div>
     <div class="block9">
         <div class="container">
-            <p>93% наших клиентов советуют нас друзьям и обращаются к нам повторно!</p>
+            <p>{{ header6|safe|default:'Заголовок 6' }}</p>
         </div>
     </div>
     <div class="block10">
         <div class="container">
-            <h2>Что включено в стоимость?</h2>
+            <h2>{{ header7|safe|default:'Заголовок 7' }}</h2>
             <ul>
-              <li>
-{#                <div class="icon">#}
-{#                  <img src="{{ STATIC_URL }}img/block_10_1.png" alt=""/>#}
-{#                </div>#}
-                <div class="content block10-icon block10-icon-1">
-                  <p>Трансферы из аэропорта и назад</p>
-                </div>
-                <div class="clear"></div>
-              </li>
-              <li>
-{#                <div class="icon">#}
-{#                  <img src="{{ STATIC_URL }}img/block_10_2.png" alt=""/>#}
-{#                </div>#}
-                <div class="content block10-icon block10-icon-2">
-                  <p>Трансферы и сафари по утвержденному <br/>маршруту на протяжении всего тура на <br/>комфортабельных минивенах и джипах.</p>
-                </div>
-                <div class="clear"></div>
-              </li>
-              <li>
-{#                <div class="icon">#}
-{#                  <img src="{{ STATIC_URL }}img/block_10_3.png" alt=""/>#}
-{#                </div>#}
-                <div class="content block10-icon block10-icon-3">
-                  <p>Проживание в гостиницах (3-4*) в <br/>национальных парках с полным пансионом <br/>(трех разовое питание).</p>
-                </div>
-                <div class="clear"></div>
-              </li>
-              <li>
-{#                <div class="icon">#}
-{#                  <img src="{{ STATIC_URL }}img/block_10_4.png" alt=""/>#}
-{#                </div>#}
-                <div class="content block10-icon block10-icon-4">
-                    <p>Сопровождение опытного русскоязычного гида.</p>
-                </div>
-                <div class="clear"></div>
-              </li>
-              <li>
-{#                <div class="icon">#}
-{#                  <img src="{{ STATIC_URL }}img/default-icon.png" alt=""/>#}
-{#                </div>#}
-                <div class="content block10-icon block10-icon-6">
-                    <p>Англоговорящий водитель гид.</p>
-                </div>
-                <div class="clear"></div>
-              </li>
-              <li>
-{#                <div class="icon">#}
-{#                  <img src="{{ STATIC_URL }}img/default-icon.png" alt=""/>#}
-{#                </div>#}
-                <div class="content block10-icon block10-icon-7">
-                    <p>Входная плата в Национальные парки по утверждённому маршруту.</p>
-                </div>
-                <div class="clear"></div>
-              </li>
-              <li>
-{#                <div class="icon">#}
-{#                  <img src="{{ STATIC_URL }}img/default-icon.png" alt=""/>#}
-{#                </div>#}
-                <div class="content block10-icon block10-icon-8">
-                    <p>Вода в машине.</p>
-                </div>
-                <div class="clear"></div>
-              </li>
-              <li>
-{#                <div class="icon">#}
-{#                  <img src="{{ STATIC_URL }}img/default-icon.png" alt=""/>#}
-{#                </div>#}
-                <div class="content block10-icon block10-icon-9">
-                    <p>Местная симкарта с небольшим балансом для круглосуточной телефонной поддержки на русском языке.</p>
-                </div>
-                <div class="clear"></div>
-              </li>
+            {% if block10 %}
+              {% for item in block10 %}
+                <li>
+                  <div class="content block10-icon {{ item.icon }}">
+                    <p>{{ item.text|safe }}</p>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+              {% endfor %}
+            {% endif %}
             </ul>
         </div>
     </div>
     <div id="block_11">
         <div class="container">
-            <p>Мы организовали 476 сафари - туров по Восточной Африке, 1488 туристов из <br/> России, Украины и Белоруссии
-                остались довольны и получили массу <br/>незабываемых впечатлений.</p>
+            <p>{{ header8|safe|default:'Заголовок 8' }}</p>
         </div>
     </div>
     {% if review %}
     <div id="block_12">
         <div class="container">
-            <h3>Впечатления от поездок</h3>
+            <h3>{{ header9|safe|default:'Заголовок 9' }}</h3>
 
             <div class="slider_1">
                 <ul class="slides_1">

@@ -12,6 +12,7 @@ SUIT_CONFIG = {
         {'label': u'Настройки', 'icon': 'icon-cog',
          'models': ('auth.user', 'auth.group', 'core.setup', 'countdown.timer')},
         {'label': u'SEO', 'icon': 'icon-cog', 'app': 'seo'},
+        {'label': u'Главная страница', 'icon': 'icon-cog', 'app': 'home'},
         {'label': u'Аватарки', 'icon': 'icon-user', 'models': ('core.avatar',)},
         {'label': u'Заявки', 'icon': 'icon-user', 'models': ('core.ticket', 'core.groupticket',)},
         {'label': u'Продажи', 'icon': 'icon-user', 'models': ('core.sale',)},

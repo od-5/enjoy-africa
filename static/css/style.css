@@ -58,7 +58,8 @@ nav .auth-user {
   right: 0;
   text-shadow: 1px 1px 1px #ff5c5c;
 }
-html, body {
+html,
+body {
   height: 100%;
 }
 body {
@@ -150,7 +151,7 @@ h2 {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#428bca), to(#357ebd));
   background-image: linear-gradient(to bottom, #428bca 0%, #357ebd 100%);
   background-repeat: repeat-x;
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff357ebd', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff357ebd', GradientType=0);
 }
 form.ticket {
   text-align: center;
@@ -163,7 +164,9 @@ form.ticket .button {
   border: none;
   border-radius: 8px;
 }
-form.ticket [type="text"], form.ticket [type="email"], form.ticket textarea {
+form.ticket [type="text"],
+form.ticket [type="email"],
+form.ticket textarea {
   padding: 12px 19px;
   font-size: 24px;
   width: 340px;
@@ -172,7 +175,9 @@ form.ticket [type="text"], form.ticket [type="email"], form.ticket textarea {
 form.ticket [type="text"]:first-child {
   margin-right: 50px;
 }
-form.ticket [type=submit], form.ticket button, form.ticket .button {
+form.ticket [type=submit],
+form.ticket button,
+form.ticket .button {
   padding: 21px;
   color: #101b3f;
   background: #fff66d;
@@ -253,6 +258,12 @@ header .logotype:hover {
 .block3-item {
   padding-left: 95px;
   margin-bottom: 20px;
+  width: 39%;
+  float: right;
+}
+.block3-item:first-child {
+  float: left;
+  margin-bottom: 100px;
 }
 .block3-item__title {
   font-size: 22px;
@@ -573,7 +584,8 @@ me .block10 ul li:last-child {
   margin-top: -10px;
   left: -9px;
 }
-#block_12 .slider_1 .flex-nav-prev, #block_12 .slider_1 .flex-nav-next {
+#block_12 .slider_1 .flex-nav-prev,
+#block_12 .slider_1 .flex-nav-next {
   width: 24px;
   height: 32px;
   position: absolute;
@@ -586,7 +598,8 @@ me .block10 ul li:last-child {
 #block_12 .slider_1 .flex-nav-next {
   right: 0;
 }
-#block_12 .slider_1 a.flex-prev, #block_12 .slider_1 a.flex-next {
+#block_12 .slider_1 a.flex-prev,
+#block_12 .slider_1 a.flex-next {
   width: 24px;
   height: 32px;
   display: block;
@@ -607,7 +620,8 @@ me .block10 ul li:last-child {
   margin: 0 auto;
   position: relative;
 }
-#block_13 .slider_2 .flex-nav-prev, #block_13 .slider_2 .flex-nav-next {
+#block_13 .slider_2 .flex-nav-prev,
+#block_13 .slider_2 .flex-nav-next {
   width: 24px;
   height: 32px;
   position: absolute;
@@ -620,7 +634,8 @@ me .block10 ul li:last-child {
 #block_13 .slider_2 .flex-nav-next {
   right: -50px;
 }
-#block_13 .slider_2 a.flex-prev, #block_13 .slider_2 a.flex-next {
+#block_13 .slider_2 a.flex-prev,
+#block_13 .slider_2 a.flex-next {
   width: 24px;
   height: 32px;
   display: block;
@@ -643,10 +658,12 @@ me .block10 ul li:last-child {
   background: #21a8ff;
   padding-top: 30px;
 }
-input[type="text"].error, input[type="email"].error {
+input[type="text"].error,
+input[type="email"].error {
   background: #ffcfa0;
 }
-input[type="text"].valid, input[type="email"].valid {
+input[type="text"].valid,
+input[type="email"].valid {
   background: #fff;
 }
 label.error {
@@ -960,11 +977,13 @@ label.error {
 .travels-review-add-form select {
   width: 400px;
 }
-.travels-review-change-form label, .travels-review-add-form label {
+.travels-review-change-form label,
+.travels-review-add-form label {
   display: block;
   margin-top: 20px;
 }
-.travels-review-change-form .btn, .travels-review-add-form .btn {
+.travels-review-change-form .btn,
+.travels-review-add-form .btn {
   margin: 20px 0;
 }
 .travels-author {
@@ -1209,7 +1228,8 @@ label.error {
 .forum-button__add {
   margin: 20px 0;
 }
-.forum-add-form input[type=text], .forum-add-form select {
+.forum-add-form input[type=text],
+.forum-add-form select {
   width: 400px;
 }
 .forum-add-form label {

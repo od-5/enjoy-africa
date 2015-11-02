@@ -10,6 +10,7 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
 from apps.travel.models import TravelReview
+from apps.home.models import Block3, Block10, Header, Attendant
 from .models import Setup, Slider, Review, Avatar
 from .forms import TicketForm, UserForm
 
@@ -19,6 +20,48 @@ def home(request):
     slider = Slider.objects.all()
     review = TravelReview.objects.all()[:3]
     form = TicketForm()
+    block3 = Block3.objects.all().order_by('order')
+    block10 = Block10.objects.all().order_by('order')
+    try:
+        attendant = Attendant.objects.all()[0]
+    except:
+        attendant = ''
+    try:
+        header1 = Header.objects.get(block=1)
+    except:
+        header1 = ''
+    try:
+        header2 = Header.objects.get(block=2)
+    except:
+        header2 = ''
+    try:
+        header3 = Header.objects.get(block=3)
+    except:
+        header3 = ''
+    try:
+        header4 = Header.objects.get(block=4)
+    except:
+        header4 = ''
+    try:
+        header5 = Header.objects.get(block=5)
+    except:
+        header5 = ''
+    try:
+        header6 = Header.objects.get(block=6)
+    except:
+        header6 = ''
+    try:
+        header7 = Header.objects.get(block=7)
+    except:
+        header7 = ''
+    try:
+        header8 = Header.objects.get(block=8)
+    except:
+        header8 = ''
+    try:
+        header9 = Header.objects.get(block=9)
+    except:
+        header9 = ''
     try:
         setup = Setup.objects.all()[0]
     except:
@@ -27,7 +70,19 @@ def home(request):
         'setup': setup,
         'form': form,
         'slider': slider,
-        'review': review
+        'review': review,
+        'block3': block3,
+        'block10': block10,
+        'header1': header1,
+        'header2': header2,
+        'header3': header3,
+        'header4': header4,
+        'header5': header5,
+        'header6': header6,
+        'header7': header7,
+        'header8': header8,
+        'header9': header9,
+        'attendant': attendant
     })
 
 

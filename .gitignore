@@ -1,4 +1,12 @@
+/apps/about/migrations
+/apps/forum/migrations
 /apps/vk/migrations
 .idea/
 *.pyc
 db.sqlite3
+/countdown/migrations
+/core/migrations
+/apps/travel/migrations
+/apps/seo/migrations
+/apps/home/migrations
+/apps/groups/migrations

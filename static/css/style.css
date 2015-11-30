@@ -740,7 +740,7 @@ label.error {
   margin-top: 10px;
 }
 .footer-menu__item a {
-  color: #cccccc;
+  color: #ccc;
 }
 .footer .icon {
   background-repeat: no-repeat;
@@ -967,7 +967,7 @@ label.error {
 .travels-review-item-cover__img:hover {
   opacity: .8;
   -moz-opacity: .8;
-  filter: alpha(opacity=80) #000000;
+  filter: alpha(opacity=80) black;
   -khtml-opacity: .8;
 }
 .travels-review-item__travel {

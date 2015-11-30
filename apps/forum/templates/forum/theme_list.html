@@ -21,7 +21,7 @@
                 <dt>
                   <a href="{{ theme.get_absolute_url }}" class="themes__title">{{ theme.title }}</a><br>
                   <span class="themes__author">Автор: {% if theme.user.first_name %}{{ theme.user.last_name|default:'' }} {{ theme.user.first_name|default:'' }}{% else %}{{ theme.user }}{% endif %}</span>
-                  <span class="themes__created"> {{ theme.created }}</span>
+                  <span class="themes__created"> {{ theme.get_theme_date }}</span>
                 </dt>
                 <dd>
                   <span class="themes__answer">Ответов: {{ theme.themecomment_set.all|length }}</span>

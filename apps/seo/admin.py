@@ -8,7 +8,7 @@ class PageAdmin(admin.ModelAdmin):
     list_display = ('page', 'meta_title', )
     fieldsets = [
         (None, {
-            'fields': ['page', 'title', 'meta_title', 'meta_keys', 'meta_desc', ]
+            'fields': ['page', 'title', 'meta_title', 'meta_keys', 'meta_desc', 'top_text']
         }),
     ]
 admin.site.register(Page, PageAdmin)

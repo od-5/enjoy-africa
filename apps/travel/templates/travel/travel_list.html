@@ -5,7 +5,7 @@
 {% block meta_keys %}{{ seo.meta_keys|default:'' }}{% endblock %}
 {% block content %}
   <div class="container">
-    <p class="title_big text-center">{{ seo.title|default:'Журнал путешествий' }}</p>
+    <h1 class="title_big text-center">{{ seo.title|default:'Журнал путешествий' }}</h1>
   {% if travel_list %}
     <div class="travels">
       <ul class="travels-list">

@@ -29,7 +29,7 @@ class Theme(Common, CommonPage):
         if self.themecomment_set.all():
             return self.themecomment_set.all()[-1].created
         else:
-            self.created
+            return self.created
 
     user = models.ForeignKey(to=User, verbose_name=u'Пользователь')
     title = models.CharField(max_length=255, verbose_name=u'Название')

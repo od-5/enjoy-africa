@@ -6,6 +6,11 @@
 {% block content %}
   <div class="container">
     <h1 class="title_big text-center">{{ seo.title|default:'Журнал путешествий' }}</h1>
+  {% if seo.top_text %}
+    <div class="top-text">
+      {{ sep.top_text|safe }}
+    </div>
+  {% endif %}
   {% if travel_list %}
     <div class="travels">
       <ul class="travels-list">

@@ -26,8 +26,8 @@ class Theme(Common, CommonPage):
         return u"/forum/%s" % self.slug
 
     def get_theme_date(self):
-        if self.themecomment_set.all():
-            return self.themecomment_set.all()[-1].created
+        if self.themecomment_set.all().count() > 0:
+            return self.themecomment_set.all().last().created
         else:
             return self.created
 

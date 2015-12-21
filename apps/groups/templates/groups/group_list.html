@@ -6,6 +6,11 @@
   <div class="container">
     <div class="groups">
       <h1 class="groups__title">{{ seo.title|default:'Групповые туры' }}</h1>
+    {% if seo.top_text %}
+      <div class="top-text">
+        {{ seo.top_text|safe }}
+      </div>
+    {% endif %}
       <div class="col-8">
         <div class="groups-list">
           Сортировать по

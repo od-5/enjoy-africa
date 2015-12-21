@@ -6,6 +6,11 @@
   <div class="container">
     <div class="forum">
       <h1 class="forum__title">{{ seo.title|default:'Вопросы и ответы' }}</h1>
+    {% if seo.top_text %}
+      <div class="top-text">
+        {{ seo.top_text|safe }}
+      </div>
+    {% endif %}
       <div class="panel panel-success forum-theme">
       {% if user.is_authenticated %}
         <a href="{% url 'forum:add' %}" class="btn btn-success forum-button__add">Создать новую тему</a>

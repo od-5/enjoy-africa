@@ -25,6 +25,12 @@ class Theme(Common, CommonPage):
     def get_absolute_url(self):
         return u"/forum/%s" % self.slug
 
+    def get_theme_date(self):
+        if self.themecomment_set.all().count() > 0:
+            return self.themecomment_set.all().last().created
+        else:
+            return self.created
+
     user = models.ForeignKey(to=User, verbose_name=u'Пользователь')
     title = models.CharField(max_length=255, verbose_name=u'Название')
     description = RichTextField(verbose_name=u'Описание')

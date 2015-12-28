@@ -49,6 +49,7 @@
             </div>
           </div>
           {% endfor %}
+          {% if group_list.paginator.num_pages > 1 %}
           <div class="text-center">
             <ul class="pagination">
             {% if group_list.has_previous %}
@@ -62,6 +63,7 @@
               {% endif %}
             </ul>
           </div>
+          {% endif %}
         </div>
       </div>
     </div>

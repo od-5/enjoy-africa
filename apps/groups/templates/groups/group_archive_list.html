@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}{{ seo.meta_title|default:'' }}{% endblock %}
+{% block meta_desc %}{{ seo.meta_desc|default:'' }}{% endblock %}
+{% block meta_keys %}{{ seo.meta_keys|default:'' }}{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="groups">
+      <h1 class="groups__title">{{ seo.title|default:'Прошедшие групповые туры' }}</h1>
+    {% if seo.top_text %}
+      <div class="top-text">
+        {{ seo.top_text|safe }}
+      </div>
+    {% endif %}
+      <div class="text-center">
+        <a href="{% url 'groups:list' %}" class="btn btn-lg btn-info add-bottom">Посмотреть актуальные туры</a>
+      </div>
+      <div class="col-12">
+        <div class="groups-list">
+          {% for group in group_list %}
+          <div class="panel panel-primary groups-list-item">
+            <div class="panel-heading groups-list-item__title"><a href="{{ group.get_absolute_url }}">{{ group.title|default:'' }}</a></div>
+            <div class="panel-body groups-list-item-content">
+              <div class="col-4">
+                <div class="groups-list-item-content__cover">
+                  <img src="{{ group.cover.url }}" alt="">
+                </div>
+              </div>
+              <div>
+                <div class="groups-list-item-content__table">
+                  <table class="table">
+                    <tr>
+                      <td>Прибытие: <strong>{{ group.travel_start|default:'' }}</strong></td>
+                      <td>Забронировано мест: <strong>{{ group.reserved|default:'0' }}</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Отъезд: <strong>{{ group.travel_end|default:'' }}</strong></td>
+                      <td>Доступно мест: <strong>{{ group.seats|default:'' }}</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Стоимость: <strong>{{ group.price|default:'' }}</strong></td>
+                      <td>&nbsp;</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+{% endblock %}

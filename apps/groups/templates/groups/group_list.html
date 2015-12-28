@@ -11,6 +11,9 @@
         {{ seo.top_text|safe }}
       </div>
     {% endif %}
+      <div class="text-center">
+        <a href="{% url 'archive:list' %}" class="btn btn-lg btn-info add-bottom">Посмотреть прошедшие туры</a>
+      </div>
       <div class="col-8">
         <div class="groups-list">
           Сортировать по
@@ -28,6 +31,7 @@
               <li><a href="{% url 'groups:list' %}?price_sort=gt">по убыванию</a></li>
             </ul>
           </div>
+
           {% for group in group_list %}
           <div class="panel panel-primary groups-list-item">
             <div class="panel-heading groups-list-item__title"><a href="{{ group.get_absolute_url }}">{{ group.title|default:'' }}</a></div>

@@ -912,6 +912,12 @@ label.error {
 .notifyjs-corner {
   z-index: 9999 !important;
 }
+.top-text {
+  margin-bottom: 40px;
+}
+.add-bottom {
+  margin-bottom: 40px;
+}
 .about {
   margin: 20px 0 40px;
 }

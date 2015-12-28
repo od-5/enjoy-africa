@@ -12,5 +12,6 @@ urlpatterns = patterns(
     # url(r'^', TemplateView.as_view(template_name='groups/group_list.html'), name='list'),
     url(r'^(?P<slug>[\w-]+)$', 'groups_detail', name='detail'),
     url(r'^', 'groups_view', name='list'),
+    # url(r'^archive/', 'groups_archive_view', name='archive'),
 )
 

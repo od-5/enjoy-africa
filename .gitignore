@@ -1,9 +1,9 @@
+/db.sqlite3
 /apps/about/migrations
 /apps/forum/migrations
 /apps/vk/migrations
 .idea/
 *.pyc
-db.sqlite3
 /countdown/migrations
 /core/migrations
 /apps/travel/migrations

@@ -38,12 +38,30 @@ def groups_view(request):
     })
 
 
+def groups_archive_view(request):
+    try:
+        setup = Setup.objects.all()[0]
+    except:
+        setup = None
+    groups_qs = Groups.objects.filter(travel_start__lte=date.today())
+
+    return render(request, 'groups/group_archive_list.html', {
+        'setup': setup,
+        'group_list': groups_qs,
+    })
+
+
+
 def groups_detail(request, slug):
     try:
         setup = Setup.objects.all()[0]
     except:
         setup = None
     group_qs = get_object_or_404(Groups, slug=slug)
+    if group_qs.travel_start > date.today():
+        actual_tour = True
+    else:
+        actual_tour = False
 
     if request.method == "POST":
         comment_form = GroupsCommentForm(request.POST)
@@ -65,4 +83,5 @@ def groups_detail(request, slug):
         'setup': setup,
         'group': group_qs,
         'comment_form': comment_form,
+        'actual_tour': actual_tour
     })

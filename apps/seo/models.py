@@ -17,6 +17,7 @@ class Page(CommonPage):
         ('about', u'О нас'),
         ('travels', u'Журнал путешествий'),
         ('groups', u'Групповые туры'),
+        ('groups-archive', u'Прошедшие групповые туры'),
         ('forum', u'Форум'),
     )
 

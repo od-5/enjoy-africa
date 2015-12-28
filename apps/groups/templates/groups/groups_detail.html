@@ -34,9 +34,11 @@
       <div class="groups__text">
         {{ group.description|safe|default:'' }}
       </div>
+    {% if actual_tour %}
       <div class="groups__button">
         <a href="#pop" class="btn btn-success popupbutton" data-group="{{ group.id }}">Присоединиться к группе</a>
       </div>
+    {% endif %}
     </div>
     <hr>
     {% include 'groups/groups_comment.html' %}

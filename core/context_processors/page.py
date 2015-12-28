@@ -1,4 +1,5 @@
 from apps.seo.models import Page
+
 __author__ = 'alexy'
 
 
@@ -14,4 +15,4 @@ def current_page(request):
 
     return {'CURRENT_PAGE': page,
             'seo': qs,
-           }
+            }

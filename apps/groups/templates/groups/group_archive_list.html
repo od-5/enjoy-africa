@@ -12,7 +12,10 @@
       </div>
     {% endif %}
       <div class="text-center">
-        <a href="{% url 'groups:list' %}" class="btn btn-lg btn-info add-bottom">Посмотреть актуальные туры</a>
+          
+        <a href="{% url 'groups:list' %}" class="btn btn-lg btn-info add-bottom">Посмотреть актуальные туры
+            <img src="{{ STATIC_URL }}img/cicle-arrow-right.png">
+        </a>
       </div>
       <div class="col-12">
         <div class="groups-list">

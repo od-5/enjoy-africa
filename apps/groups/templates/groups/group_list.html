@@ -11,9 +11,6 @@
         {{ seo.top_text|safe }}
       </div>
     {% endif %}
-      <div class="text-center">
-        <a href="{% url 'archive:list' %}" class="btn btn-lg btn-info add-bottom">Посмотреть прошедшие туры</a>
-      </div>
       <div class="col-8">
         <div class="groups-list">
           Сортировать по
@@ -84,6 +81,11 @@
           </div>
           {% endfor %}
         </div>
+      </div>
+      <div class="clear"></div>
+      <div class="text-center">
+        <a href="{% url 'archive:list' %}" class="btn btn-lg btn-info add-bottom">Посмотреть прошедшие туры
+        <img src="{{ STATIC_URL }}img/cicle-arrow-right.png"></a>
       </div>
     </div>
     <div class="clear"></div>

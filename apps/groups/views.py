@@ -45,7 +45,7 @@ def groups_archive_view(request):
     except:
         setup = None
     groups_qs = Groups.objects.filter(travel_start__lte=date.today())
-    paginator = Paginator(groups_qs, 3) # Show 25 contacts per page
+    paginator = Paginator(groups_qs, 10) # Show 10 per page
 
     page = request.GET.get('page')
     try:

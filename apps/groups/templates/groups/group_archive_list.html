@@ -49,6 +49,19 @@
             </div>
           </div>
           {% endfor %}
+          <div class="text-center">
+            <ul class="pagination">
+            {% if group_list.has_previous %}
+                <li><a href="?page={{ group_list.previous_page_number }}"> << </a></li>
+              {% endif %}
+            {% for page in group_list.paginator.page_range %}
+              <li {% if page == group_list.number %}class="active"{% endif %}><a href="?page={{ page }}">{{ page }}</a></li>
+            {% endfor %}
+            {% if group_list.has_next %}
+                <li><a href="?page={{ group_list.next_page_number }}"> >> </a></li>
+              {% endif %}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

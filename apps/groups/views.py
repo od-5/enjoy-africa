@@ -1,4 +1,5 @@
 # coding=utf-8
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from apps.forum.models import Theme
@@ -44,10 +45,22 @@ def groups_archive_view(request):
     except:
         setup = None
     groups_qs = Groups.objects.filter(travel_start__lte=date.today())
+    paginator = Paginator(groups_qs, 3) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        groups_list = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        groups_list = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        groups_list = paginator.page(paginator.num_pages)
+
 
     return render(request, 'groups/group_archive_list.html', {
         'setup': setup,
-        'group_list': groups_qs,
+        'group_list': groups_list,
     })
 
 
